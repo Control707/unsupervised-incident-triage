@@ -2,7 +2,7 @@
 
 [![Showcase Website](https://img.shields.io/badge/Web_Showcase-GitHub_Pages-1768ac?style=flat-square)](https://control707.github.io/unsupervised-incident-triage/)
 [![Notebook](https://img.shields.io/badge/Jupyter-End--to--End_Showcase-d97706?style=flat-square)](Incident_Triage_End_to_End_Showcase.ipynb)
-[![Paper PDF](https://img.shields.io/badge/Paper-ACMSE_2027_Manuscript-0f766e?style=flat-square)](Final_Project_Report_V2.pdf)
+[![Paper PDF](https://img.shields.io/badge/Paper-Preprint_PDF-0f766e?style=flat-square)](Final_Project_Report_V2.pdf)
 [![Tests](https://img.shields.io/badge/Unit_Tests-90_Passing-16a34a?style=flat-square)](tests/)
 
 **Authors:** [Zakaria Sherif](https://www.linkedin.com/in/zakaria-sherif/) · Nicholas Cosereanu · Wyatt Barker  
@@ -76,11 +76,11 @@ python -m http.server --directory docs 8080
 ## Citation
 
 ```bibtex
-@inproceedings{sherif2027unsupervised,
-  title     = {Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage},
-  author    = {Sherif, Zakaria and Cosereanu, Nicholas and Barker, Wyatt},
-  booktitle = {Proceedings of the 2027 ACM Southeast Conference (ACMSE 2027)},
-  year      = {2027},
-  url       = {https://github.com/Control707/unsupervised-incident-triage}
+@misc{sherif2026unsupervised,
+  title  = {Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage},
+  author = {Sherif, Zakaria and Cosereanu, Nicholas and Barker, Wyatt},
+  year   = {2026},
+  note   = {Preprint, Kennesaw State University},
+  url    = {https://github.com/Control707/unsupervised-incident-triage}
 }
 ```

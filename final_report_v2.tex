@@ -1,4 +1,4 @@
-\documentclass[sigconf,anonymous,pbalance]{acmart}
+\documentclass[sigconf,nonacm,pbalance]{acmart}
 \usepackage{booktabs}
 \usepackage{multirow}
 \definecolor{hlred}{RGB}{196, 18, 28}
@@ -10,32 +10,51 @@
   \providecommand\BibTeX{{%
     Bib\TeX}}}
 
-\setcopyright{cc}
-\setcctype{by}
-\copyrightyear{2027}
-\acmYear{2027}
-\acmDOI{10.1145/YYYYYYY.YYYYYYY}
-
-\acmConference[ACMSE 2027]{2027 ACM Southeast Conference}{April 15--17, 2027}{Decatur, AL, USA}
-\acmBooktitle{2027 ACM Southeast Conference (ACMSE 2027), April 15--17, 2027, Decatur, AL, USA}
-\acmISBN{979-8-4007-2749-8/2027/04}
+\settopmatter{printacmref=false}
 
 \raggedbottom
 \clubpenalty=0
 \widowpenalty=0
 \begin{document}
-\pagestyle{empty}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Preprint}
+\fancyhead[R]{Overcoming Template Mega Clusters and Pooling Cancellation}
 
 \title[Overcoming Template Mega Clusters and Pooling Cancellation]{Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage}
+\subtitle{Preprint}
 
-\author{Anonymous Author}
+\author{Zakaria Sherif}
 \affiliation{%
-  \institution{Anonymous Institution}
-  \city{Anonymous City}
-  \state{Anonymous State}
+  \department{Department of Computer Science}
+  \institution{Kennesaw State University}
+  \city{Kennesaw}
+  \state{GA}
   \country{USA}
 }
-\email{anonymous@example.edu}
+\email{zsherif@students.kennesaw.edu}
+
+\author{Nicholas Cosereanu}
+\affiliation{%
+  \department{Department of Computer Science}
+  \institution{Kennesaw State University}
+  \city{Kennesaw}
+  \state{GA}
+  \country{USA}
+}
+\email{ncoserea@students.kennesaw.edu}
+
+\author{Wyatt Barker}
+\affiliation{%
+  \department{Department of Computer Science}
+  \institution{Kennesaw State University}
+  \city{Kennesaw}
+  \state{GA}
+  \country{USA}
+}
+\email{wbarker8@students.kennesaw.edu}
+
+\renewcommand{\shortauthors}{Sherif, Cosereanu, and Barker}
 
 \begin{abstract}
 Enterprise helpdesks and software repositories receive thousands of unstructured incident reports each quarter, and operations teams need to know which tickets belong together and which problems are growing. In our enterprise Information Technology Service Management (ITSM) benchmark, nearly one in four tickets (314 of 1,380 records) sit orphaned in an \texttt{Unassigned} backlog without a resolution timestamp because front line Tier 1 intake agents cannot determine which specialist team owns cross boundary security, network, or identity outages. Meanwhile, open source maintainers struggle to distinguish genuine user bug outbreaks from internal refactoring pull requests (PRs). We show that standard unsupervised topic modeling falls into two traps on these streams. In the \textbf{Template and Mega Cluster Trap}, automated word coherence metrics reward models that group recurring ticket boilerplate, while default density clustering merges distinct software bugs into one mega cluster. In the \textbf{Static Window Trap}, comparing two fixed periods suffers from \emph{pooling cancellation} (a drop in one month and a rise in the next cancel out once the months are combined) and cannot tell a short internal coding sprint from a chronic bug plateau. We present a three stage framework that avoids both traps: domain pruned term weighting with size bounded hierarchical density clustering (\textbf{Bounded EOM}) for discovery, false discovery rate (FDR) tests with 14 day rolling windows for shift tracking, and a check against withheld operational metadata. On open source GitHub issues and enterprise service desk tickets, the framework splits a 298 ticket mega cluster into five actionable subsystems, reveals four enterprise shifts that coarse windows erased, separates internal maintainer sprints from external user bug outbreaks, and groups 75.5\% of orphaned enterprise incidents with similar tickets that a team already handled.
