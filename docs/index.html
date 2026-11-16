@@ -9,719 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet" />
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-alt: #f1f5f9;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #1768ac;
-      --accent-soft: rgba(23, 104, 172, 0.1);
-      --gold: #d97706;
-      --gold-bright: #f59e0b;
-      --gold-soft: rgba(245, 158, 11, 0.14);
-      --purple: #7b4397;
-      --red: #c62828;
-      --teal: #0f766e;
-      --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
-      --radius: 14px;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b1120;
-      --surface: #111827;
-      --surface-alt: #1e293b;
-      --border: #334155;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --gold: #fbbf24;
-      --gold-bright: #f59e0b;
-      --gold-soft: rgba(251, 191, 36, 0.14);
-      --purple: #c084fc;
-      --red: #f87171;
-      --teal: #2dd4bf;
-      --shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.55);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    code, pre { font-family: 'JetBrains Mono', monospace; }
-
-    /* Top Nav */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(12px);
-      background: color-mix(in srgb, var(--surface) 86%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-    .brand-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 3px;
-      background: linear-gradient(135deg, var(--gold-bright), var(--accent));
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-    .nav-links a { color: var(--text-muted); }
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
-    .nav-menu-btn {
-      display: none;
-      border: 1px solid var(--border);
-      background: var(--surface-alt);
-      color: var(--text);
-      border-radius: 8px;
-      padding: 0.38rem 0.75rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .mobile-actions {
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .theme-btn {
-      border: 1px solid var(--border);
-      background: var(--surface-alt);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 0.35rem 0.8rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 4rem 0 2.75rem;
-      border-bottom: 1px solid var(--border);
-      background:
-        radial-gradient(900px 360px at 15% -10%, var(--gold-soft), transparent 65%),
-        radial-gradient(900px 360px at 85% -10%, var(--accent-soft), transparent 65%);
-    }
-    .venue-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      background: var(--gold-soft);
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
-    }
-    h1.hero-title {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: clamp(2rem, 4.1vw, 3.35rem);
-      line-height: 1.13;
-      letter-spacing: -0.025em;
-      margin: 0 0 1rem;
-      max-width: 980px;
-      font-weight: 600;
-    }
-    .hero-sub {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      max-width: 850px;
-      margin: 0 0 1.5rem;
-    }
-    .authors-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem 1.4rem;
-      margin-bottom: 1.75rem;
-      font-size: 0.95rem;
-    }
-    .author-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .linkedin-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.14rem 0.5rem;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.68rem 1.15rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
-      transition: transform 0.12s ease, border-color 0.12s ease;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-1px); text-decoration: none; border-color: var(--accent); }
-    .btn-primary {
-      background: #0f172a;
-      color: #fbbf24;
-      border-color: #0f172a;
-    }
-    [data-theme="dark"] .btn-primary {
-      background: #f59e0b;
-      color: #0b1120;
-      border-color: #f59e0b;
-    }
-
-    /* KPI Strip */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-    }
-    .kpi-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.15rem 1.25rem;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .kpi-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: var(--kpi-color, var(--accent));
-    }
-    .kpi-val {
-      font-size: 1.9rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 0.35rem;
-    }
-    .kpi-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* Sections */
-    section.block {
-      padding: 3.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .sec-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.75rem;
-    }
-    .sec-eyebrow {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 0.3rem;
-    }
-    h2.sec-title {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: clamp(1.55rem, 2.5vw, 2.15rem);
-      margin: 0;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-    .sec-desc {
-      color: var(--text-muted);
-      max-width: 780px;
-      margin: 0.45rem 0 0;
-      font-size: 0.96rem;
-    }
-
-    /* Cards & Controls */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.4rem;
-      box-shadow: var(--shadow);
-    }
-    .stage-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .stage-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-    }
-    .stage-num {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      background: var(--gold-soft);
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-    .stage-card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
-    .stage-card p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
-
-    .arch-frame {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.75rem;
-      text-align: center;
-      cursor: zoom-in;
-    }
-    .video-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: var(--shadow);
-    }
-    .video-card video {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: block;
-      border-radius: 10px;
-      background: #0b1120;
-    }
-    .arch-frame img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-      margin: 0 auto;
-    }
-    .caption-text {
-      margin-top: 0.65rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-align: left;
-    }
-
-    /* Toolbar / Tabs */
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .seg-group {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      background: var(--surface-alt);
-      padding: 0.3rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
-    .seg-btn {
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      padding: 0.42rem 0.85rem;
-      border-radius: 7px;
-      font-size: 0.83rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .seg-btn.active {
-      background: var(--surface);
-      color: var(--text);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    }
-
-    .plot-box {
-      width: 100%;
-      min-height: 460px;
-    }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 1.25rem;
-      align-items: start;
-    }
-    .two-col.even {
-      grid-template-columns: 1fr 1fr;
-    }
-    .two-col > *, .gallery-grid > *, .kpi-grid > *, .stage-grid > * {
-      min-width: 0;
-    }
-    .qr-share-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .qr-share-card img {
-      width: 96px;
-      height: 96px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      padding: 4px;
-      flex-shrink: 0;
-      cursor: zoom-in;
-    }
-    .lightbox-close, .lightbox-zoom {
-      position: fixed;
-      top: 1rem;
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      border-radius: 999px;
-      height: 40px;
-      font-weight: 700;
-      cursor: pointer;
-      z-index: 105;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-    .lightbox-close {
-      right: 1rem;
-      width: 40px;
-      font-size: 1.2rem;
-    }
-    .lightbox-zoom {
-      right: 4rem;
-      padding: 0 0.9rem;
-      font-size: 0.85rem;
-    }
-    .swipe-hint {
-      display: none;
-    }
-    .wide-fig-scroll {
-      width: 100%;
-    }
-    @media (max-width: 960px) {
-      .two-col, .two-col.even { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      html, body { overflow-x: hidden; }
-      .container { padding: 0 0.75rem; }
-      .nav-inner { padding: 0.6rem 0.75rem; gap: 0.5rem; flex-wrap: wrap; }
-      .brand span:last-child { font-size: 0.88rem; }
-      .mobile-actions { display: flex; }
-      .nav-menu-btn { display: inline-flex; align-items: center; gap: 0.3rem; }
-      .nav-links {
-        display: none;
-        flex-basis: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.2rem;
-        padding: 0.6rem 0 0.35rem;
-        border-top: 1px solid var(--border);
-        margin-top: 0.35rem;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a {
-        padding: 0.55rem 0.4rem;
-        border-radius: 8px;
-        font-size: 0.92rem;
-      }
-      .nav-links a:hover { background: var(--surface-alt); }
-      .nav-links .theme-btn { display: none; }
-      .hero { padding: 2.1rem 0 1.85rem; }
-      .hero-sub { font-size: 0.96rem; }
-      .cta-row { gap: 0.55rem; }
-      .cta-row .btn { width: 100%; justify-content: center; min-height: 44px; font-size: 0.88rem; }
-      section.block { padding: 2.2rem 0; }
-      .card { padding: 0.85rem; }
-      .arch-frame { padding: 0.5rem; }
-      .gallery-card { padding: 0.75rem; }
-      .plot-box { min-height: 410px; }
-      .seg-group { width: 100%; }
-      .seg-btn { flex: 1 1 auto; text-align: center; min-height: 38px; font-size: 0.78rem; padding: 0.4rem 0.55rem; }
-      .qr-share-card { flex-direction: column; text-align: center; }
-      .swipe-hint {
-        display: block;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--accent);
-        text-align: center;
-        margin-bottom: 0.4rem;
-      }
-      .wide-fig-scroll {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        background: #ffffff;
-      }
-      .wide-fig-scroll img {
-        max-width: none !important;
-        width: 760px;
-        height: auto;
-        border: none !important;
-      }
-      /* Stacked responsive cards for tables on narrow screens */
-      .table-wrap {
-        border: none;
-        background: transparent;
-        overflow-x: visible;
-      }
-      .table-wrap table,
-      .table-wrap thead,
-      .table-wrap tbody,
-      .table-wrap tr,
-      .table-wrap td {
-        display: block;
-        width: 100%;
-      }
-      .table-wrap thead { display: none; }
-      .table-wrap tr {
-        background: var(--surface-alt);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 0.55rem 0.75rem;
-        margin-bottom: 0.6rem;
-      }
-      .table-wrap td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.75rem;
-        white-space: normal;
-        text-align: right;
-        padding: 0.34rem 0;
-        border-bottom: 1px dashed var(--border);
-        font-size: 0.82rem;
-      }
-      .table-wrap td::before {
-        content: attr(data-label);
-        font-weight: 700;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        color: var(--text-muted);
-        text-align: left;
-        flex-shrink: 0;
-      }
-      .table-wrap td:last-child { border-bottom: none; }
-    }
-
-    /* Tables */
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--surface);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.84rem;
-    }
-    th, td {
-      padding: 0.58rem 0.72rem;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-      white-space: nowrap;
-    }
-    th {
-      background: var(--surface-alt);
-      font-weight: 700;
-      color: var(--text-muted);
-      font-size: 0.77rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: color-mix(in srgb, var(--accent-soft) 50%, transparent); }
-    .badge {
-      display: inline-block;
-      padding: 0.14rem 0.48rem;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
-    .badge-sig { background: rgba(23, 104, 172, 0.14); color: var(--accent); }
-    .badge-warn { background: rgba(198, 40, 40, 0.14); color: var(--red); }
-    .badge-ok { background: rgba(15, 118, 110, 0.14); color: var(--teal); }
-    .badge-muted { background: var(--surface-alt); color: var(--text-muted); }
-
-    /* Poster Figure Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1rem;
-    }
-    .gallery-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-    .gallery-card img {
-      width: 100%;
-      height: auto;
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-    }
-    .gallery-card h4 { margin: 0; font-size: 0.95rem; }
-    .gallery-card p { margin: 0; font-size: 0.82rem; color: var(--text-muted); }
-
-    /* Code / BibTeX */
-    pre.code-block {
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 1.1rem 1.25rem;
-      border-radius: 10px;
-      overflow-x: auto;
-      font-size: 0.82rem;
-      line-height: 1.55;
-      margin: 0;
-    }
-    .copy-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-    .mini-btn {
-      border: 1px solid var(--border);
-      background: var(--surface-alt);
-      color: var(--text);
-      border-radius: 6px;
-      padding: 0.28rem 0.65rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 6, 23, 0.88);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 3.5rem 1rem 1.5rem;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      z-index: 100;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox.zoomed {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-    .lightbox img {
-      max-width: 95vw;
-      max-height: 86vh;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 0.5rem;
-      transition: width 0.15s ease;
-    }
-    .lightbox.zoomed img {
-      max-width: none;
-      max-height: none;
-      width: 190vw;
-      height: auto;
-      cursor: zoom-out;
-    }
-
-    footer {
-      padding: 2.5rem 0 3.5rem;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      text-align: center;
-    }
-    .hidden { display: none !important; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar">
+  <a class="skip-link" href="#main-content">Skip to project content</a>
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-inner">
       <div class="brand">
         <span class="brand-dot"></span>
@@ -729,14 +21,14 @@
       </div>
       <div class="mobile-actions">
         <button class="theme-btn" id="themeToggleMobile" type="button">Dark</button>
-        <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false">Sections &#9662;</button>
+        <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Sections &#9662;</button>
       </div>
       <div class="nav-links" id="navLinks">
         <a href="#video-walkthrough">40s Video</a>
         <a href="#pipeline">Pipeline</a>
-        <a href="#trap1">Trap 1 · Mega Clusters</a>
-        <a href="#trap2">Trap 2 · Rolling &amp; Pooling</a>
-        <a href="#payoff">Operational Payoff</a>
+        <a href="#trap1">Discovery</a>
+        <a href="#trap2">Shift tracking</a>
+        <a href="#payoff">Validation</a>
         <a href="#artifacts">Cite &amp; QR</a>
         <button class="theme-btn" id="themeToggle" type="button">Dark Mode</button>
       </div>
@@ -745,8 +37,11 @@
 
   <header class="hero">
     <div class="container">
-      <div class="venue-pill">Preprint &bull; College of Computing and Software Engineering (CCSE), Kennesaw State University</div>
-      <h1 class="hero-title">Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage</h1>
+      <div class="hero-meta">
+        <span class="venue-pill">Research preprint &middot; Poster 7372-UR</span>
+        <span class="hero-affiliation">College of Computing and Software Engineering (CCSE)<br>Kennesaw State University</span>
+      </div>
+      <h1 class="hero-title">Overcoming Template Mega Clusters and Pooling Cancellation in <em>Unsupervised Incident Triage</em></h1>
       <p class="hero-sub">
         A three-stage unsupervised framework combining <strong>Bounded EOM</strong> manifold clustering, domain-pruned <strong>c-TF-IDF</strong>, multi-horizon <strong>Benjamini–Hochberg FDR</strong> shift tests, and continuous 14-day rolling trajectories—validated against withheld GitHub contributor roles and enterprise IT routing logs.
       </p>
@@ -767,57 +62,45 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://github.com/Control707/unsupervised-incident-triage/blob/main/Incident_Triage_End_to_End_Showcase.ipynb" target="_blank" rel="noopener">
-          Open End-to-End Notebook (.ipynb)
-        </a>
-        <a class="btn" href="#video-walkthrough">
-          Watch 40s Walkthrough
-        </a>
-        <a class="btn" href="assets/Final_Project_Report_V2.pdf" target="_blank" rel="noopener">
-          Read Preprint Paper (PDF)
-        </a>
-        <a class="btn" href="assets/Incident_Triage_Poster_High_Resolution_Final.pdf" target="_blank" rel="noopener">
-          View Poster (PDF)
-        </a>
-        <a class="btn" href="assets/Incident_Triage_Poster_High_Resolution_Final.pptx" target="_blank" rel="noopener">
-          Download Poster (PPTX)
-        </a>
-        <a class="btn" href="https://github.com/Control707/unsupervised-incident-triage" target="_blank" rel="noopener">
-          GitHub Repository
-        </a>
-        <button class="btn" type="button" onclick="openLightbox('assets/showcase_qr.png')">
-          Mobile QR Code
-        </button>
+        <a class="btn btn-primary" href="#trap1">Explore the research <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn" href="#video-walkthrough"><span aria-hidden="true">&#9655;</span> Watch the 40s overview</a>
+      </div>
+      <div class="resource-links" aria-label="Project resources">
+        <a href="assets/Final_Project_Report_V2.pdf" target="_blank" rel="noopener">Preprint PDF &nearr;</a>
+        <a href="https://github.com/Control707/unsupervised-incident-triage/blob/main/Incident_Triage_End_to_End_Showcase.ipynb" target="_blank" rel="noopener">Jupyter notebook &nearr;</a>
+        <a href="assets/Incident_Triage_Poster_High_Resolution_Final.pdf" target="_blank" rel="noopener">Poster PDF &nearr;</a>
+        <a href="assets/Incident_Triage_Poster_High_Resolution_Final.pptx">Editable poster &darr;</a>
+        <a href="https://github.com/Control707/unsupervised-incident-triage" target="_blank" rel="noopener">GitHub &nearr;</a>
       </div>
 
       <div class="kpi-grid">
         <div class="kpi-card" style="--kpi-color: #1768ac;">
           <div class="kpi-val">298 &rarr; 5</div>
-          <div class="kpi-label"><strong>Mega Cluster Unmixed:</strong> Bounded EOM splits parent cluster <code>R1</code> into 5 distinct failure subsystems while preserving sibling clusters (<code>ARI = 1.000</code>).</div>
+          <div class="kpi-label"><strong>Distinct subsystems.</strong> Bounded EOM splits parent cluster <code>R1</code> into 5 distinct failure subsystems while preserving sibling clusters (<code>ARI = 1.000</code>).</div>
         </div>
         <div class="kpi-card" style="--kpi-color: #d97706;">
-          <div class="kpi-val">0 &rarr; 4 Shifts</div>
-          <div class="kpi-label"><strong>Pooling Cancellation Exposed:</strong> Monthly testing rescues 4 FDR-significant enterprise IT shifts hidden by coarse pooling (<code>IT03</code> 99% cancellation).</div>
+          <div class="kpi-val">0 &rarr; 4</div>
+          <div class="kpi-label"><strong>Hidden IT shifts recovered.</strong> Monthly testing rescues 4 FDR-significant enterprise IT shifts hidden by coarse pooling (<code>IT03</code> 99% cancellation).</div>
         </div>
         <div class="kpi-card" style="--kpi-color: #7b4397;">
-          <div class="kpi-val">0.0% External</div>
-          <div class="kpi-label"><strong>Sprints vs. Outbreaks:</strong> Withheld GitHub roles reveal <code>R3</code> (<code>task_cast</code>) was 100% internal contributors, versus 33–54% external user bugs.</div>
+          <div class="kpi-val">0% external</div>
+          <div class="kpi-label"><strong>An internal sprint, not an outbreak.</strong> Withheld GitHub roles reveal <code>R3</code> (<code>task_cast</code>) was 100% internal contributors, versus 33–54% external user bugs.</div>
         </div>
         <div class="kpi-card" style="--kpi-color: #0f766e;">
-          <div class="kpi-val">75.5% Grouped</div>
-          <div class="kpi-label"><strong>Orphaned IT Triage:</strong> 237 of 314 <code>Unassigned</code> enterprise incidents group with previously handled specialist teams at <code>98.3%</code> type purity.</div>
+          <div class="kpi-val">75.5%</div>
+          <div class="kpi-label"><strong>Orphaned tickets grouped.</strong> 237 of 314 <code>Unassigned</code> enterprise incidents group with previously handled specialist teams at <code>98.3%</code> type purity.</div>
         </div>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- VIDEO WALKTHROUGH -->
     <section class="block" id="video-walkthrough">
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">40-Second Walkthrough</div>
+            <div class="sec-eyebrow">01 / The overview</div>
             <h2 class="sec-title">Project Overview in 40 Seconds</h2>
             <p class="sec-desc">Narrated overview covering the Template Mega Cluster split (<code>298 &rarr; 5</code>), 14-day rolling vs. monthly pooling cancellation, and <code>75.5%</code> orphaned ticket grouping.</p>
           </div>
@@ -838,7 +121,7 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Three-Stage Methodology</div>
+            <div class="sec-eyebrow">02 / The method</div>
             <h2 class="sec-title">Discover, Track, and Validate Without Label Leakage</h2>
             <p class="sec-desc">All operational metadata (GitHub author roles, PR flags, MTTR, IT support queues, reassignment hops) is strictly withheld during Stages 1 and 2 and used only post hoc in Stage 3.</p>
           </div>
@@ -864,7 +147,7 @@
 
         <div class="arch-frame">
           <div class="swipe-hint">&larr; Swipe figure horizontally or tap to zoom &rarr;</div>
-          <div class="wide-fig-scroll" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
+          <div class="wide-fig-scroll" role="button" tabindex="0" aria-label="Enlarge pipeline diagram" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
             <img src="assets/figures/v6_figure1_architecture.png" alt="Three Stage Incident Discovery, Shift Tracking, and Validation Pipeline" loading="lazy" />
           </div>
           <div class="caption-text"><strong>Figure 1 (tap to zoom &amp; pan):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380).</div>
@@ -877,8 +160,8 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Overcoming Trap 1</div>
-            <h2 class="sec-title">Breaking the 298-Ticket Mega Cluster &amp; Coherence Mirage</h2>
+            <div class="sec-eyebrow">03 / Discover</div>
+            <h2 class="sec-title">One mega cluster. Five distinct failure modes.</h2>
             <p class="sec-desc">Explore all 881 GitHub tickets in 2D UMAP space. Toggle between <strong>Bounded EOM (C0–C13)</strong> and <strong>Unbounded EOM (R0–R9)</strong>, or inspect why automated <em>C_v</em> word coherence misleads topic model selection.</p>
           </div>
         </div>
@@ -894,7 +177,7 @@
             </div>
             <div id="spatialPlot" class="plot-box"></div>
             <p class="caption-text" id="spatialCaption">
-              Hover any ticket to inspect its GitHub issue ID, title, cluster assignment, quarter, and author status. Bounded EOM keeps 9 clusters untouched (<code>ARI = 1.000</code>) while splitting the 298-ticket <code>R1</code> parent into 5 subsystems (<code>C5</code> Pool.map, <code>C7</code> Arrow Index, <code>C2</code> Tensor Cast, <code>C3</code> PyArrow ABI, <code>C8</code> Tokenizer).
+              Hover or tap any ticket to inspect its GitHub issue ID, title, cluster assignment, quarter, and author status. Bounded EOM keeps 9 clusters untouched (<code>ARI = 1.000</code>) while splitting the 298-ticket <code>R1</code> parent into 5 subsystems (<code>C5</code> Pool.map, <code>C7</code> Arrow Index, <code>C2</code> Tensor Cast, <code>C3</code> PyArrow ABI, <code>C8</code> Tokenizer).
             </p>
           </div>
 
@@ -906,10 +189,11 @@
                 <button class="seg-btn" data-stream="it">Enterprise IT</button>
               </div>
             </div>
-            <div id="benchPlot" style="width:100%; height:260px;"></div>
-            <div class="table-wrap" style="margin-top:0.75rem;">
-              <table id="benchTable"></table>
-            </div>
+            <div id="benchPlot" class="chart benchmark" role="img" aria-label="Interactive cross-domain model benchmark"></div>
+            <details class="table-details">
+              <summary>View the full benchmark results</summary>
+              <div class="table-wrap"><table id="benchTable" aria-label="Model benchmark results"></table></div>
+            </details>
             <p class="caption-text">
               Notice the inversion: LDA achieves the highest <em>C_v</em> coherence (<code>0.948</code> SWE / <code>0.905</code> IT) by grouping boilerplate tokens, yet suffers negative 5D Silhouette (<code>-0.225</code>) and lowest IT purity.
             </p>
@@ -923,8 +207,8 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Overcoming Trap 2</div>
-            <h2 class="sec-title">Continuous Rolling Plateaus vs. Sprints &amp; Pooling Cancellation</h2>
+            <div class="sec-eyebrow">04 / Track</div>
+            <h2 class="sec-title">See the shifts that pooled windows hide.</h2>
             <p class="sec-desc">Coarse period comparisons conflate chronic plateaus with completed sprints (GitHub Q2) and cancel opposing monthly swings (Enterprise IT Q1).</p>
           </div>
         </div>
@@ -938,7 +222,7 @@
                 <button class="seg-btn" data-view="share">Q2 Rolling Share (%)</button>
               </div>
             </div>
-            <div id="rollingPlot" style="width:100%; height:360px;"></div>
+            <div id="rollingPlot" class="chart"></div>
             <p class="caption-text">
               <strong><code>R1</code> (Serialization)</strong> stays above its Q1 baseline on <strong>94.5%</strong> of Q2 days (mean +6.29 pp, flat slope <code>-0.06 pp/wk</code>). <strong><code>R3</code> (Task Cast)</strong> stays dormant in April, peaks at <strong>16.7%</strong> on May 26, and resolves in June.
             </p>
@@ -952,7 +236,7 @@
                 <button class="seg-btn" data-view="delta">Coarse vs. March &Delta;</button>
               </div>
             </div>
-            <div id="poolingPlot" style="width:100%; height:360px;"></div>
+            <div id="poolingPlot" class="chart"></div>
             <p class="caption-text">
               In <code>IT-03</code> (Installation), a Feb dip (<code>-4.43 pp</code>) and Mar surge (<code>+9.88 pp</code>) cancel <strong>99%</strong> of variation when pooled (<code>Coarse &Delta; = -0.15 pp</code>, 0/14 FDR shifts). Sequential monthly testing rescues <strong>4/14</strong> significant shifts.
             </p>
@@ -964,9 +248,10 @@
             <strong>Bounded EOM Hierarchical Unmixing Table (GitHub Q1 &rarr; Q2 Shifts)</strong>
             <span class="badge badge-sig">Only C5 surges inside R1 (q = 0.070)</span>
           </div>
-          <div class="table-wrap">
-            <table id="shiftsTable"></table>
-          </div>
+          <details class="table-details">
+            <summary>Inspect all cluster shifts and significance tests</summary>
+            <div class="table-wrap"><table id="shiftsTable" aria-label="Quarterly cluster shifts"></table></div>
+          </details>
         </div>
       </div>
     </section>
@@ -976,8 +261,8 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Stage 3 Operational Payoff</div>
-            <h2 class="sec-title">Exposing Internal Sprints &amp; Grouping 237 Orphaned Incidents</h2>
+            <div class="sec-eyebrow">05 / Validate</div>
+            <h2 class="sec-title">From discovered topics to operational context.</h2>
             <p class="sec-desc">Validating text-only clusters against withheld operational metadata separates genuine user bug outbreaks from internal PR sprints and surfaces Tier 1 helpdesk blind spots.</p>
           </div>
         </div>
@@ -987,7 +272,7 @@
             <div class="toolbar">
               <strong>GitHub Extrinsic Validation: Bug Share vs. Median MTTR</strong>
             </div>
-            <div id="ghPayoffPlot" style="width:100%; height:370px;"></div>
+            <div id="ghPayoffPlot" class="chart payoff"></div>
             <p class="caption-text">
               Bubble size = cluster count; color = external author share (<code>author_association == NONE</code>). <strong><code>R3</code> has 0.0% external users</strong> (75% core members), confirming a maintainer sprint, while <code>R0</code>, <code>R1</code>, <code>R6</code> draw 33–54% external reporters.
             </p>
@@ -998,7 +283,7 @@
               <strong>Enterprise IT: Routine Queues vs. Cross-Boundary Outages</strong>
               <span class="badge badge-ok">237 / 314 (75.5%) Orphaned Grouped</span>
             </div>
-            <div id="itPayoffPlot" style="width:100%; height:370px;"></div>
+            <div id="itPayoffPlot" class="chart payoff"></div>
             <p class="caption-text">
               Routine requests (<code>IT-00</code>–<code>IT-03</code>, teal) map cleanly with 0.59–0.78 hops. Outage clusters (<code>IT-07</code>, <code>IT-08</code>, <code>IT-10</code>, <code>IT-12</code>, <code>IT-13</code>, red) suffer 1.42–1.59 reassignments and leave 63.6–93.8% orphaned unless grouped by failure signature.
             </p>
@@ -1012,7 +297,7 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Share &amp; Reproducibility</div>
+            <div class="sec-eyebrow">06 / Take it further</div>
             <h2 class="sec-title">Mobile QR Code, Local Setup &amp; Citation</h2>
             <p class="sec-desc">Scan to open on another device, reproduce the 90 unit tests and notebook locally, or cite the preprint.</p>
           </div>
@@ -1094,7 +379,7 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     ];
 
     function isMobile() {
-      return window.innerWidth < 640;
+      return window.innerWidth <= 768;
     }
 
     function plotConfig() {
@@ -1105,8 +390,8 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       const dark = document.documentElement.getAttribute('data-theme') === 'dark';
       return {
         bg: 'rgba(0,0,0,0)',
-        text: dark ? '#e2e8f0' : '#0f172a',
-        grid: dark ? '#334155' : '#e2e8f0',
+        text: dark ? '#edf3f2' : '#152f36',
+        grid: dark ? '#30464e' : '#e4ebe9',
         noise: dark ? '#475569' : '#cbd5e1',
       };
     }
@@ -1131,9 +416,15 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       lb.classList.remove('zoomed');
     }
 
-    function copyText(id) {
-      const txt = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(txt);
+    async function copyText(id) {
+      const button = document.querySelector(`[onclick="copyText('${id}')"]`);
+      try {
+        await navigator.clipboard.writeText(document.getElementById(id).innerText);
+        button.textContent = 'Copied!';
+      } catch {
+        button.textContent = 'Select text to copy';
+      }
+      setTimeout(() => { button.textContent = 'Copy'; }, 2000);
     }
 
     function toggleTheme() {
@@ -1142,6 +433,7 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       html.setAttribute('data-theme', next);
       document.getElementById('themeToggle').textContent = next === 'dark' ? 'Light Mode' : 'Dark Mode';
       document.getElementById('themeToggleMobile').textContent = next === 'dark' ? 'Light' : 'Dark';
+      try { localStorage.setItem('showcase-theme', next); } catch {}
       if (DATA) renderAllPlots();
     }
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
@@ -1172,10 +464,13 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
 
     function bindSeg(groupId, cb) {
       const el = document.getElementById(groupId);
+      el.setAttribute('role', 'group');
       el.querySelectorAll('.seg-btn').forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
         btn.addEventListener('click', () => {
-          el.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+          el.querySelectorAll('.seg-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
           btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
           cb(btn.dataset);
         });
       });
@@ -1265,6 +560,15 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       if (!window.Plotly || !DATA) return;
       const tc = themeColors();
       const mob = isMobile();
+      // Short axis labels keep the comparison legible without hiding model names in the results.
+      const benchmarkAxis = () => ({
+        automargin: true,
+        tickmode: 'array', tickvals: labels,
+        ticktext: currentBenchStream === 'swe'
+          ? ['LDA<br>K=14', 'TF-IDF<br>K-Means', 'SBERT<br>K-Means', 'EOM<br>K=10', 'Bounded<br>EOM K=14']
+          : ['LDA<br>K=14', 'TF-IDF<br>K-Means', 'SBERT<br>K-Means', 'EOM<br>K=14', 'Bounded<br>EOM K=22'],
+        tickangle: 0, tickfont: { size: mob ? 10 : 11 }
+      });
       let rows, labels, cv, sil;
       if (currentBenchStream === 'swe') {
         rows = DATA.exp1_swe.filter(r => r.Preprocessing === 'Domain-Pruned' && r.K >= 10).slice(3);
@@ -1279,7 +583,7 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           dragmode: mob ? false : 'zoom',
           font: { color: tc.text, size: mob ? 9.5 : 10.5 }, margin: { l: 38, r: 8, t: 38, b: mob ? 76 : 62 },
           yaxis: { gridcolor: tc.grid, range: [-0.3, 1.05], automargin: true },
-          xaxis: { automargin: true },
+          xaxis: benchmarkAxis(),
           legend: { orientation: 'h', y: 1.04, yanchor: 'bottom', x: 0 }
         }, plotConfig());
 
@@ -1304,7 +608,7 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           dragmode: mob ? false : 'zoom',
           font: { color: tc.text, size: mob ? 9.5 : 10.5 }, margin: { l: 38, r: 8, t: 48, b: mob ? 76 : 62 },
           yaxis: { gridcolor: tc.grid, range: [-0.12, 1.08], automargin: true },
-          xaxis: { automargin: true },
+          xaxis: benchmarkAxis(),
           legend: { orientation: 'h', y: 1.04, yanchor: 'bottom', x: 0 }
         }, plotConfig());
 
@@ -1511,22 +815,64 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       }, 150);
     });
 
+    try {
+      const theme = localStorage.getItem('showcase-theme');
+      if (theme === 'dark' || theme === 'light') {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('themeToggle').textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        document.getElementById('themeToggleMobile').textContent = theme === 'dark' ? 'Light' : 'Dark';
+      }
+    } catch {}
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        navLinks.classList.remove('open');
+        navMenuBtn.setAttribute('aria-expanded', 'false');
+        navMenuBtn.innerHTML = 'Sections &#9662;';
+      }
+    });
+    document.querySelector('.wide-fig-scroll').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox('assets/figures/v6_figure1_architecture.png');
+      }
+    });
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.filter(entry => entry.isIntersecting).forEach(entry => {
+        navLinks.querySelectorAll('a').forEach(link => {
+          if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+
     bindSeg('spatialModeGroup', d => { currentSpatialMode = d.mode; renderSpatial(); });
     bindSeg('benchStreamGroup', d => { currentBenchStream = d.stream; renderBench(); });
     bindSeg('rollingModeGroup', d => { currentRollingView = d.view; renderRolling(); });
     bindSeg('poolingModeGroup', d => { currentPoolingView = d.view; renderPooling(); });
 
-    fetch('data/showcase_data.json')
-      .then(r => r.json())
-      .then(json => {
-        DATA = json;
-        const waitPlotly = setInterval(() => {
-          if (window.Plotly) {
-            clearInterval(waitPlotly);
-            renderAllPlots();
-          }
-        }, 50);
-      });
+    async function loadCharts() {
+      const containers = [...document.querySelectorAll('.chart, .plot-box')];
+      containers.forEach(el => el.setAttribute('aria-busy', 'true'));
+      try {
+        const response = await fetch('data/showcase_data.json');
+        if (!response.ok) throw new Error('Unable to load research data');
+        DATA = await response.json();
+        for (let attempt = 0; !window.Plotly && attempt < 200; attempt++) {
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        if (!window.Plotly) throw new Error('Chart library unavailable');
+        renderAllPlots();
+      } catch {
+        containers.forEach(el => {
+          el.innerHTML = '<p class="caption-text">The interactive chart could not load. Please refresh or explore the <a href="https://github.com/Control707/unsupervised-incident-triage">notebook on GitHub</a>.</p>';
+        });
+      } finally {
+        containers.forEach(el => el.setAttribute('aria-busy', 'false'));
+      }
+    }
+    loadCharts();
   </script>
 </body>
 </html>
