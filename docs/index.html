@@ -403,6 +403,12 @@
       gap: 1.25rem;
       align-items: start;
     }
+    .two-col.even {
+      grid-template-columns: 1fr 1fr;
+    }
+    .two-col > *, .gallery-grid > *, .kpi-grid > *, .stage-grid > * {
+      min-width: 0;
+    }
     .qr-share-card {
       display: flex;
       align-items: center;
@@ -448,7 +454,8 @@
       font-size: 0.85rem;
     }
     @media (max-width: 960px) {
-      .two-col { grid-template-columns: 1fr; }
+      .two-col, .two-col.even { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; }
@@ -821,7 +828,7 @@
           </div>
         </div>
 
-        <div class="two-col" style="grid-template-columns: 1fr 1fr;">
+        <div class="two-col even">
           <div class="card">
             <div class="toolbar">
               <strong>GitHub Q2: 14-Day Rolling Share &amp; Q1 Excess</strong>
@@ -874,7 +881,7 @@
           </div>
         </div>
 
-        <div class="two-col" style="grid-template-columns: 1fr 1fr;">
+        <div class="two-col even">
           <div class="card">
             <div class="toolbar">
               <strong>GitHub Extrinsic Validation: Bug Share vs. Median MTTR</strong>
@@ -944,7 +951,7 @@
           </div>
         </div>
 
-        <div class="two-col" style="grid-template-columns: 1fr 1fr;">
+        <div class="two-col even">
           <div class="card">
             <div class="copy-row">
               <strong>Reproduce Locally</strong>
@@ -1378,11 +1385,14 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        if (DATA && isMobile() !== lastMobile) {
+        if (!DATA) return;
+        if (isMobile() !== lastMobile) {
           lastMobile = isMobile();
           renderAllPlots();
+        } else if (window.Plotly) {
+          document.querySelectorAll('.js-plotly-plot').forEach(el => Plotly.Plots.resize(el));
         }
-      }, 200);
+      }, 150);
     });
 
     bindSeg('spatialModeGroup', d => { currentSpatialMode = d.mode; renderSpatial(); });
