@@ -40,7 +40,7 @@ We resolve both traps with a three-stage framework (**Discover → Track → Val
 
 - **Showcase Webpage:** [`docs/index.html`](docs/index.html) (published via GitHub Pages)
 - **Executed End-to-End Notebook:** [`Incident_Triage_End_to_End_Showcase.ipynb`](Incident_Triage_End_to_End_Showcase.ipynb) (and [`NLP_Final_Experiments_180d.ipynb`](NLP_Final_Experiments_180d.ipynb))
-- **Paper & Poster:** [`Final_Project_Report_V2.pdf`](Final_Project_Report_V2.pdf), [`final_report_v2.tex`](final_report_v2.tex), and [`Incident_Triage_Poster_High_Resolution_Final.pptx`](Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-4/Incident_Triage_Poster_High_Resolution_Final.pptx)
+- **Paper & Poster (7372-UR):** [`Final_Project_Report_V2.pdf`](Final_Project_Report_V2.pdf), [`final_report_v2.tex`](final_report_v2.tex), [`Incident_Triage_Poster_High_Resolution_Final.pdf`](Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-4/Incident_Triage_Poster_High_Resolution_Final.pdf), and [`Incident_Triage_Poster_High_Resolution_Final.pptx`](Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-4/Incident_Triage_Poster_High_Resolution_Final.pptx)
 - **Core Pipeline & Modules:**
   - [`run_final_experiments.py`](run_final_experiments.py) — GitHub SWE tri-model ablations, Bounded EOM, prospective validation, dose-response perturbation
   - [`run_cross_domain_it_experiments.py`](run_cross_domain_it_experiments.py) — Enterprise IT benchmark, pooling cancellation, extrinsic queue routing

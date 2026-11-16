@@ -18,8 +18,8 @@ elements:
     content: {text: 'POSTER NUMBER', fontFamily: Arial, fontSize: 24, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
   - elementId: poster-id
     elementType: text
-    bounds: [70, 96, 366, 140]
-    content: {text: 'TBD', fontFamily: Arial, fontSize: 120, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
+    bounds: [58, 96, 390, 140]
+    content: {text: '7372-UR', fontFamily: Arial, fontSize: 82, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
   - elementId: paper-title
     elementType: text
     bounds: [516, 39, 2580, 207]
