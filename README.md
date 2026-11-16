@@ -39,7 +39,7 @@ We resolve both traps with a three-stage framework (**Discover → Track → Val
 ## Repository Contents
 
 - **Showcase Webpage:** [`docs/index.html`](docs/index.html) (published via GitHub Pages)
-- **30s AI Showcase Video:** [`showcase_video_30s.mp4`](showcase_video_30s.mp4) (`1080p`, AI-narrated via KittenTTS)
+- **40s AI Showcase Video:** [`showcase_video.mp4`](showcase_video.mp4) (`1080p`, AI-narrated via ElevenLabs)
 - **Executed End-to-End Notebook:** [`Incident_Triage_End_to_End_Showcase.ipynb`](Incident_Triage_End_to_End_Showcase.ipynb) (and [`NLP_Final_Experiments_180d.ipynb`](NLP_Final_Experiments_180d.ipynb))
 - **Paper & Poster (7372-UR):** [`Final_Project_Report_V2.pdf`](Final_Project_Report_V2.pdf), [`final_report_v2.tex`](final_report_v2.tex), [`Incident_Triage_Poster_High_Resolution_Final.pdf`](Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-4/Incident_Triage_Poster_High_Resolution_Final.pdf), and [`Incident_Triage_Poster_High_Resolution_Final.pptx`](Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-4/Incident_Triage_Poster_High_Resolution_Final.pptx)
 - **Core Pipeline & Modules:**
