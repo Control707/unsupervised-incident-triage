@@ -279,16 +279,26 @@ elements:
     fit: {mode: contain}
   - elementId: footer-authors
     elementType: text
-    bounds: [760, 2420, 2638, 82]
+    bounds: [760, 2394, 2638, 70]
     content:
       text: 'Zakaria Sherif  •  Nicholas Cosereanu  •  Wyatt Barker'
       fontFamily: Arial
-      fontSize: 56
+      fontSize: 52
       bold: true
       color: '#FFC000'
       align: [left, middle]
       margins: [0, 0, 0, 0]
+  - elementId: footer-emails
+    elementType: text
+    bounds: [760, 2466, 2638, 42]
+    content:
+      text: 'zsherif@students.kennesaw.edu  •  ncoserea@students.kennesaw.edu  •  wbarker8@students.kennesaw.edu'
+      fontFamily: Arial
+      fontSize: 28
+      color: '#E5E7EB'
+      align: [left, middle]
+      margins: [0, 0, 0, 0]
   - elementId: footer-subtitle
     elementType: text
-    bounds: [760, 2510, 2638, 42]
-    content: {text: 'Unsupervised Incident Triage  |  Natural Language Processing  |  Computing Showcase Day', fontFamily: Arial, fontSize: 30, color: '#FFFFFF', margins: [0, 0, 0, 0]}
+    bounds: [760, 2514, 2638, 46]
+    content: {text: 'College of Computing and Software Engineering (CCSE)  |  Kennesaw State University  |  Computing Showcase Day', fontFamily: Arial, fontSize: 28, color: '#FFFFFF', align: [left, middle], margins: [0, 0, 0, 0]}
