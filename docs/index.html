@@ -424,27 +424,36 @@
       flex-shrink: 0;
       cursor: zoom-in;
     }
-    .lightbox-close {
+    .lightbox-close, .lightbox-zoom {
       position: fixed;
       top: 1rem;
-      right: 1rem;
       background: #ffffff;
       color: #0f172a;
-      border: none;
+      border: 1px solid #cbd5e1;
       border-radius: 999px;
-      width: 40px;
       height: 40px;
-      font-size: 1.2rem;
       font-weight: 700;
       cursor: pointer;
+      z-index: 105;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .lightbox-close {
+      right: 1rem;
+      width: 40px;
+      font-size: 1.2rem;
+    }
+    .lightbox-zoom {
+      right: 4rem;
+      padding: 0 0.9rem;
+      font-size: 0.85rem;
     }
     @media (max-width: 960px) {
       .two-col { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       html, body { overflow-x: hidden; }
-      .container { padding: 0 1rem; }
-      .nav-inner { padding: 0.65rem 1rem; gap: 0.6rem; }
+      .container { padding: 0 0.75rem; }
+      .nav-inner { padding: 0.65rem 0.75rem; gap: 0.6rem; }
       .brand span:last-child { font-size: 0.85rem; }
       .nav-links {
         gap: 0.85rem;
@@ -461,9 +470,11 @@
       .hero-sub { font-size: 0.96rem; }
       .cta-row { gap: 0.55rem; }
       .cta-row .btn { width: 100%; justify-content: center; min-height: 44px; font-size: 0.88rem; }
-      section.block { padding: 2.3rem 0; }
-      .card { padding: 1rem; }
-      .plot-box { min-height: 340px; }
+      section.block { padding: 2.2rem 0; }
+      .card { padding: 0.85rem; }
+      .arch-frame { padding: 0.45rem; }
+      .gallery-card { padding: 0.75rem; }
+      .plot-box { min-height: 390px; }
       .seg-group { width: 100%; }
       .seg-btn { flex: 1 1 auto; text-align: center; min-height: 38px; font-size: 0.78rem; padding: 0.4rem 0.55rem; }
       .qr-share-card { flex-direction: column; text-align: center; }
@@ -527,8 +538,7 @@
     }
     .gallery-card img {
       width: 100%;
-      height: 195px;
-      object-fit: contain;
+      height: auto;
       background: #ffffff;
       border-radius: 8px;
       border: 1px solid var(--border);
@@ -569,20 +579,34 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(2, 6, 23, 0.85);
+      background: rgba(2, 6, 23, 0.88);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 3.5rem 1rem 1.5rem;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
       z-index: 100;
     }
     .lightbox.open { display: flex; }
+    .lightbox.zoomed {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
     .lightbox img {
       max-width: 95vw;
-      max-height: 90vh;
+      max-height: 86vh;
       background: #ffffff;
       border-radius: 10px;
       padding: 0.5rem;
+      transition: width 0.15s ease;
+    }
+    .lightbox.zoomed img {
+      max-width: none;
+      max-height: none;
+      width: 190vw;
+      height: auto;
+      cursor: zoom-out;
     }
 
     footer {
@@ -734,7 +758,7 @@
 
         <div class="arch-frame" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
           <img src="assets/figures/v6_figure1_architecture.png" alt="Three Stage Incident Discovery, Shift Tracking, and Validation Pipeline" loading="lazy" />
-          <div class="caption-text"><strong>Figure 1 (click to enlarge):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380).</div>
+          <div class="caption-text"><strong>Figure 1 (tap to zoom &amp; pan):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380).</div>
         </div>
       </div>
     </section>
@@ -883,7 +907,7 @@
           <div>
             <div class="sec-eyebrow">Paper, Poster &amp; Reproducibility</div>
             <h2 class="sec-title">High-Resolution Showcase Assets &amp; Citation</h2>
-            <p class="sec-desc">All figures below are reproduced directly from saved project matrices and embeddings; click any panel to inspect at full resolution.</p>
+            <p class="sec-desc">All figures below are reproduced directly from saved project matrices and embeddings; tap any panel to open a zoomable &amp; pan-able view.</p>
           </div>
         </div>
 
@@ -967,9 +991,10 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
-    <img id="lightboxImg" src="" alt="Expanded Figure" />
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-zoom" id="lightboxZoomBtn" type="button" onclick="toggleLightboxZoom(event)">Zoom 2x</button>
+    <button class="lightbox-close" type="button" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Expanded Figure" onclick="toggleLightboxZoom(event)" />
   </div>
 
   <script>
@@ -1003,11 +1028,23 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     }
 
     function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('zoomed');
+      document.getElementById('lightboxZoomBtn').textContent = 'Zoom 2x';
       document.getElementById('lightboxImg').src = src;
-      document.getElementById('lightbox').classList.add('open');
+      lb.classList.add('open');
     }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
+    function toggleLightboxZoom(e) {
+      if (e) e.stopPropagation();
+      const lb = document.getElementById('lightbox');
+      const zoomed = lb.classList.toggle('zoomed');
+      document.getElementById('lightboxZoomBtn').textContent = zoomed ? 'Fit Screen' : 'Zoom 2x';
+    }
+    function closeLightbox(e) {
+      if (e && e.target && e.target.id === 'lightboxImg') return;
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('open');
+      lb.classList.remove('zoomed');
     }
 
     function copyText(id) {
@@ -1189,10 +1226,11 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       Plotly.newPlot('rollingPlot', traces, {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
         dragmode: isMobile() ? false : 'zoom',
-        font: { color: tc.text, size: 11 }, margin: { l: 48, r: 12, t: 16, b: 42 },
-        yaxis: { title: currentRollingView === 'excess' ? 'Excess vs. Q1 Baseline (pp)' : '14-Day Rolling Share (%)', gridcolor: tc.grid, zeroline: true },
+        font: { color: tc.text, size: isMobile() ? 10 : 11 },
+        margin: { l: isMobile() ? 40 : 48, r: 8, t: 14, b: isMobile() ? 48 : 42 },
+        yaxis: { title: currentRollingView === 'excess' ? 'Excess vs. Q1 (pp)' : '14-Day Share (%)', gridcolor: tc.grid, zeroline: true },
         xaxis: { gridcolor: tc.grid },
-        legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
+        legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
       }, plotConfig());
     }
 
@@ -1221,10 +1259,11 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         Plotly.newPlot('poolingPlot', traces, {
           paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
           dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: 11 }, margin: { l: 48, r: 12, t: 16, b: 42 },
-          yaxis: { title: 'Monthly Ticket Share (%)', gridcolor: tc.grid },
+          font: { color: tc.text, size: isMobile() ? 10 : 11 },
+          margin: { l: isMobile() ? 40 : 48, r: 8, t: 14, b: isMobile() ? 48 : 42 },
+          yaxis: { title: 'Monthly Share (%)', gridcolor: tc.grid },
           xaxis: { gridcolor: tc.grid },
-          legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
+          legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
         }, plotConfig());
       } else {
         const ids = ['IT-03', 'IT-02', 'IT-08', 'IT-10'];
@@ -1243,9 +1282,10 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
           dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: 11 }, margin: { l: 55, r: 14, t: 16, b: 45 },
-          xaxis: { title: 'Share Shift (Percentage Points)', gridcolor: tc.grid, zeroline: true },
-          legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
+          font: { color: tc.text, size: isMobile() ? 10 : 11 },
+          margin: { l: isMobile() ? 46 : 55, r: 10, t: 14, b: 48 },
+          xaxis: { title: 'Share Shift (pp)', gridcolor: tc.grid, zeroline: true },
+          legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
         }, plotConfig());
       }
     }
@@ -1268,28 +1308,38 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     function renderPayoff() {
       if (!window.Plotly || !DATA) return;
       const tc = themeColors();
+      const mob = isMobile();
       const gh = DATA.exp6_gh_payoff.filter(r => r.Cluster_ID !== 'Noise (-1)');
+      const labelPos = {
+        R0: 'bottom center', R1: 'top center', R2: 'top left', R3: 'top right',
+        R4: 'bottom right', R5: 'top right', R6: 'bottom left', R7: 'bottom center',
+        R8: 'top left', R9: 'top center'
+      };
       Plotly.newPlot('ghPayoffPlot', [{
         x: gh.map(r => r.Issue_Ratio_Pct),
         y: gh.map(r => r.Median_MTTR_Hours),
-        text: gh.map(r => `${r.Cluster_ID}: ${r.Topic_Label}<br>Count: ${r.Total_Count} | External: ${r.External_User_Pct}% | MTTR: ${r.Median_MTTR_Hours}h`),
-        hoverinfo: 'text',
+        text: gh.map(r => r.Cluster_ID === 'R3' ? 'R3 (0% Ext.)' : r.Cluster_ID),
+        hovertext: gh.map(r => `<b>${r.Cluster_ID}</b>: ${r.Topic_Label}<br>Count: ${r.Total_Count} | External: ${r.External_User_Pct}% | MTTR: ${r.Median_MTTR_Hours}h`),
+        hovertemplate: '%{hovertext}<extra></extra>',
         mode: 'markers+text',
-        textposition: 'top center',
-        textfont: { size: 10, color: tc.text },
+        textposition: gh.map(r => labelPos[r.Cluster_ID] || 'top center'),
+        textfont: { size: mob ? 9.5 : 10.5, color: tc.text },
         marker: {
-          size: gh.map(r => Math.sqrt(r.Total_Count) * 3.1 + 8),
+          size: gh.map(r => Math.sqrt(r.Total_Count) * (mob ? 2.6 : 3.1) + (mob ? 7 : 8)),
           color: gh.map(r => r.External_User_Pct),
           colorscale: 'RdYlBu', reversescale: true, cmin: 0, cmax: 55,
-          colorbar: { title: 'Ext. %', thickness: 12 },
+          colorbar: mob
+            ? { title: 'Ext. %', orientation: 'h', y: -0.32, x: 0.5, xanchor: 'center', len: 0.85, thickness: 10, titleside: 'top' }
+            : { title: 'Ext. %', thickness: 12 },
           line: { width: 1, color: tc.text }
         }
       }], {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        dragmode: isMobile() ? false : 'zoom',
-        font: { color: tc.text, size: isMobile() ? 10 : 11 }, margin: { l: 48, r: 10, t: 14, b: 44 },
-        xaxis: { title: 'User Bug Issue Share (%) [vs. PRs]', gridcolor: tc.grid, range: [0, 80] },
-        yaxis: { title: 'Median MTTR (Hours)', gridcolor: tc.grid, range: [0, 170] }
+        dragmode: mob ? false : 'zoom',
+        font: { color: tc.text, size: mob ? 10 : 11 },
+        margin: mob ? { l: 42, r: 10, t: 14, b: 92 } : { l: 50, r: 12, t: 14, b: 46 },
+        xaxis: { title: 'User Bug Issue Share (%) [vs. PRs]', gridcolor: tc.grid, range: [-2, 82] },
+        yaxis: { title: 'Median MTTR (Hours)', gridcolor: tc.grid, range: [0, 175] }
       }, plotConfig());
 
       const keep = ['IT-00','IT-01','IT-02','IT-03','IT-10','IT-07','IT-08','IT-12','IT-13'];
@@ -1297,19 +1347,19 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       Plotly.newPlot('itPayoffPlot', [{
         y: it.map(r => r.Cluster_ID),
         x: it.map(r => r.Unassigned_Tickets_Routed),
-        text: it.map(r => isMobile()
-          ? `${r.Unassigned_Tickets_Routed} · ${r.Subcategory_Purity_Pct.toFixed(0)}%`
+        text: it.map(r => mob
+          ? `${r.Unassigned_Tickets_Routed} (${r.Subcategory_Purity_Pct.toFixed(0)}%)`
           : `${r.Unassigned_Tickets_Routed} unassigned | ${r.Mean_Reassigned_Count.toFixed(2)} hops | ${r.Subcategory_Purity_Pct.toFixed(0)}% purity`),
-        textposition: 'outside',
+        textposition: mob ? 'auto' : 'outside',
         type: 'bar', orientation: 'h',
         marker: { color: it.map(r => ['IT-00','IT-01','IT-02','IT-03'].includes(r.Cluster_ID) ? '#0f766e' : '#c62828') },
         hovertemplate: '%{y}: %{x} orphaned tickets<br>%{text}<extra></extra>'
       }], {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        dragmode: isMobile() ? false : 'zoom',
-        font: { color: tc.text, size: isMobile() ? 10 : 11 },
-        margin: { l: 48, r: isMobile() ? 48 : 110, t: 14, b: 44 },
-        xaxis: { title: 'Orphaned Unassigned Tickets Grouped', gridcolor: tc.grid, range: [0, isMobile() ? 38 : 44] },
+        dragmode: mob ? false : 'zoom',
+        font: { color: tc.text, size: mob ? 10 : 11 },
+        margin: { l: 48, r: mob ? 16 : 110, t: 14, b: 44 },
+        xaxis: { title: 'Orphaned Unassigned Tickets Grouped', gridcolor: tc.grid, range: [0, mob ? 35 : 44] },
         yaxis: { autorange: 'reversed' }
       }, plotConfig());
     }
