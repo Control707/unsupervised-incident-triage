@@ -491,7 +491,6 @@
       .seg-group { width: 100%; }
       .seg-btn { flex: 1 1 auto; text-align: center; min-height: 38px; font-size: 0.78rem; padding: 0.4rem 0.55rem; }
       .qr-share-card { flex-direction: column; text-align: center; }
-      .gallery-grid { grid-template-columns: 1fr; }
       .swipe-hint {
         display: block;
         font-size: 0.75rem;
@@ -509,15 +508,9 @@
       }
       .wide-fig-scroll img {
         max-width: none !important;
-        width: 720px;
+        width: 760px;
         height: auto;
         border: none !important;
-      }
-      .wide-fig-scroll.ultra-wide img {
-        width: 960px;
-      }
-      .wide-fig-scroll.single-panel img {
-        width: 520px;
       }
       /* Stacked responsive cards for tables on narrow screens */
       .table-wrap {
@@ -715,7 +708,7 @@
         <a href="#trap1">Trap 1 · Mega Clusters</a>
         <a href="#trap2">Trap 2 · Rolling &amp; Pooling</a>
         <a href="#payoff">Operational Payoff</a>
-        <a href="#artifacts">Paper &amp; Poster</a>
+        <a href="#artifacts">Cite &amp; QR</a>
         <button class="theme-btn" id="themeToggle" type="button">Dark Mode</button>
       </div>
     </div>
@@ -869,7 +862,6 @@
                 <button class="seg-btn" data-mode="unbounded">Unbounded EOM (R0–R9)</button>
                 <button class="seg-btn" data-mode="r1split">Highlight R1 &rarr; 5 Subsystems</button>
               </div>
-              <button class="mini-btn" onclick="openLightbox('assets/figures/spatial.svg')">View Vector Poster Fig.</button>
             </div>
             <div id="spatialPlot" class="plot-box"></div>
             <p class="caption-text" id="spatialCaption">
@@ -965,7 +957,6 @@
           <div class="card">
             <div class="toolbar">
               <strong>GitHub Extrinsic Validation: Bug Share vs. Median MTTR</strong>
-              <button class="mini-btn" onclick="openLightbox('assets/figures/payoff.svg')">Vector Fig. 5</button>
             </div>
             <div id="ghPayoffPlot" style="width:100%; height:370px;"></div>
             <p class="caption-text">
@@ -992,44 +983,9 @@
       <div class="container">
         <div class="sec-head">
           <div>
-            <div class="sec-eyebrow">Paper, Poster &amp; Reproducibility</div>
-            <h2 class="sec-title">High-Resolution Showcase Assets &amp; Citation</h2>
-            <p class="sec-desc">All figures below are reproduced directly from saved project matrices and embeddings; tap any panel to open a zoomable &amp; pan-able view.</p>
-          </div>
-        </div>
-
-        <div class="gallery-grid" style="margin-bottom:1.75rem;">
-          <div class="gallery-card">
-            <div class="swipe-hint">&larr; Swipe or tap to zoom &rarr;</div>
-            <div class="wide-fig-scroll single-panel" onclick="openLightbox('assets/figures/spatial.png')">
-              <img src="assets/figures/spatial.png" alt="2D UMAP Bounded EOM" loading="lazy" />
-            </div>
-            <h4>1 &middot; Break the Mega Cluster</h4>
-            <p>Bounded EOM splits 298-ticket <code>R1</code> into 5 subsystem clusters while keeping 9 sibling clusters intact.</p>
-          </div>
-          <div class="gallery-card">
-            <div class="swipe-hint">&larr; Swipe or tap to zoom &rarr;</div>
-            <div class="wide-fig-scroll single-panel" onclick="openLightbox('assets/figures/rolling.png')">
-              <img src="assets/figures/rolling.png" alt="14-day Rolling Trajectories" loading="lazy" />
-            </div>
-            <h4>2 &middot; Plateaus vs. Sprints</h4>
-            <p>14-day rolling trajectories across 91 Q2 days separate chronic <code>R1</code> (94.5% days elevated) from May sprint <code>R3</code>.</p>
-          </div>
-          <div class="gallery-card">
-            <div class="swipe-hint">&larr; Swipe across panels or tap to zoom &rarr;</div>
-            <div class="wide-fig-scroll" onclick="openLightbox('assets/figures/pooling.png')">
-              <img src="assets/figures/pooling.png" alt="IT Pooling Cancellation" loading="lazy" />
-            </div>
-            <h4>3 &middot; Pooling Cancellation</h4>
-            <p>Monthly IT share breakdown rescues 4 FDR-significant shifts missed by coarse two-period pooling.</p>
-          </div>
-          <div class="gallery-card">
-            <div class="swipe-hint">&larr; Swipe across panels or tap to zoom &rarr;</div>
-            <div class="wide-fig-scroll ultra-wide" onclick="openLightbox('assets/figures/payoff.png')">
-              <img src="assets/figures/payoff.png" alt="Extrinsic Operational Payoff" loading="lazy" />
-            </div>
-            <h4>4 &middot; Operational Payoff</h4>
-            <p>Withheld role checks confirm <code>R3</code> is 0% external and group 237/314 (75.5%) orphaned IT tickets.</p>
+            <div class="sec-eyebrow">Share &amp; Reproducibility</div>
+            <h2 class="sec-title">Mobile QR Code, Local Setup &amp; Citation</h2>
+            <p class="sec-desc">Scan to open on another device, reproduce the 90 unit tests and notebook locally, or cite the preprint.</p>
           </div>
         </div>
 
