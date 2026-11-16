@@ -1,0 +1,67 @@
+Anomaly_Domain,Injected_Count_M,Injected_Share_Q2_Pct,HDBSCAN_Min_Cluster_Size,Detected_Cluster_ID,Cluster_Recall,Cluster_Purity,Detected_Delta_K_PP,Surge_Rank,Top1_Detected,Top3_Detected
+CUDA / NCCL Distributed OOM,5,1.23,12,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,5,1.23,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,8,1.95,12,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,8,1.95,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,10,2.42,12,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,10,2.42,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,12,2.89,12,0,1.0,1.0,2.89,4,False,False
+CUDA / NCCL Distributed OOM,12,2.89,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,14,3.36,12,0,1.0,1.0,3.36,4,False,False
+CUDA / NCCL Distributed OOM,14,3.36,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,15,3.59,12,0,1.0,1.0,3.59,3,False,True
+CUDA / NCCL Distributed OOM,15,3.59,16,-1,0.0,0.0,0.0,-1,False,False
+CUDA / NCCL Distributed OOM,16,3.82,12,0,1.0,1.0,3.82,3,False,True
+CUDA / NCCL Distributed OOM,16,3.82,16,0,1.0,1.0,3.82,3,False,True
+CUDA / NCCL Distributed OOM,18,4.28,12,0,1.0,1.0,4.28,2,False,True
+CUDA / NCCL Distributed OOM,18,4.28,16,0,1.0,1.0,4.28,2,False,True
+CUDA / NCCL Distributed OOM,20,4.73,12,0,1.0,1.0,4.73,1,True,True
+CUDA / NCCL Distributed OOM,20,4.73,16,0,1.0,1.0,4.73,1,True,True
+CUDA / NCCL Distributed OOM,25,5.84,12,0,1.0,1.0,5.84,1,True,True
+CUDA / NCCL Distributed OOM,25,5.84,16,0,1.0,1.0,5.84,1,True,True
+CUDA / NCCL Distributed OOM,30,6.93,12,0,1.0,1.0,6.93,1,True,True
+CUDA / NCCL Distributed OOM,30,6.93,16,0,1.0,1.0,6.93,1,True,True
+S3 / Cloud Auth & SSL Handshake,5,1.23,12,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,5,1.23,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,8,1.95,12,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,8,1.95,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,10,2.42,12,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,10,2.42,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,12,2.89,12,0,1.0,1.0,2.89,4,False,False
+S3 / Cloud Auth & SSL Handshake,12,2.89,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,14,3.36,12,0,1.0,1.0,3.36,4,False,False
+S3 / Cloud Auth & SSL Handshake,14,3.36,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,15,3.59,12,0,1.0,1.0,3.59,3,False,True
+S3 / Cloud Auth & SSL Handshake,15,3.59,16,-1,0.0,0.0,0.0,-1,False,False
+S3 / Cloud Auth & SSL Handshake,16,3.82,12,0,1.0,1.0,3.82,3,False,True
+S3 / Cloud Auth & SSL Handshake,16,3.82,16,0,1.0,1.0,3.82,3,False,True
+S3 / Cloud Auth & SSL Handshake,18,4.28,12,0,1.0,1.0,4.28,2,False,True
+S3 / Cloud Auth & SSL Handshake,18,4.28,16,0,1.0,1.0,4.28,2,False,True
+S3 / Cloud Auth & SSL Handshake,20,4.73,12,0,1.0,1.0,4.73,1,True,True
+S3 / Cloud Auth & SSL Handshake,20,4.73,16,0,1.0,1.0,4.73,1,True,True
+S3 / Cloud Auth & SSL Handshake,25,5.84,12,0,1.0,1.0,5.84,1,True,True
+S3 / Cloud Auth & SSL Handshake,25,5.84,16,0,1.0,1.0,5.84,1,True,True
+S3 / Cloud Auth & SSL Handshake,30,6.93,12,0,1.0,1.0,6.93,1,True,True
+S3 / Cloud Auth & SSL Handshake,30,6.93,16,0,1.0,1.0,6.93,1,True,True
+Arrow C++ Segfault / Parquet Schema,5,1.23,12,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,5,1.23,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,8,1.95,12,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,8,1.95,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,10,2.42,12,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,10,2.42,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,12,2.89,12,0,1.0,1.0,2.89,4,False,False
+Arrow C++ Segfault / Parquet Schema,12,2.89,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,14,3.36,12,0,1.0,1.0,3.36,4,False,False
+Arrow C++ Segfault / Parquet Schema,14,3.36,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,15,3.59,12,0,1.0,1.0,3.59,3,False,True
+Arrow C++ Segfault / Parquet Schema,15,3.59,16,-1,0.0,0.0,0.0,-1,False,False
+Arrow C++ Segfault / Parquet Schema,16,3.82,12,0,1.0,1.0,3.82,3,False,True
+Arrow C++ Segfault / Parquet Schema,16,3.82,16,0,1.0,1.0,3.82,3,False,True
+Arrow C++ Segfault / Parquet Schema,18,4.28,12,0,1.0,1.0,4.28,2,False,True
+Arrow C++ Segfault / Parquet Schema,18,4.28,16,0,1.0,1.0,4.28,2,False,True
+Arrow C++ Segfault / Parquet Schema,20,4.73,12,0,1.0,1.0,4.73,1,True,True
+Arrow C++ Segfault / Parquet Schema,20,4.73,16,0,1.0,1.0,4.73,1,True,True
+Arrow C++ Segfault / Parquet Schema,25,5.84,12,0,1.0,1.0,5.84,1,True,True
+Arrow C++ Segfault / Parquet Schema,25,5.84,16,0,1.0,1.0,5.84,1,True,True
+Arrow C++ Segfault / Parquet Schema,30,6.93,12,0,1.0,1.0,6.93,1,True,True
+Arrow C++ Segfault / Parquet Schema,30,6.93,16,0,1.0,1.0,6.93,1,True,True

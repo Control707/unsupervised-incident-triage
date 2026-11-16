@@ -1,0 +1,159 @@
+{
+  "num_tickets": 1338,
+  "period_A_tickets": 487,
+  "period_B_tickets": 851,
+  "num_topics_discovered": 21,
+  "noise_ratio": 0.1973,
+  "baseline_kmeans": {
+    "coherence": 0.3677,
+    "diversity": 0.86,
+    "silhouette": 0.0637
+  },
+  "proposed_pipeline": {
+    "coherence": 0.3085,
+    "diversity": 0.8,
+    "silhouette": 0.6231
+  },
+  "topics": [
+    {
+      "id": 15,
+      "label": "performance / hardware / data / optimization",
+      "keywords": "performance, hardware, data, optimization, slow, optimization team",
+      "delta_k": 0.0216,
+      "category": "Persistent Root Cause"
+    },
+    {
+      "id": 2,
+      "label": "specific needs / department / customizing / department specific",
+      "keywords": "specific needs, department, customizing, department specific, specific, customizations",
+      "delta_k": 0.0106,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 7,
+      "label": "licenses / additional / license / request additional",
+      "keywords": "licenses, additional, license, request additional, request, team",
+      "delta_k": 0.0103,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 8,
+      "label": "save / crashes / files / saving",
+      "keywords": "save, crashes, files, saving, try save, save files",
+      "delta_k": 0.0081,
+      "category": "Persistent Root Cause"
+    },
+    {
+      "id": 4,
+      "label": "marketing / licenses / marketing department / licenses marketing",
+      "keywords": "marketing, licenses, marketing department, licenses marketing, department, additional",
+      "delta_k": 0.0056,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 13,
+      "label": "endpoint / falcon / crowdstrike / crowdstrike falcon",
+      "keywords": "endpoint, falcon, crowdstrike, crowdstrike falcon, security, threats",
+      "delta_k": 0.0053,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 1,
+      "label": "reports / format / exporting reports / exporting",
+      "keywords": "reports, format, exporting reports, exporting, export, issue exporting",
+      "delta_k": 0.0053,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 9,
+      "label": "outlook / error / websocket / emails",
+      "keywords": "outlook, error, websocket, emails, tried, email",
+      "delta_k": 0.0015,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 17,
+      "label": "credentials / invalid credentials / invalid / credentials error",
+      "keywords": "credentials, invalid credentials, invalid, credentials error, login, error",
+      "delta_k": 0.0012,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 12,
+      "label": "data / permissions / insightidr / rapid7 insightidr",
+      "keywords": "data, permissions, insightidr, rapid7 insightidr, rapid7, role",
+      "delta_k": -0.0008,
+      "category": "Persistent Root Cause"
+    },
+    {
+      "id": 3,
+      "label": "installation / version / request / upgrade",
+      "keywords": "installation, version, request, upgrade, request installation, software",
+      "delta_k": -0.0015,
+      "category": "Persistent Root Cause"
+    },
+    {
+      "id": 11,
+      "label": "error / java / error message / enterprise",
+      "keywords": "error, java, error message, enterprise, message, range",
+      "delta_k": -0.0029,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 18,
+      "label": "error / harmony endpoint / harmony / point harmony",
+      "keywords": "error, harmony endpoint, harmony, point harmony, check point, kernel",
+      "delta_k": -0.0076,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 14,
+      "label": "network / nessus / ve / persistent",
+      "keywords": "network, nessus, ve, persistent, tableau, connectivity",
+      "delta_k": -0.0076,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 5,
+      "label": "licenses / new hires / hires / request",
+      "keywords": "licenses, new hires, hires, request, bulk, licenses new",
+      "delta_k": -0.0085,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 6,
+      "label": "licenses / accounting / accounting department / department",
+      "keywords": "licenses, accounting, accounting department, department, licenses accounting, request",
+      "delta_k": -0.0088,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 10,
+      "label": "error / onedrive / business / onedrive business",
+      "keywords": "error, onedrive, business, onedrive business, google, acrobat",
+      "delta_k": -0.0094,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 19,
+      "label": "rsa / error / token / rsa token",
+      "keywords": "rsa, error, token, rsa token, rsa secureid, vault",
+      "delta_k": -0.017,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 16,
+      "label": "error / mail / error message / com",
+      "keywords": "error, mail, error message, com, message, ping",
+      "delta_k": -0.0173,
+      "category": "Stable Routine"
+    },
+    {
+      "id": 0,
+      "label": "training / advanced / session / features",
+      "keywords": "training, advanced, session, features, advanced features, request",
+      "delta_k": -0.024,
+      "category": "Stable Routine"
+    }
+  ]
+}

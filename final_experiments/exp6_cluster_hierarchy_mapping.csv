@@ -1,0 +1,15 @@
+Historical_ID,Historical_Subsystem,Hist_Count,Rerun_EOM10_ID,Bounded_EOM14_ID,Medoid_Ticket_Title
+T0,Key Hashing & Shard Deduplication,29,R0,C0,Better DuplicateKeysError error to help the user debug the issue
+T1,Table Schema & Column Operations,23,R2,C1,Update format columns in Dataset.rename_columns
+T2,NLP Task Template & Prompt Casting,20,R3,C4,Datasets with tricky task templates
+T3,YAML Metadata & Config Validation,18,Noise (-1),Noise (-1),Remove `extended` field from dataset tagger
+T4,PyArrow C++ Bridge & Wheel Resolution,62,R1,C3,Got pyarrow error when loading a dataset while adding special tokens into the tokenizer
+T5,NLP Metric Evaluation (BLEURT/WER),42,R4,C6,[BUG FIX] typo in the import path for metrics
+T6,Sphinx & ReadTheDocs Rendering,29,R5,C9,Fix docstrings issues
+T7,Remote Downloader & Checksum Verification,91,R6,C10,"load_dataset(""web_nlg"") NonMatchingChecksumError"
+T8,Multiprocessing Pool & Serialization (.map),105,R1,C5,Saving large in-memory datasets with save_to_disk crashes because of pickling
+T9,Arrow Memory-Mapping & Disk Indexing,87,R1,C7,ValueError: datasets' indices [1] come from memory and datasets' indices [0] come from disk
+T10,Hub Model/Card Taxonomy & Metadata,35,R7,C11,1
+T11,Web-Scale Streaming Loaders (C4/CoNLL),20,R7,C11,Add C4
+T12,Speech Recognition (ASR) Audio Pipeline,42,R8,C12,MustC Speech Translation
+T13,Legal & Financial Corpus Parsing (CUAD),22,R9,C13,adding ccnet dataset

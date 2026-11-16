@@ -1,0 +1,279 @@
+pageType: content
+background: {type: solid, color: '#FFFFFF'}
+elements:
+  - elementId: header-gold
+    elementType: shape
+    bounds: [0, 0, 3456, 286]
+    shapeName: rect
+    fill: {type: solid, color: '#FFC000'}
+  - elementId: poster-id-box
+    elementType: shape
+    bounds: [48, 48, 410, 190]
+    shapeName: rect
+    fill: {type: solid, color: '#FFFFFF'}
+    border: {style: solid, width: 3, color: '#000000'}
+  - elementId: poster-id-label
+    elementType: text
+    bounds: [70, 62, 366, 35]
+    content: {text: 'POSTER NUMBER', fontFamily: Arial, fontSize: 24, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
+  - elementId: poster-id
+    elementType: text
+    bounds: [70, 96, 366, 140]
+    content: {text: 'TBD', fontFamily: Arial, fontSize: 120, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
+  - elementId: paper-title
+    elementType: text
+    bounds: [516, 39, 2888, 207]
+    content:
+      text: "Overcoming Template Mega Clusters and Pooling\nCancellation in Unsupervised Incident Triage"
+      fontFamily: Arial
+      fontSize: 88
+      bold: true
+      align: [left, middle]
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: divider-one
+    elementType: shape
+    bounds: [1156, 340, 2, 996]
+    shapeName: rect
+    fill: {type: solid, color: '#DDDDDD'}
+  - elementId: divider-two
+    elementType: shape
+    bounds: [2296, 340, 2, 996]
+    shapeName: rect
+    fill: {type: solid, color: '#DDDDDD'}
+  - elementId: overview-bar
+    elementType: shape
+    bounds: [48, 340, 1080, 72]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: overview-title
+    elementType: text
+    bounds: [72, 346, 1032, 60]
+    content: {text: 'Abstract and Study Overview', fontFamily: Arial, fontSize: 48, bold: true, color: '#FFC000', align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: abstract
+    elementType: text
+    bounds: [72, 440, 1032, 190]
+    content:
+      text: 'Ticket templates can hide distinct failures; pooled time windows can erase workload changes. Bounded clustering, pruned descriptors, multihorizon tests, and withheld metadata reveal incident groups and distinguish chronic bugs from internal sprints.'
+      fontFamily: Arial
+      fontSize: 32
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: data-box
+    elementType: shape
+    bounds: [72, 650, 1032, 120]
+    shapeName: rect
+    fill: {type: solid, color: '#F2F2F2'}
+  - elementId: data
+    elementType: text
+    bounds: [92, 658, 992, 106]
+    content:
+      text: |-
+        881 GitHub records: Q1 vs. Q2 2021.
+        1,380 synthetic IT tickets: 1,338 in Q1 2021 + 42 from 2024; IT temporal analysis uses Q1 only.
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: method-label
+    elementType: text
+    bounds: [72, 800, 1032, 50]
+    content: {text: 'Three-Stage Framework', fontFamily: Arial, fontSize: 40, bold: true, margins: [0, 0, 0, 0]}
+  - elementId: stage-one-bg
+    elementType: shape
+    bounds: [72, 872, 1032, 106]
+    shapeName: rect
+    fill: {type: solid, color: '#FFF7DC'}
+  - elementId: stage-one
+    elementType: text
+    bounds: [92, 885, 992, 84]
+    content:
+      text: '01  DISCOVER: Sentence-BERT → 5D UMAP → HDBSCAN. Prune c-TF-IDF descriptors; cap GitHub clusters at 120 tickets.'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: stage-two-bg
+    elementType: shape
+    bounds: [72, 996, 1032, 106]
+    shapeName: rect
+    fill: {type: solid, color: '#F2F2F2'}
+  - elementId: stage-two
+    elementType: text
+    bounds: [92, 1009, 992, 84]
+    content:
+      text: '02  TRACK: Fisher tests + BH FDR (q < .10), monthly tests, 14-day trajectories. Noise stays in workload denominators.'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: stage-three-bg
+    elementType: shape
+    bounds: [72, 1120, 1032, 106]
+    shapeName: rect
+    fill: {type: solid, color: '#FFF7DC'}
+  - elementId: stage-three
+    elementType: text
+    bounds: [92, 1133, 992, 84]
+    content:
+      text: '03  VALIDATE: Check withheld contributor roles and queue logs. Enterprise temporal and triage analyses use standard EOM.'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: limitations
+    elementType: text
+    bounds: [72, 1250, 1032, 104]
+    content:
+      text: 'Limits: one repository, synthetic IT data, imperfect role proxies, and retrospective full-period clustering; online performance is not established.'
+      fontFamily: Arial
+      fontSize: 28
+      color: '#555555'
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: spatial-bar
+    elementType: shape
+    bounds: [1188, 340, 1080, 72]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: spatial-title
+    elementType: text
+    bounds: [1212, 346, 1032, 60]
+    content: {text: '1  Break the Mega Cluster', fontFamily: Arial, fontSize: 48, bold: true, color: '#FFC000', align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: paper-figure-two
+    elementType: image
+    bounds: [1212, 440, 1032, 780]
+    src: media/paper-figure2-umap.png
+    fit: {mode: contain}
+  - elementId: spatial-caption
+    elementType: text
+    bounds: [1212, 1244, 1032, 102]
+    content:
+      text: 'Paper Fig. 2. The 298-ticket parent separates into five subsystems (202 assigned; 96 noise). Other original clusters stay unchanged. Only C5 grows significantly (+5.0 pp, q = .070).'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: rolling-bar
+    elementType: shape
+    bounds: [2328, 340, 1080, 72]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: rolling-title
+    elementType: text
+    bounds: [2352, 346, 1032, 60]
+    content: {text: '2  Separate Plateaus from Sprints', fontFamily: Arial, fontSize: 48, bold: true, color: '#FFC000', align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: paper-figure-three
+    elementType: image
+    bounds: [2352, 440, 1032, 780]
+    src: media/paper-figure3-rolling.png
+    fit: {mode: contain}
+  - elementId: rolling-caption
+    elementType: text
+    bounds: [2352, 1244, 1032, 102]
+    content:
+      text: 'Paper Fig. 3. R1 stays above its Q1 level on 94.5% of Q2 days; R3 spikes in late May and fades. R3 has 0% external authors, consistent with an internal maintainer sprint.'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: pooling-bar
+    elementType: shape
+    bounds: [48, 1388, 1464, 72]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: pooling-title
+    elementType: text
+    bounds: [72, 1394, 1416, 60]
+    content: {text: '3  Reveal Shifts Hidden by Pooling', fontFamily: Arial, fontSize: 48, bold: true, color: '#FFC000', align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: paper-figure-four
+    elementType: image
+    bounds: [72, 1484, 1416, 760]
+    src: media/paper-figure4-pooling.png
+    fit: {mode: contain}
+  - elementId: pooling-caption
+    elementType: text
+    bounds: [72, 2262, 1416, 88]
+    content:
+      text: 'Paper Fig. 4. IT03 falls in February and rebounds in March. Pooling hides the change: coarse tests find 0/14 shifts; March-vs.-prior-month tests reveal 4/14 at q < .10.'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: payoff-bar
+    elementType: shape
+    bounds: [1560, 1388, 1848, 72]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: payoff-title
+    elementType: text
+    bounds: [1584, 1394, 1800, 60]
+    content: {text: '4  Validate the Operational Payoff', fontFamily: Arial, fontSize: 48, bold: true, color: '#FFC000', align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: paper-figure-five
+    elementType: image
+    bounds: [1584, 1484, 1800, 563]
+    src: media/paper-figure5-payoff.png
+    fit: {mode: contain}
+  - elementId: payoff-caption
+    elementType: text
+    bounds: [1584, 2070, 1800, 78]
+    content:
+      text: 'Paper Fig. 5. Withheld roles distinguish internal sprints from user bugs (left). Synthetic IT intake logs expose cross-boundary outages left in generic queues or Unassigned (right).'
+      fontFamily: Arial
+      fontSize: 29
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: payoff-metric-bg
+    elementType: shape
+    bounds: [1584, 2170, 1800, 100]
+    shapeName: rect
+    fill: {type: solid, color: '#FFC000'}
+  - elementId: payoff-number
+    elementType: text
+    bounds: [1608, 2180, 310, 82]
+    content: {text: '75.5%', fontFamily: Arial, fontSize: 70, bold: true, align: [left, middle], margins: [0, 0, 0, 0]}
+  - elementId: payoff-label
+    elementType: text
+    bounds: [1940, 2186, 1420, 70]
+    content:
+      text: '237 / 314 orphaned incidents grouped with similar previously handled tickets; 77 remain noise for human review.'
+      fontFamily: Arial
+      fontSize: 29
+      bold: true
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: caveat-and-source
+    elementType: text
+    bounds: [1584, 2290, 1800, 62]
+    content:
+      text: 'Grouping coverage is not verified routing or resolution accuracy. Figures reproduced from the project paper (Figs. 2–5); IT temporal and triage results use standard EOM.'
+      fontFamily: Arial
+      fontSize: 25
+      color: '#555555'
+      wrap: true
+      margins: [0, 0, 0, 0]
+  - elementId: footer-black
+    elementType: shape
+    bounds: [0, 2376, 3456, 216]
+    shapeName: rect
+    fill: {type: solid, color: '#000000'}
+  - elementId: template-logo
+    elementType: image
+    bounds: [42, 2397, 625, 174]
+    src: media/9932ce610ef02806e58dc4fb.png
+    fit: {mode: contain}
+  - elementId: footer-authors
+    elementType: text
+    bounds: [760, 2420, 2638, 82]
+    content:
+      text: 'Zakaria Sherif  •  Nicholas Cosereanu  •  Wyatt Barker'
+      fontFamily: Arial
+      fontSize: 56
+      bold: true
+      color: '#FFC000'
+      align: [left, middle]
+      margins: [0, 0, 0, 0]
+  - elementId: footer-subtitle
+    elementType: text
+    bounds: [760, 2510, 2638, 42]
+    content: {text: 'Unsupervised Incident Triage  |  Natural Language Processing  |  Computing Showcase Day', fontFamily: Arial, fontSize: 30, color: '#FFFFFF', margins: [0, 0, 0, 0]}

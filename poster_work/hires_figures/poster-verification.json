@@ -1,0 +1,46 @@
+{
+  "slides": 1,
+  "size_inches": [
+    48.0,
+    36.0
+  ],
+  "unchanged_text_formatting_and_bounds": true,
+  "changed_images": [
+    {
+      "shape": 22,
+      "pixels": [
+        3440,
+        2600
+      ],
+      "panel_aspect": 1.323077,
+      "image_aspect": 1.323077
+    },
+    {
+      "shape": 26,
+      "pixels": [
+        3440,
+        2600
+      ],
+      "panel_aspect": 1.323077,
+      "image_aspect": 1.323077
+    },
+    {
+      "shape": 30,
+      "pixels": [
+        4720,
+        2533
+      ],
+      "panel_aspect": 1.863158,
+      "image_aspect": 1.863403
+    },
+    {
+      "shape": 34,
+      "pixels": [
+        6000,
+        1876
+      ],
+      "panel_aspect": 3.197158,
+      "image_aspect": 3.198294
+    }
+  ]
+}

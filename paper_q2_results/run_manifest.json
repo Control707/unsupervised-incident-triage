@@ -1,0 +1,56 @@
+{
+  "dataset_path": "github_issues_180d.csv",
+  "dataset_sha256": "a09b8a48dff17f963aee00b7d2ad2c46202cc0fe4dd055efa63549fe9af388ee",
+  "record_count": 881,
+  "quarter_counts": {
+    "2021Q1": 478,
+    "2021Q2": 403
+  },
+  "focus_quarter": "2021Q2",
+  "synthetic_records_added": 0,
+  "data_expanded": false,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "device": "cpu",
+  "row_order": "unchanged input CSV order",
+  "umap": {
+    "n_components": 5,
+    "n_neighbors": 15,
+    "min_dist": 0.0,
+    "metric": "cosine",
+    "random_state": 42
+  },
+  "hdbscan": {
+    "min_cluster_size": 16,
+    "min_samples": 5,
+    "metric": "euclidean",
+    "cluster_selection_method": "eom"
+  },
+  "num_topics": 10,
+  "noise_count": 240,
+  "python": "3.11.15",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.6",
+    "sentence-transformers": "3.4.1",
+    "torch": "2.11.0",
+    "transformers": "4.57.6",
+    "umap-learn": "0.5.12",
+    "hdbscan": "0.8.44",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "historical_comparability": "Fresh shared-model fit on the same records. Numeric IDs and memberships may differ from historical tables; labels are derived from this run. Existing benchmark outputs are not overwritten.",
+  "paths": {
+    "quarterly_csv": "paper_q2_results/quarterly_topic_prevalence.csv",
+    "rolling_csv": "paper_q2_results/rolling_topic_windows.csv",
+    "trajectories_csv": "paper_q2_results/topic_trajectories.csv",
+    "summary_json": "paper_q2_results/temporal_tracking_summary.json",
+    "focus_rolling_csv": "paper_q2_results/rolling_topic_windows_2021Q2.csv",
+    "focus_monthly_csv": "paper_q2_results/monthly_topic_prevalence_2021Q2.csv",
+    "focus_trajectories_csv": "paper_q2_results/topic_trajectories_2021Q2.csv",
+    "focus_summary_json": "paper_q2_results/temporal_tracking_2021Q2_summary.json",
+    "focus_plot": "paper_q2_results/topic_trajectories_2021Q2.png",
+    "focus_plot_pdf": "paper_q2_results/topic_trajectories_2021Q2.pdf",
+    "focus_heatmap": "paper_q2_results/topic_heatmap_2021Q2.png"
+  }
+}

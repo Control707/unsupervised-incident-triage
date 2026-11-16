@@ -1,0 +1,23 @@
+Quarter,Cluster_ID,Topic_Label,Count,Total_Tickets,Prevalence,Previous_Quarter,Delta_K,Pct_Change,Category,Is_Partial_Quarter
+2021Q1,-1,Noise / Outliers,135,478,0.2824267782426778,,,,Initial Observation,False
+2021Q1,0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,8,478,0.016736401673640166,,,,Initial Observation,False
+2021Q1,1,pickle / dtype / pickle py / python3 pickle,145,478,0.303347280334728,,,,Initial Observation,False
+2021Q1,2,rename_column / formatted / foo / add_item,13,478,0.027196652719665274,,,,Initial Observation,False
+2021Q1,3,git src / prepare_for_task / textclassification / datasetinfo,2,478,0.0041841004184100415,,,,Initial Observation,False
+2021Q1,4,char_error_rate / refs / cer / preds,14,478,0.029288702928870293,,,,Initial Observation,False
+2021Q1,5,minor / readthedocs / readinstruction / bertscore,14,478,0.029288702928870293,,,,Initial Observation,False
+2021Q1,6,numpy / core src / macosx / numpy core,60,478,0.12552301255230125,,,,Initial Observation,False
+2021Q1,7,coco / rico / cards / add_new_dataset md,36,478,0.07531380753138076,,,,Initial Observation,False
+2021Q1,8,speech / audio / hindi / openslr,29,478,0.060669456066945605,,,,Initial Observation,False
+2021Q1,9,pdf / babi / entities / duorc,22,478,0.04602510460251046,,,,Initial Observation,False
+2021Q2,-1,Noise / Outliers,105,403,0.26054590570719605,2021Q1,-0.021880872535481766,-7.747449682933544,Persistent,False
+2021Q2,0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,21,403,0.052109181141439205,2021Q1,0.03537277946779904,211.3523573200993,Emerging Surge,False
+2021Q2,1,pickle / dtype / pickle py / python3 pickle,153,403,0.37965260545905705,2021Q1,0.07630532512432903,25.154445109951226,Emerging Surge,False
+2021Q2,2,rename_column / formatted / foo / add_item,7,403,0.017369727047146403,2021Q1,-0.00982692567251887,-36.13284978049246,Stable,False
+2021Q2,3,git src / prepare_for_task / textclassification / datasetinfo,18,403,0.04466501240694789,2021Q1,0.04048091198853785,967.4937965260548,Emerging Surge,False
+2021Q2,4,char_error_rate / refs / cer / preds,15,403,0.03722084367245657,2021Q1,0.00793214074358628,27.0825948245303,Stable,False
+2021Q2,5,minor / readthedocs / readinstruction / bertscore,17,403,0.04218362282878412,2021Q1,0.012894919899913829,44.02694080113436,Stable,False
+2021Q2,6,numpy / core src / macosx / numpy core,23,403,0.05707196029776675,2021Q1,-0.0684510522545345,-54.53267162944582,Declining,False
+2021Q2,7,coco / rico / cards / add_new_dataset md,20,403,0.04962779156327544,2021Q1,-0.025686015968105318,-34.105321202095396,Declining,False
+2021Q2,8,speech / audio / hindi / openslr,15,403,0.03722084367245657,2021Q1,-0.023448612394489032,-38.64978180884744,Persistent,False
+2021Q2,9,pdf / babi / entities / duorc,9,403,0.022332506203473945,2021Q1,-0.023692598399036518,-51.477554703361164,Stable,False

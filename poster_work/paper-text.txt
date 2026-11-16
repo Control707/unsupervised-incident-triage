@@ -1,0 +1,853 @@
+
+--- PAGE 1 ---
+Overcoming Template Mega Clusters and Pooling Cancellation in
+Unsupervised Incident Triage
+Anonymous Author(s)
+Abstract
+Enterprise helpdesks and software repositories receive thousands
+of unstructured incident reports each quarter, and operations teams
+need to know which tickets belong together and which problems
+are growing. In our enterprise Information Technology Service
+Management (ITSM) benchmark, nearly one in four tickets (314 of
+1,380 records) sit orphaned in an Unassigned backlog without a
+resolution timestamp because front line Tier 1 intake agents cannot
+determine which specialist team owns cross boundary security,
+network, or identity outages. Meanwhile, open source maintainers
+struggle to distinguish genuine user bug outbreaks from internal
+refactoring pull requests (PRs). We show that standard unsuper-
+vised topic modeling falls into two traps on these streams. In the
+Template and Mega Cluster Trap, word coherence metrics (𝐶𝑣)
+reward models that group recurring ticket boilerplate, while default
+density clustering merges distinct software bugs into one mega
+cluster. In theStatic Window Trap, comparing two fixed periods
+suffers frompooling cancellation(a drop in one month and a rise
+in the next cancel out once the months are combined) and cannot
+tell a short internal coding sprint from a chronic bug plateau. We
+present a three stage framework that avoids both traps: domain
+pruned term weighting with size bounded hierarchical density clus-
+tering (Bounded EOM) for discovery, false discovery rate (FDR)
+tests with 14 day rolling windows for shift tracking, and a check
+against withheld operational metadata. On open source GitHub
+issues and enterprise service desk tickets, the framework splits a
+298 ticket mega cluster into five actionable subsystems, reveals four
+enterprise shifts that coarse windows erased, separates internal
+maintainer sprints from external user bug outbreaks, and groups
+75.5% of orphaned enterprise incidents with similar tickets that a
+team already handled.
+CCS Concepts
+•Computing methodologies → Natural language processing;
+Unsupervised learning;•Software and its engineering →
+Maintaining software.
+Keywords
+Incident Management, Topic Discovery, Density Clustering, Mani-
+fold Learning, Temporal Shift Detection, Site Reliability Engineer-
+ing, Service Desk Triage
+ACM Reference Format:
+Anonymous Author(s). 2027. Overcoming Template Mega Clusters and Pool-
+ing Cancellation in Unsupervised Incident Triage. In2027 ACM Southeast
+This work is licensed under a Creative Commons Attribution 4.0 International License.
+ACMSE 2027, April 15 to 17, 2027, Decatur, AL, USA
+©2027 Copyright held by the owner/author(s).
+ACM ISBN 979-8-4007-2749-8/2027/04
+https://doi.org/10.1145/YYYYYYY.YYYYYYY
+Conference (ACMSE 2027), April 15 to 17, 2027, Decatur, AL, USA.ACM, New
+York, NY, USA, 8 pages. https://doi.org/10.1145/YYYYYYY.YYYYYYY
+1 Introduction
+In enterprise Information Technology Service Management (ITSM),
+incoming support contacts are triaged through a tiered queue hier-
+archy [1, 6]: front lineTier 1intake agents handle routine fulfillment
+requests and initial categorization, escalating unresolved technical
+faults to generalTier 2support technicians or specialized engi-
+neering queues (such as network operations, endpoint security,
+or identity management). While routine requests (such as provi-
+sioning a software license or scheduling training) map cleanly to
+deterministic fulfillment workflows, complex infrastructure outages
+often produce ambiguous user symptoms that mask the underlying
+subsystem [8]. When a Tier 1 agent cannot identify the owning
+specialist department, tickets bounce across repeated queue reas-
+signments or stagnate in generic holding queues. In a synthetic
+enterprise helpdesk benchmark [6], this diagnostic ambiguity leaves
+314 error incidents (nearly one quarter of all incoming volume, al-
+most half of them high or critical priority) completely orphaned in
+an Unassigned backlog without a recorded resolution. A parallel
+triage challenge arises in open source Site Reliability Engineering
+(SRE) and software maintenance [12, 16], where maintainers ingest
+a mixed stream of external user bug reports and internal developer
+pull requests (PRs) and must rapidly isolate postrelease regressions
+from routine refactoring [8].
+Unsupervised topic discovery [5, 9, 11] offers a natural path to
+automate both intake routing and outbreak surveillance without re-
+quiring labeled training histories. By grouping semantically related
+tickets into clusters and tracking each cluster’s prevalence over
+time, an operations team should be able to dispatch unassigned
+tickets to specialist queues and detect emerging failure surges as
+they form. Yet when practitioners apply standard topic modeling
+and drift monitoring pipelines to technical ticket streams, they
+encounter two systematic failure modes.
+First, standard clustering pipelines fall into theTemplate and
+Mega Cluster Trap. Nearly every support ticket or bug issue con-
+tains recurring submission scaffolding such as hello team , error
+message, or dataset, python, line . Classical bag of words mod-
+els such as Latent Dirichlet Allocation (LDA) [5] group documents
+around these high frequency template words. Because template
+tokens cooccur across almost every sliding window in the cor-
+pus, LDA achieves deceptively high automated word coherence
+scores (𝐶𝑣) [20, 22] while mixing unrelated technical subsystems
+into the same topic [13]. Neural pipelines following the BERTopic
+paradigm [11], which encode text with Sentence-BERT (SBERT)
+transformers [21, 25], project embeddings via Uniform Manifold Ap-
+proximation and Projection (UMAP) [19], and extract dense clusters
+via Hierarchical Density Based Spatial Clustering of Applications
+with Noise (HDBSCAN) [7, 18], overcome lexical sparsity [4, 24].
+
+--- PAGE 2 ---
+Figure 1: Our three stage pipeline: Stage 1 avoids the Template and Mega Cluster Trap, Stage 2 avoids the Static Window Trap,
+and Stage 3 checks the clusters against withheld operational metadata.
+However, when distinct software failure modes share low level stack
+trace vocabulary (such as pickle, dtype, and arrow), HDBSCAN’s
+default Excess of Mass (EOM) tree selection [7] overmerges them
+into a single ancestor “mega cluster” that obscures which specific
+subsystem is failing.
+Second, standard temporal monitors fall into theStatic Window
+Trap. Drift studies commonly partition a ticket stream into two
+static eras (a baseline window and an observation window) and
+rank topics by their proportional shift [8, 9, 11]. When a topic dips
+in one month and surges in the next, and both months fall inside the
+same observation window, the dip and the surge cancel out once the
+window is pooled. We call thispooling cancellation: the pooled
+share looks unchanged, hiding a major workload shift. Conversely,
+when a positive two period surge is detected, static windowing
+cannot tell whether the shift reflects a chronic bug plateau that
+persisted all quarter or a short internal coding sprint that already
+resolved.
+We overcome both traps through the three stage framework
+illustrated in Figure 1 and evaluate it on open source software
+engineering issues [16] and enterprise IT service desk tickets [6].
+Specifically, we: (1) explain and resolve the coherence mirage and
+mega cluster overmerging using domain pruned term weighting
+and size bounded HDBSCAN tree selection (Bounded EOM); (2)
+pair Benjamini–Hochberg false discovery rate (FDR) contingency
+testing [2, 10] with continuous 14 day rolling trajectories [15, 17] to
+expose shifts hidden by pooling cancellation and separate chronic
+plateaus from transient spikes; and (3) validate our clusters against
+withheld contributor roles and helpdesk routing logs, separating
+internal developer sprints from external user bug outbreaks and
+grouping orphaned enterprise incidents with similar tickets that a
+team already handled.
+2 Related Work
+Topic Modeling on Short Technical Text.Generative topic
+models such as LDA [ 5] and Dynamic Embedded Topic Models
+(DETM) [9] model documents as mixtures of multinomial word dis-
+tributions. On short technical tickets dominated by stack traces and
+version identifiers, modular neural pipelines that decouple represen-
+tation learning from keyword extraction consistently outperform
+generative bag of words priors [4, 11, 24]. Following BERTopic [11],
+such pipelines combine transformer embeddings [21, 25], UMAP
+manifold projection [19], HDBSCAN clustering [7, 18], and class
+based TF-IDF (c-TF-IDF) term weighting. While Hoyle et al. [13]
+showed that automated sliding window coherence metrics [20, 22]
+correlate poorly with human judgment on general corpora, we
+identify the specific mechanism driving coherence failure on tem-
+plated tickets and show how bounding HDBSCAN branch selection
+prevents parent mega clusters from swallowing distinct failure
+modes.
+Automated Triage and Temporal Drift Monitoring.In soft-
+ware maintenance and service desk operations, syntax tree log
+parsers such as Drain [12] and supervised ticket classifiers [1, 8]
+require fixed log templates or labeled training histories, preventing
+them from routing unlabeled queues or isolating novel postrelease
+
+--- PAGE 3 ---
+regressions [8]. Unsupervised drift monitors track cluster propor-
+tions across discrete time buckets [9, 11], but rely on uncalibrated
+heuristic thresholds or static two window splits that suffer from
+pooling cancellation. Section 3 details how our spatial and multi-
+horizon temporal architecture addresses these gaps.
+3 Methodology
+3.1 Overview and Problem Formulation
+In plain terms, the pipeline follows each ticket through three stages.
+Stage 1 turns the ticket text into a vector, places similar tickets near
+each other, and groups them into clusters, keeping each cluster small
+enough to describe one specific failure. Stage 2 counts how many
+tickets each cluster receives over time and asks whether a change
+is larger than chance, both between two periods and in a sliding 14
+day window. Stage 3 compares the clusters with information the
+pipeline never saw, such as who wrote each ticket and which team
+handled it. Throughout the paper,R clusters are the original GitHub
+clusters, C clusters are the finer GitHub clusters after Bounded EOM,
+andITclusters come from the enterprise service desk.
+As shown in Figure 1, our pipeline ingests a timestamped stream
+of technical incident recordsD={(𝑥 𝑖,𝑡𝑖,𝑚𝑖)}𝑁
+𝑖=1, where𝑥𝑖 concate-
+nates the ticket title and body text,𝑡𝑖 is the creation timestamp, and
+𝑚𝑖 denotes operational metadata (contributor roles, pull request
+flags, resolution timestamps, reassignment counts, and support
+queues). All metadata𝑚𝑖 is strictly withheld during clustering and
+shift estimation and used exclusively for extrinsic operational vali-
+dation.
+3.2 Manifold Projection and Bounded Density
+Clustering
+Each ticket𝑥𝑖 is mapped into a unit normalized vectore 𝑖∈R 384
+using the pretrained all-MiniLM-L6-v2 Siamese Sentence-BERT
+encoder [21, 25]. Because cosine distances between distinct docu-
+ments concentrate around their mean in high dimensional space [3],
+which erases the density valleys needed for spatial clustering, we
+project{e𝑖}𝑁
+𝑖=1 onto a 5 dimensional manifold{z𝑖}𝑁
+𝑖=1 via UMAP [19]
+using local neighborhood size𝑘nn = 15, cosine dissimilarity, and
+zero minimum packing distance (min_dist=0.0).
+On the 5D manifold, we apply HDBSCAN [7, 18] with minimum
+sample size𝑚pts = 5and minimum cluster size 𝑚cl = 16(20on the
+larger enterprise IT corpus). To suppress sparse background noise,
+HDBSCAN defines themutual reachability distancebetween tickets
+𝑖 and 𝑗 as the maximum of their 𝑚pts nearest neighbor core dis-
+tances and their Euclidean distance, pushing isolated outliers away
+from dense regions. Constructing a minimum spanning tree over
+mutual reachability distances yields a condensed cluster tree across
+density levels𝜆= 1/distance, where branches smaller than𝑚cl fall
+into an explicit noise partition𝐶−1. Standard HDBSCAN extracts
+flat clusters from this condensed tree via Excess of Mass (EOM),
+selecting branches that maximize integrated density persistence:
+𝑆(𝐶𝑘)=
+∑︁
+𝑥𝑖∈𝐶𝑘
+(𝜆max(𝑥𝑖,𝐶𝑘)−𝜆 min(𝐶𝑘)),(1)
+where𝜆min(𝐶𝑘) is the density level at which cluster𝐶𝑘 splits from
+its parent and𝜆max(𝑥𝑖,𝐶𝑘) is the level at which ticket𝑥𝑖 leaves𝐶𝑘.
+When distinct technical subsystems share common stack trace to-
+kens, their density branches merge at moderate reachability thresh-
+olds, causing unconstrained EOM in Equation 1 to select a single
+merged ancestor cluster. To prevent mega cluster absorption with-
+out incurring the severe outlier rejection of terminal leaf clustering,
+we introduceBounded EOM (BEOM), which enforces an upper
+cluster size cap of120tickets and traverses down the condensed
+tree to select descendant subsystem branches whenever an ancestor
+exceeds that cap.
+3.3 Domain Pruned Class Based Term
+Weighting
+To extract human interpretable topic descriptors without genera-
+tive word priors, we concatenate all documents assigned to cluster
+𝐶𝑘 and compute class based TF-IDF (c-TF-IDF) weights [11] over
+unigrams and bigrams:
+𝑊𝑡,𝑘 = 𝑓𝑡,𝑘Í
+𝑡′∈V 𝑓𝑡′,𝑘
+·
+
+ln
+ 𝐾+1
+cf𝑡+1
+
++1
+
+,(2)
+whereV is the candidate vocabulary,𝑓𝑡,𝑘 is the frequency of term
+𝑡 in𝐶𝑘, and cf𝑡 is the number of clusters containing𝑡. Following
+domain stopword filtering practices [4, 11, 13], we augment stan-
+dard English stopwords with recurring ticket template tokens (e.g.,
+please, issue, dataset, line) and zero out terms appearing in
+more than𝜏cf = 35%of discovered clusters so top ranked keywords
+uniquely identify the underlying failure mode.
+3.4 Multihorizon Shift Testing and Rolling
+Trajectories
+Given a baseline partitionD𝑎 (𝑁𝑎 tickets) and an observation par-
+titionD𝑏 (𝑁𝑏 tickets), we retain all valid timestamped records,
+including noise 𝐶−1, in the denominator so cluster prevalence
+𝑃(𝐶𝑘|D)=𝑐 𝑘/𝑁 measures true share of total operational work-
+load andΔ𝐾𝑘 tracks the shift in percentage points (pp):
+Δ𝐾𝑘 =𝑃(𝐶 𝑘|D 𝑏)−𝑃(𝐶 𝑘|D 𝑎)= 𝑐𝑘,𝑏
+𝑁𝑏
+−𝑐𝑘,𝑎
+𝑁𝑎
+.(3)
+We evaluate each cluster’s2× 2contingency table using a two sided
+Fisher’s exact test [10] (giving the exact 𝑝 value of a count shift
+at least that large under chance), compute 95% Wald confidence
+intervals (the normal approximation interval for the difference
+between two independent proportions), and control the familywise
+false discovery rate (FDR) across all𝐾 clusters via the Benjamini–
+Hochberg (BH) step up procedure [2], which adjusts𝑝 values into𝑞
+values for multiple testing (𝑞< 0.10). To avoid pooling cancellation,
+we run this test at several time scales: a coarse comparison of the
+two periods, and a monthly comparison in which each new month
+D𝑏 is tested against all earlier monthsD 𝑎 combined.
+To capture subperiod dynamics that coarse two window compar-
+isons average out, we slide a trailing lookback window of length
+𝑤= 14days W(𝜏)=(𝜏−𝑤,𝜏] daily across the stream, re-
+taining the final 𝑤− 1days of the preceding quarter so trajec-
+tories remain continuous across calendar boundaries. At each daily
+endpoint𝜏 with at least 𝑁(𝜏) ≥ 5tickets, we compute rolling
+prevalence𝑃𝜏(𝐶𝑘)=𝑐 𝑘(𝜏)/𝑁(𝜏) , baseline relative excess𝐸𝑘(𝜏)=
+𝑃𝜏(𝐶𝑘)−𝑃(𝐶 𝑘 |D base), ordinary least squares weekly slope (in
+percentage points per week), and the nonparametric Mann–Kendall
+
+--- PAGE 4 ---
+trend statistic𝜏MK∈[− 1, 1] [15, 17], which measures monotonic
+trend consistency by comparing the fraction of concordant versus
+discordant temporal pairs.
+L
+DAT F-IDFS BERTE OMB EOM0
+.00
+.20
+.40
+.60
+.81
+.0Score / Ground Truth Purity(
+a) Template Coherence Mirage (IT)C
+v Coherence (Mirage)5
+D SilhouetteSu
+bcat. Purity (82.3%)2
+3 5 1 01 52 55 01 003 84U
+MAP Ambient Dimension d0
+.00
+.20
+.40
+.60
+.81
+.0Score / Proportion
+S
+ilhouette (Manifold)T
+opic Quality (Cv×TD)N
+oise RatioS
+elected d = 54
+6 8 1 01 2U
+MAP Dimension 11
+2
+3
+4
+5
+6
+7
+UMAP Dimension 2
+R
+8 (C12): SpeechR
+3 (C4): Task CastR
+6 (C10): ChecksumsC
+3 (R1): PyArrowC
+5 (R1): Pool .mapR
+0 (C0): DupKeysR
+2 (C1): ColumnsN
+oise C_-1 (38.1%)
+Bounded EOM Splits Mega Cluster R1
+Figure 2: 2D UMAP view of the GitHub corpus: Bounded
+EOM splits mega cluster R1 into specific subsystems (C2,
+C3, C5, C7, C8), while the other clusters keep their original
+membership.
+4 Experimental Setup
+4.1 Benchmark Corpora
+To evaluate generalization across distinct operational environments,
+we test our framework on two timestamped corpora (Figure 1). First,
+the open source software engineering (SWE) corpus from the Hug-
+ging Face datasets GitHub repository [ 16] comprises 𝑁= 881
+records across Q1 2021 (478records) and Q2 2021 (403records),
+pairing issue (41.7%) and pull request (58.3%) text with withheld
+GitHub author_association roles (MEMBER, CONTRIBUTOR, or ex-
+ternal community user NONE), maintainer tags, and Mean Time to
+Resolution (MTTR, elapsed hours from opening to closure). Second,
+the enterprise IT service desk benchmark [6], a publicly released
+synthetic dataset of IT call center tickets, contains 𝑁= 1, 380
+records spanning Q1 2021 (1, 338tickets across January, February,
+and March) plus a multiyear 2024 slice (42tickets), with curated
+ground truth labels for ticket type (Incident versus Request), cat-
+egory, subcategory, priority, reassignment count (queue hops), 15
+specialist support queues, and314unassigned Q1 error incidents.
+On this corpus, the model benchmark in Table 1 compares both
+standard EOM (𝐾= 14) and Bounded EOM ( 𝐾= 22). Because
+the IT stream has no mixed mega cluster under standard EOM (its
+largest cluster is a single homogeneous software installation queue,
+and the five critical outage families already reach93 .8%to100%
+subcategory purity), the shift analysis (Section 6.2) and the triage
+evaluation (Section 7.2) use the standard EOM clusters (𝑚cl = 20,
+𝑚pts = 6, labeled IT00 to IT13) to retain higher ticket coverage
+(14.9%noise versus34 .5%under Bounded EOM, where the 120
+ticket cap subdivides large routine queues).
+4.2 Baselines and Evaluation Metrics
+We benchmark our unbounded EOM and Bounded EOM pipelines
+against three baselines across matching cluster counts 𝐾∈
+{10, 14, 22} under both standard English and domain pruned
+stopwords: classical generative LDA [ 5], sparse TF-IDF with 𝐾
+Means (TF-IDF+KM), and dense 384D Sentence-BERT embeddings
+with𝐾 Means (SBERT+KM) [21]. Following Röder et al. [22], we in-
+dex word cooccurrences over a sliding 110 token window (stride 25)
+to compute Normalized Pointwise Mutual Information (NPMI) [20],
+which measures how much more frequently two words cooccur
+than expected under independence, and 𝐶𝑣 coherence, which
+averages the cosine similarity between each top word’s NPMI
+context vector and the topic’s aggregate vector. We also report
+Topic Diversity (Div., unique fraction among top 10 words across all
+topics), Topic Quality (𝐶𝑣×Div.), and Silhouette coefficients [23] in
+384D (Sil.384) and 5D UMAP space (Sil.5D), which contrast within
+cluster cohesion against nearest cluster separation on[−1, 1] over
+the assigned non noise tickets (with the 𝐶−1 share reported as
+Noise in Table 1). Extrinsic accuracy on enterprise ground truth is
+measured via Cluster Purity (fraction of assigned tickets matching
+their cluster’s majority ground truth class) and Adjusted Rand
+Index (ARI, chance corrected pairwise assignment agreement on
+[−1,1]) [14].
+5 Overcoming Trap 1: The Template Coherence
+Mirage and Mega Clusters
+5.1 Why High Word Coherence (𝐶 𝑣) Is a Mirage
+on Ticket Streams
+Across both operational benchmarks, Table 1 reveals an inverse
+relationship between bag of words coherence and geometric or op-
+erational validity. Lexical bag of words baselines achieve the highest
+𝐶𝑣 coherence across all blocks of Table 1, led by classical LDA on
+SWE (0.948standard;0 .910pruned) and by sparse TF-IDF+𝐾 Means
+(0.937) followed by LDA (0.905) on IT, yet both baselines suffer neg-
+ative or near zero 5D manifold Silhouette scores (−0.225to0 .058)
+while LDA ranks last on every enterprise ground truth metric.
+This paradox arises from how sliding window NPMI evaluates
+word cooccurrence in templated text [ 13]. Because submission
+boilerplate (dataset, github, python, error message ) appears
+in nearly every ticket, LDA places slight permutations of these
+ubiquitous tokens at the top of multiple topics, depressing Topic
+Diversity (0.670). Because boilerplate words cooccur across almost
+every 110 token window, their pairwise NPMI is artificially inflated,
+rewarding LDA with a high𝐶𝑣 score even though documents shar-
+ing template words describe unrelated technical failures and scatter
+across the embedding space.
+Stripping domain boilerplate (middle and bottom blocks
+of Table 1) forces c-TF-IDF to rank subsystem specific identi-
+fiers ( duplicatedkeyserror, prepare_for_task, crowdstrike
+falcon). Because specialized identifiers appear only within narrow
+failure modes, corpus wide window cooccurrence drops, lowering
+𝐶𝑣 while lifting Topic Diversity above0.94. Crucially, comparing𝐾
+Means against Bounded EOM on the enterprise stream reveals why
+density clustering excels at fine grained triage: whereas forced𝐾
+Means partitioning assigns every ambiguous ticket to its nearest
+
+--- PAGE 5 ---
+Table 1: Model Benchmark on Both Corpora: Removing Tem-
+plate Words Lowers the Inflated 𝐶𝑣 Score, While Bounded
+EOM Gives the Best Cluster Separation and Ground Truth
+Purity (IT Type / Sub. = Incident vs. Request Purity / Subcat-
+egory Purity)
+Stream / Filter Model (𝐾) Noise𝐶 𝑣 Div. Sil.384 Sil.5D IT Type / Sub.
+SWE / Std. LDA (10) 0.0% .948 .670−.032−.108n/a
+SWE / Std. TF-IDF+KM (10) 0.0% .882 .810−.026−.168n/a
+SWE / Std. SBERT+KM (10) 0.0% .853 .760.026.043n/a
+SWE / Std. BEOM (14) 38.1% .862 .800.051.531n/a
+SWE / Pruned LDA (14) 0.0% .910 .807−.035−.225n/a
+SWE / Pruned TF-IDF+KM (14) 0.0% .718 1.00−.034−.194n/a
+SWE / Pruned SBERT+KM (14) 0.0% .654 .943.030.059n/a
+SWE / Pruned EOM (10) 27.2% .691.960.026.378n/a
+SWE / Pruned BEOM (14) 38.1% .694.943.051.531n/a
+IT / Pruned LDA (14) 0.0% .905 .836.021−.06085.5 / 63.6%
+IT / Pruned TF-IDF+KM (14) 0.0% .937 .900.039.05892.6 / 80.4%
+IT / Pruned SBERT+KM (14) 0.0% .874 .936.083.26995.5 / 78.6%
+IT / Pruned EOM (14) 14.9% .840.979.100.55996.6 / 76.0%
+IT / Pruned BEOM (22) 34.5% .897 .914.092.58898.3/82.3%
+centroid and blurs fine subcategory boundaries, Bounded EOM
+quarantines cross cutting outliers into𝐶−1 to achieve the highest
+manifold separation alongside98.3%incident versus request purity
+and82.3%subcategory purity. Even when noise points are assigned
+to their nearest centroid to evaluate 100% of the SWE corpus, our
+pipeline retains a sixfold advantage in 5D Silhouette over dense𝐾
+Means (0.354versus0.059).
+5.2 Breaking the 298 Ticket “Mega Cluster”
+with Bounded EOM
+Manifold projection must precede density clustering: in raw 384D
+SBERT space, cosine distance concentration [ 3] flattens density
+differences so severely that HDBSCAN rejects98.2%of the corpus
+as noise, whereas the 5D projection restores the dense regions that
+clusters need.
+Within this 5D manifold, however, comparing unbounded EOM
+(𝐾= 10, clusters R0 to R9) against Bounded EOM (𝐾= 14, clusters
+C0 to C13, max_cluster_size= 120) exposes a critical hierarchi-
+cal overmerging effect [7, 16]. Left unconstrained, a single parent
+cluster (R1) absorbs33 .8%of the entire GitHub corpus (46 .5%of
+assigned records). Cross tabulating cluster memberships across the
+condensed tree reveals that Bounded EOM leaves the nine special-
+ized clusters ( R0, R2 to R9) completely unchanged ( ARI= 1.000
+outside R1), while splitting the 298 ticket R1 ancestor into five
+mechanically distinct subsystems in Figure 2 and Table 2: multi-
+processing worker pool .map() serialization (pickle) locks ( C5,
+𝑁= 92), Apache Arrow columnar int64 memory mapped index
+collisions (C7,𝑁= 35), PyArrow C++ Application Binary Interface
+(ABI) and Conda wheel conflicts (C3,𝑁= 23), tensor format cast-
+ing (C2,𝑁= 31), and tokenizer C++ _libs bindings (C8,𝑁= 21).
+Because all five failure modes share low level stack trace tokens
+(pickle, dtype, arrow), their branches merge near the root of the
+condensed tree; enforcing the Bounded EOM size cap selects the
+descendant branches instead, cutting maximum cluster share nearly
+in thirds (46.5%to16 .9%). We now examine how their prevalence
+evolves across coarse and continuous time horizons.
+6 Overcoming Trap 2: The Static Window Trap
+6.1 Unmixing the Mega Cluster and Separating
+Sprints from Chronic Bugs on GitHub
+Applying Fisher’s exact tests [10] and Benjamini–Hochberg FDR
+control [2] to the unified GitHub hierarchy in Table 2 demonstrates
+why hierarchical unmixing is essential for accurate drift attribution.
+Table 2: Open Source GitHub Shift and Mega Cluster Unmix-
+ing: Splitting R1 Shows Only the C5 Pickle Branch Surged
+(𝑞< 0.10;𝜏MK = 14d Rolling Trend; ABI = Application Binary
+Interface; CER/WER = Character/Word Error Rate; ASR =
+Automatic Speech Recognition)
+ID Subsystem Q1 Q2Δ𝐾 𝑞 𝜏 MK (𝑝)
+R1(EOM) Serialization Parent 30.3% 38.0%+7.6.046+.01(.94)
+↩→C5Pool.map()Pickle 8.2% 13.2%+5.0.070+.08(.27)
+↩→C7Arrow Disk Index 2.9% 5.2%+2.3.201+.04(.58)
+↩→C3PyArrow C++ ABI 2.1% 3.2%+1.1.381−.03(.69)
+↩→C2Tensor / JAX Cast 4.2% 2.7%−1.5.381−.11(.13)
+↩→C8Tokenizer_libs3.1% 1.5%−1.6.201−.14(.05)
+R3(C4) Task Prompt Cast 0.4% 4.5%+4.1.001+.36(1e-6)
+R0(C0) DuplicateKeys Hash 1.7% 5.2%+3.5.019+.10(.15)
+R5(C9) Sphinx Docs Build 2.9% 4.2%+1.3.400+.00(.97)
+R4(C6) CER / WER Metrics 2.9% 3.7%+0.8.572+.03(.65)
+R2(C1) Tablerename_col2.7% 1.7%−1.0.400−.58(1e-13)
+R8(C12) Speech ASR Audio 6.1% 3.7%−2.3.201−.16(.03)
+R9(C13) PDF / DuoRC Parse 4.6% 2.2%−2.4.187−.29(5e-5)
+R7(C11) Hub Cards / C4 7.5% 5.0%−2.6.201+.32(8e-6)
+R6(C10) NumPy / Checksums 12.6% 5.7%−6.8.003−.16(.03)
+0
+20
+40
+60Q2 share (%)
+R1: pickle / dtype (chronic plateau)
+R3: task_cast (May sprint)
+Q1 baseline share
+Apr 01 Apr 15 May 01 May 15 Jun 01 Jun 15 Jul 01
+2021 Q2 daily window end (14 day trailing window)
+0
+10
+20Excess vs. Q1 (pp)
+R1 above its Q1 level on 94.5% of Q2 days
+R3 peak: +16.2 pp (May 26)
+Figure 3: 14 Day Rolling Trajectories Across Q2 2021: R1 Stays
+Above Its Q1 Level All Quarter (Chronic Plateau), While R3
+Spikes in Late May and Fades (Internal Sprint)
+Under unbounded EOM, the parent cluster R1 appears to surge
+broadly across nearly two fifths of the repository. Bounded EOM
+decomposition in Table 2 proves thatonly the multiprocessing
+.map() pickle branch (C5) experienced a statistically signif-
+icant Q2 surge, while the other four subbranches inside R1 re-
+mained stationary or declined. The three significant Q2 surges are
+cross process pickle failures in parallel.map() workers (C5), shard
+key uniqueness errors (R0), and task template casting (R3), while
+
+--- PAGE 6 ---
+Jan Feb Mar
+0
+5
+10
+15
+20
+25Monthly share of tickets (%)
+Feb and Mar pooled: 15.9%
+vs. Jan 16.0% (-0.15 pp)
+(a) Pooling cancellation (IT03)
+* = significant March shift (q < 0.10)
+IT03 Install*
+IT10 RSA/Java*
+IT05 File Crash
+IT07 OneDrive
+IT02 DevOps*
+IT08 F5 BIG-IP*
+0 10
+Shift in share (pp), 95% CI
+IT03
+Install
+IT02
+DevOps
+IT08
+F5 BIG-IP
+IT10
+RSA/Java
+q = 0.007
+q = 0.007
+q = 0.013
+q = 0.059
+(b) Monthly test reveals the shifts
+Coarse: Jan vs. Feb+Mar (none significant)
+Monthly: Mar vs. Jan+Feb (q < 0.10)
+Figure 4: Pooling cancellation on the synthetic IT benchmark and the monthly test that fixes it: (a) IT03’s February dip (11 .6%)
+and March surge (21.5%) pool to15 .9%, almost exactly its January share, so the coarse comparison sees only −0.15pp; (b) testing
+March against January and February (colored bars, 95% CI) reveals four significant shifts that the coarse comparison (gray bars)
+misses.
+remote downloader checksum failures (R6) declined significantly.
+Comparing C7 (+2.3pp, 𝑞= 0.201) against R3 (+4.1pp, 𝑞= 0.001)
+also shows why uncalibrated point cutoffs fail: because binomial
+variance scales with baseline share𝑝( 1−𝑝) , a+4.1pp jump from a
+0.4%baseline represents an11× outbreak, whereas a+2.3pp fluctu-
+ation atop a2.9%baseline lies within expected quarterly variation.
+Even when statistically calibrated, coarse two period deltas ob-
+scure the within quarter shape of a shift. Tracking continuous 14
+day rolling windows across all 91 days of Q2 in Figure 3 and the
+𝜏MK column of Table 2 reveals that R1 and R3 follow opposite tem-
+poral regimes despite both registering positive quarterly surges.
+Serialization failures in R1 jump at the start of April and remain
+chronically elevated above their Q1 baseline on94.5%of Q2 days
+(mean excess+6.29pp); because this step change plateaued early
+in the quarter, its within quarter linear slope (−0.06pp/wk) and
+Mann–Kendall trend𝜏MK [15, 17] are near zero. Conversely, task
+casting activity in R3 remains dormant throughout April, erupts
+into a sharp late May spike (16.7%peak on May 26; +0.52pp/wk
+slope) during a template standardization sprint, and subsides in
+June once those pull requests merge. Consequently, a trend monitor
+relying solely on within quarter slopes misses the largest chronic
+bug burden in the repository (R1), whereas a coarse quarterly table
+mistakes a completed May refactoring sprint (R3) for an active June
+outage. We use 14 day windows because 7 day windows roughly
+double the day to day jitter, while 21 and 28 day windows detect
+R3’s peak 5 to 11 days later.
+6.2 Pooling Cancellation in Enterprise IT
+The second failure mode of static two period monitoring, pooling
+cancellation, appears clearly in the enterprise IT stream [ 6] (Fig-
+ure 4). When January baseline traffic (𝑁= 487) is compared against
+pooled February and March traffic (𝑁= 851), zero out of 14 clusters
+survive FDR control (𝑞≥ 0.23), making the service desk appear
+completely stationary.
+Table 3: Enterprise IT Shift Diagnostics: Monthly and Rolling
+Horizons Unmask Four March Shifts That Coarse Feb+Mar
+Pooling Cancels Out (CoarseΔParentheses Show FDR𝑞)
+ID Subsystem CoarseΔMarΔ(95% CI) Mar𝑞 𝜏 MK
+IT03 Installation−0.15(.94)+7.65(+3.0,+12.3).007+.17
+IT05 File Crash+0.84(.90)+2.91(−0.9,+6.8).231+.26
+IT02 DevOps Config+1.06(.69)+2.81(+0.9,+4.8).007+.46
+IT04 Report Export+0.53(.88)+1.58(−0.2,+3.4).112+.28
+IT01 Licensing−0.31(.94)+1.40(−2.0,+4.8).469+.20
+IT08 F5 BIG-IP Err−0.64(.88)−2.65(−4.1,−1.2).013−.25
+IT07 OneDrive Err−3.16(.23)−2.92(−5.4,−0.4).112−.19
+IT10 RSA/Java Err−2.36(.69)−4.52(−7.9,−1.1).059−.27
+Panel a of Figure 4 shows why coarse pooling failed: in Software
+Installations (IT03), a February lull (−4.43pp) and a March surge
+(+9.88pp) moved in opposite directions, cancelling99%of their
+cumulative monthly variation when averaged together. Applying
+the monthly rule fixes this. February tested against January shows
+no significant shift (𝑞≥ 0.36for all 14 clusters), but March tested
+against January and February together reveals four significant shifts
+(Panel b of Figure 4 and Table 3), and the 14 day rolling trends (𝜏MK)
+
+--- PAGE 7 ---
+0
+1 02 03 04 05 06 07 08 0U
+ser Bug Issue Share (%, Excl. PRs)2
+04
+06
+08
+01
+001
+201
+401
+60Median Resolution Time (Hours)(
+a) GitHub Payoff: Internal Sprints vs. User BugsR
+0: dup_keys (41% Ext.)R
+1: pickle (33% Ext.)R
+2: rename_colR
+4: cer_metricR
+5: docs (3% Ext.)R
+6: numpy (54% Ext.)R
+7: coco/cardsR
+8: speechR
+9: pdf/duorc (23% Ext.)0
+2 55 07 51 00S
+hare of Cluster Tickets by Human Intake Outcome (%)I
+T00: Training (Req.)I
+T02: DevOps Config (Req.)I
+T01: Licensing (Req.)I
+T03: SW Install (Req.)I
+T10: RSA/Java OutageI
+T07: OneDrive/Ping ErrI
+T08: F5 BIG-IP OutageI
+T12: CrowdStrike AlertI
+T13: IAM Role Outage0
+1
+02
+03
+04
+05
+0E
+xternal User Share (NONE %)
+Internal Maintainer Sprints
+(R3: 0.0% External Users, Not an Outage)
+External User Bugs
+(33% to 54% External)
+(b) Enterprise IT Payoff: The Tier 1 Triage Blind Spot
+0.63 Hops
+0.75 Hops
+0.59 Hops
+0.78 Hops
+Sent to Generic TIER 2 Holding Queue
+Orphaned in Unassigned (No Resolution)
+1.42 Hops (21 Grouped)
+1.49 Hops (16 Grouped)
+1.52 Hops (21 Grouped)
+1.59 Hops (25 Grouped)
+1.59 Hops (30 Grouped)
+R3: task_cast (0% Ext.)
+Reached a Specialist Queue at Intake
+Figure 5: Triage Payoff: (a) On GitHub Issues, author roles show R3 had 0.0% external users (an internal maintainer sprint),
+separating it from external user bug outbreaks; (b) On Enterprise IT, 94% to 100% of cross boundary security, network, and
+identity outages fail to reach a specialist team at Tier 1 intake, whereas our manifold clusters isolate each outage family in its
+own cluster.
+point the same way: F5 BIG-IP load balancer errors (IT08) and RSA
+SecurID token errors (IT10) fell, while software installations (IT03)
+and department specific DevOps configurations (IT02) rose.
+7 The Payoff: Exposing Sprint False Alarms and
+Grouping Orphaned Tickets
+7.1 GitHub Payoff:R3Was an Internal
+Developer Sprint
+To verify that discovered clusters reflect genuine engineering work-
+flows rather than lexical artifacts [ 8, 13], we evaluate R0 to R9
+against withheld GitHub metadata in Panel a of Figure 5: Pull Re-
+quest versus user bug issue share, external community user share
+(Ext.%, where author_association == NONE rather than internal
+MEMBERorCONTRIBUTOR), and MTTR.
+The withheld contributor roles in Panel a of Figure 5 confirm
+our trajectory analysis.0.0% of records in R3 (task_cast) were
+submitted by external community users (75%core MEMBER,25%
+CONTRIBUTOR), showing that the late May spike in Figure 3 was a
+coordinated internal refactoring sprint rather than a user outage.
+By contrast, the clusters behind the chronic and declining shifts
+(multiprocessing pickle crashes in R1, shard key hash collisions in
+R0, and NumPy and C++ wheel build failures in R6) draw33%to
+54%of their records from external users, the profile expected of
+genuine user bug outbreaks. Self contained documentation fixes
+sit at the other extreme (R5:93.5%PRs,3%external,18 .5h median
+MTTR).
+7.2 Enterprise IT Payoff: Grouping Orphaned
+Tickets from the Tier 1 Blind Spot
+On the enterprise service desk corpus [ 1, 6], Panel b of Figure 5
+shows where the 314 orphanedUnassignedincidents sit. Routine
+service requests in the top four bars of Panel b (IT00 to IT03) map
+unambiguously at intake to dedicated fulfillment queues (Asset &
+Vendor, SW Dev & DevOps , End User Computing ), experiencing
+minimal reassignments (0.59to0 .78hops) and virtually zero generic
+Tier 2 escalation or unassigned abandonment.
+Conversely, across the five critical security, network, and iden-
+tity outage clusters in the bottom bars of Panel b (IT10, IT07, IT08,
+IT12, and IT13),93.8%to100%of incoming tickets fail to reach a
+specialist team at Tier 1 intake, bouncing across repeated reassign-
+ments (1.42to1 .59mean hops) [ 1, 8]. Panel b of Figure 5 shows two
+patterns: for authentication and cloud sync faults (IT10 RSA/Java
+login tokens and IT07 OneDrive/Ping single sign on),75 .0%to
+80.3%of tickets land in the generic TIER 2 TEAM holding queue,
+whereas for infrastructure, endpoint security, and cloud permission
+faults (IT08 F5 BIG-IP network load balancers, IT12 CrowdStrike
+Falcon endpoint sensors, and IT13 Identity and Access Manage-
+ment [IAM] roles),63.6%to93 .8%of tickets remain orphaned in
+Unassigned. Grouping these contacts by their technical failure
+signatures (f5 big ip , crowdstrike falcon , rsa token , ping
+identity) isolates all five outage families and groups237of the
+314orphaned Unassigned incidents (75.5%) with similar tickets
+that a team already handled, while leaving the77ambiguous noise
+residuals in𝐶−1 for human review. This shows which queue each
+orphaned ticket resembles; it does not check that the queue would
+have resolved the ticket.
+8 Limitations
+Our study covers one open source repository and one enterprise
+benchmark, and the enterprise tickets are synthetic, so results
+on real helpdesks and other organizations may differ. Several
+clusters are small (for example, R3 has 20 tickets), and GitHub
+author_association roles are only a proxy for whether a contrib-
+utor is internal. Finally, we fit the clusters on the full study period;
+running the pipeline online on new tickets without refitting is left
+for future work.
+9 Conclusion
+Turning unstructured ticket streams into reliable operational in-
+telligence requires overcoming the lexical and temporal traps that
+distort standard topic models. Across open source and enterprise
+benchmarks, we showed that: (1) sliding window coherence (𝐶𝑣)
+
+--- PAGE 8 ---
+is inflated by ticket templates, whereas domain pruned c-TF-IDF
+and Bounded EOM on a 5D UMAP manifold split overmerged mega
+clusters into specific subsystems with98.3%type purity and82 .3%
+subcategory purity; (2) pairing BH FDR tests with 14 day rolling
+windows at several time scales avoids pooling cancellation and
+separates chronic plateaus from internal maintainer sprints; and
+(3) checking clusters against withheld metadata exposes R3 as an
+internal maintainer sprint and groups75.5%of orphaned incidents
+with similar tickets that a team already handled.
+References
+[1] Shivali Agarwal, Renuka Sindhgatta, and Bikram Sengupta. 2012. SmartDispatch:
+Enabling Efficient Ticket Dispatch in an IT Service Environment. InProceedings
+of the 18th ACM SIGKDD International Conference on Knowledge Discovery and
+Data Mining. ACM, Beijing, China, 1393–1401.
+[2] Yoav Benjamini and Yosef Hochberg. 1995. Controlling the False Discovery Rate:
+A Practical and Powerful Approach to Multiple Testing.Journal of the Royal
+Statistical Society: Series B57, 1 (1995), 289–300.
+[3] Kevin Beyer, Jonathan Goldstein, Raghu Ramakrishnan, and Uri Shaft. 1999.
+When Is Nearest Neighbor Meaningful?. InProceedings of the 7th International
+Conference on Database Theory. Springer, Jerusalem, Israel, 217–235.
+[4] Federico Bianchi, Silvia Terragni, and Dirk Hovy. 2021. Pre-training Is a Hot Topic:
+Contextualized Document Embeddings Improve Topic Coherence. InProceed-
+ings of the 59th Annual Meeting of the Association for Computational Linguistics.
+Association for Computational Linguistics, Bangkok, Thailand, 759–766.
+[5] David Blei, Andrew Ng, and Michael Jordan. 2003. Latent Dirichlet Allocation.
+Journal of Machine Learning Research3, 1 (2003), 993–1022.
+[6] Kameron Brooks and Leon Vogel. 2024. Synthetic IT Call Center Tickets Dataset.
+Hugging Face Datasets. https://huggingface.co/datasets/lvogelFH/synthetic-it-
+callcenter-tickets
+[7] Ricardo Campello, Davoud Moulavi, and Joerg Sander. 2013. Density-Based
+Clustering Based on Hierarchical Density Estimates. InProceedings of the 17th
+Pacific-Asia Conference on Knowledge Discovery and Data Mining. Springer, Gold
+Coast, Australia, 160–172.
+[8] Zhuangbin Chen, Yu Kang, Liqun Li, Xu Zhang, Hongyu Zhang, Hui Xu, Yangfan
+Zhou, Li Yang, Jeffrey Sun, Zhangwei Xu, Yingnong Dang, Feng Gao, Pu Zhao, Bo
+Qiao, Qingwei Lin, Dongmei Zhang, and Michael Lyu. 2020. Towards Intelligent
+Incident Management: Why We Need It and How We Make It. InProceedings of
+the 28th ACM Joint Meeting on European Software Engineering Conference and
+Symposium on the Foundations of Software Engineering. ACM, Sacramento, USA,
+1487–1497.
+[9] Adji Dieng, Francisco Ruiz, and David Blei. 2019. The Dynamic Embedded Topic
+Model.Computing Research RepositoryarXiv:1907.05545, 1 (2019), 1–13.
+[10] Ronald Fisher. 1922. On the Interpretation of Chi-Square from Contingency
+Tables, and the Calculation of P.Journal of the Royal Statistical Society85, 1
+(1922), 87–94.
+[11] Maarten Grootendorst. 2022. BERTopic: Neural Topic Modeling with a Class-
+Based TF-IDF Procedure.Computing Research RepositoryarXiv:2203.05794, 1
+(2022), 1–10.
+[12] Pinjia He, Jieming Zhu, Zibin Zheng, and Michael Lyu. 2017. Drain: An Online
+Log Parsing Approach with Fixed Depth Tree. InProceedings of the 2017 IEEE
+International Conference on Web Services. IEEE, Honolulu, USA, 33–40.
+[13] Alexander Hoyle, Pranav Goel, Andrew Hian-Cheong, Denis Peskov, Jordan Boyd-
+Graber, and Philip Resnik. 2021. Is Automated Topic Model Evaluation Broken?
+The Incoherence of Coherence. InAdvances in Neural Information Processing
+Systems. Curran Associates, Sydney, Australia, 2018–2033.
+[14] Lawrence Hubert and Phipps Arabie. 1985. Comparing Partitions.Journal of
+Classification2, 1 (1985), 193–218.
+[15] Maurice Kendall. 1948.Rank Correlation Methods. Charles Griffin, London, United
+Kingdom.
+[16] Quentin Lhoest, Albert Villanova del Moral, Yacine Jernite, Abhishek Thakur,
+Patrick von Platen, Suraj Patil, Julien Chaumond, Mariama Drame, Julien Plu,
+Lewis Tunstall, Joe Davison, Mario Sasko, Gunjan Chhablani, Bhavitvya Malik,
+Simon Brandeis, Teven Le Scao, Victor Sanh, Canwen Xu, Nicolas Patry, Angelina
+McMillan-Major, Philipp Schmid, Sylvain Gugger, Clement Delangue, Théo Ma-
+tussiere, Lysandre Debut, Stas Bekman, Pierric Cistac, Thibault Goehringer, Victor
+Mustar, François Lagunas, Alexander Rush, and Thomas Wolf. 2021. Datasets: A
+Community Library for Natural Language Processing. InProceedings of the 2021
+Conference on Empirical Methods in Natural Language Processing: System Demon-
+strations. Association for Computational Linguistics, Punta Cana, Dominican
+Republic, 175–184.
+[17] Henry Mann. 1945. Nonparametric Tests Against Trend.Econometrica13, 3
+(1945), 245–259.
+[18] Leland McInnes, John Healy, and Steve Astels. 2017. HDBSCAN: Hierarchical
+Density Based Clustering.Journal of Open Source Software2, 11 (2017), 205.
+[19] Leland McInnes, John Healy, Nathaniel Saul, and Lukas Großberger. 2018. UMAP:
+Uniform Manifold Approximation and Projection.Journal of Open Source Software
+3, 29 (2018), 861.
+[20] David Newman, Jey Han Lau, Karl Grieser, and Timothy Baldwin. 2010. Automatic
+Evaluation of Topic Coherence. InHuman Language Technologies: The 2010 Annual
+Conference of the North American Chapter of the Association for Computational
+Linguistics. Association for Computational Linguistics, Los Angeles, USA, 100–
+108.
+[21] Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings
+Using Siamese BERT-Networks. InProceedings of the 2019 Conference on Em-
+pirical Methods in Natural Language Processing. Association for Computational
+Linguistics, Hong Kong, China, 3982–3992.
+[22] Michael Röder, Andreas Both, and Alexander Hinneburg. 2015. Exploring the
+Space of Topic Coherence Measures. InProceedings of the Eighth ACM Inter-
+national Conference on Web Search and Data Mining. ACM, Shanghai, China,
+399–408.
+[23] Peter Rousseeuw. 1987. Silhouettes: A Graphical Aid to the Interpretation and
+Validation of Cluster Analysis.J. Comput. Appl. Math.20, 1 (1987), 53–65.
+[24] Suzanna Sia, Ayush Dalmia, and Sabrina Mielke. 2020. Tired of Topic Models?
+Clusters of Pretrained Word Embeddings Make for Fast and Good Topics Too!.
+InProceedings of the 2020 Conference on Empirical Methods in Natural Language
+Processing. Association for Computational Linguistics, Punta Cana, Dominican
+Republic, 1728–1736.
+[25] Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan Yang, and Ming Zhou. 2020.
+MiniLM: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-
+Trained Transformers. InAdvances in Neural Information Processing Systems.
+Curran Associates, Vancouver, Canada, 5776–5788.

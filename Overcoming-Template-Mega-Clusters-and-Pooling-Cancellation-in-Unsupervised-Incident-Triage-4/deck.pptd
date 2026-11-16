@@ -1,0 +1,22 @@
+version: v2
+title: Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage
+size: [3456, 2592]
+theme:
+  colors:
+    primary: '#000000'
+    accent: '#FFC000'
+    text: '#171717'
+    muted: '#555555'
+    background: '#FFFFFF'
+  textStyles:
+    title:
+      fontFamily: Arial
+      fontSize: 84
+      bold: true
+      color: $text
+    body:
+      fontFamily: Arial
+      fontSize: 32
+      color: $text
+pages:
+  - pages/page-1.page

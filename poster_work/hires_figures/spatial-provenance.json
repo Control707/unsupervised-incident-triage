@@ -1,0 +1,33 @@
+{
+  "input": "paper_q2_results/joint_embeddings.npz",
+  "counts": {
+    "-1": 336,
+    "0": 29,
+    "1": 20,
+    "2": 31,
+    "3": 23,
+    "4": 20,
+    "5": 92,
+    "6": 29,
+    "7": 35,
+    "8": 21,
+    "9": 31,
+    "10": 83,
+    "11": 56,
+    "12": 44,
+    "13": 31
+  },
+  "projection": {
+    "n_components": 2,
+    "n_neighbors": 15,
+    "min_dist": 0.12,
+    "metric": "cosine",
+    "random_state": 42
+  },
+  "canvas_points": [
+    1032,
+    780
+  ],
+  "dpi": 240,
+  "equal_data_aspect": true
+}

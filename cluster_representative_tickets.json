@@ -1,0 +1,184 @@
+{
+  "0": {
+    "count": 29,
+    "representative_titles": [
+      "Better DuplicateKeysError error to help the user debug the issue",
+      "`datasets.keyhash.DuplicatedKeysError` for `drop` and `adversarial_qa/adversarialQA`",
+      "DuplicatedKeysError when trying to load adversarial_qa"
+    ],
+    "snippets": [
+      "Better DuplicateKeysError error to help the user debug the issue. As mentioned in https://github.com",
+      "`datasets.keyhash.DuplicatedKeysError` for `drop` and `adversarial_qa/adversarialQA`. ## Describe th",
+      "DuplicatedKeysError when trying to load adversarial_qa. ## Describe the bug\r\nA clear and concise des"
+    ]
+  },
+  "1": {
+    "count": 23,
+    "representative_titles": [
+      "Update format columns in Dataset.rename_columns",
+      "Implement Dataset add_column",
+      "'Dataset' object has no attribute 'rename_column'"
+    ],
+    "snippets": [
+      "Update format columns in Dataset.rename_columns. Fixes #2026 ",
+      "Implement Dataset add_column. Implement `Dataset.add_column`.\r\n\r\nClose #1954.",
+      "'Dataset' object has no attribute 'rename_column'. 'Dataset' object has no attribute 'rename_column'"
+    ]
+  },
+  "2": {
+    "count": 20,
+    "representative_titles": [
+      "Datasets with tricky task templates",
+      "Task casting for text classification & question answering",
+      "Insert Extractive QA templates for SQuAD-like datasets"
+    ],
+    "snippets": [
+      "Datasets with tricky task templates. I'm collecting a list of datasets here that don't follow the \"s",
+      "Task casting for text classification & question answering. This PR implements task preparation for a",
+      "Insert Extractive QA templates for SQuAD-like datasets. This PR adds task templates for 9 SQuAD-like"
+    ]
+  },
+  "3": {
+    "count": 18,
+    "representative_titles": [
+      "Remove `extended` field from dataset tagger",
+      "Fix metadata validation with config names",
+      "Add Disfl-QA"
+    ],
+    "snippets": [
+      "Remove `extended` field from dataset tagger. ## Describe the bug\r\nWhile working on #2435 I used the ",
+      "Fix metadata validation with config names. I noticed in https://github.com/huggingface/datasets/pull",
+      "Add Disfl-QA. Dataset: https://github.com/google-research-datasets/disfl-qa\r\n\r\nTo-Do: Update README."
+    ]
+  },
+  "4": {
+    "count": 62,
+    "representative_titles": [
+      "Got pyarrow error when loading a dataset while adding special tokens into the tokenizer",
+      "Incorrect version specification for pyarrow",
+      "Fix incorrect version specification for the pyarrow package"
+    ],
+    "snippets": [
+      "Got pyarrow error when loading a dataset while adding special tokens into the tokenizer. I added fiv",
+      "Incorrect version specification for pyarrow. ## Describe the bug\r\nThe pyarrow dependency is incorrec",
+      "Fix incorrect version specification for the pyarrow package. This PR addresses the bug in the pyarro"
+    ]
+  },
+  "5": {
+    "count": 42,
+    "representative_titles": [
+      "[BUG FIX] typo in the import path for metrics",
+      "Docstring mistake: dataset vs. metric",
+      "Updated WER metric implementation to avoid memory issues"
+    ],
+    "snippets": [
+      "[BUG FIX] typo in the import path for metrics. This tiny PR fixes a typo introduced in https://githu",
+      "Docstring mistake: dataset vs. metric. This:\r\n\r\nhttps://github.com/huggingface/datasets/blob/d95b95f",
+      "Updated WER metric implementation to avoid memory issues. This is in order to fix this issue:\r\n\r\nhtt"
+    ]
+  },
+  "6": {
+    "count": 29,
+    "representative_titles": [
+      "Fix docstrings issues",
+      "Fix docstring issues",
+      "Fix docs custom stable version"
+    ],
+    "snippets": [
+      "Fix docstrings issues. Fix docstring issues.",
+      "Fix docstring issues. Fix docstring issues.",
+      "Fix docs custom stable version. Currently docs default version is 1.5.0. This PR fixes this and sets"
+    ]
+  },
+  "7": {
+    "count": 91,
+    "representative_titles": [
+      "load_dataset(\"web_nlg\") NonMatchingChecksumError",
+      "Error when downloading a large dataset on slow connection.",
+      "Incorrect URLs for some datasets"
+    ],
+    "snippets": [
+      "load_dataset(\"web_nlg\") NonMatchingChecksumError. Hi! It seems the WebNLG dataset gives a NonMatchin",
+      "Error when downloading a large dataset on slow connection.. I receive the following error after abou",
+      "Incorrect URLs for some datasets. ## Describe the bug\r\nIt seems that the URLs for the following data"
+    ]
+  },
+  "8": {
+    "count": 105,
+    "representative_titles": [
+      "Saving large in-memory datasets with save_to_disk crashes because of pickling",
+      "Running `datase.map` with `num_proc > 1` uses a lot of memory",
+      "Memory usage consistently increases when processing a dataset with `.map`"
+    ],
+    "snippets": [
+      "Saving large in-memory datasets with save_to_disk crashes because of pickling. Using Datasets 1.5.0 ",
+      "Running `datase.map` with `num_proc > 1` uses a lot of memory. ## Describe the bug\r\nRunning `datase.",
+      "Memory usage consistently increases when processing a dataset with `.map`. ## Describe the bug\r\n\r\nI "
+    ]
+  },
+  "9": {
+    "count": 87,
+    "representative_titles": [
+      "ValueError: datasets' indices [1] come from memory and datasets' indices [0] come from disk",
+      "ValueError when rename_column on splitted dataset",
+      "Fix backward compatibility in Dataset.load_from_disk"
+    ],
+    "snippets": [
+      "ValueError: datasets' indices [1] come from memory and datasets' indices [0] come from disk. Hi ther",
+      "ValueError when rename_column on splitted dataset. Hi there,\r\nI am loading `.tsv` file via `load_dat",
+      "Fix backward compatibility in Dataset.load_from_disk. Fix backward compatibility when loading from d"
+    ]
+  },
+  "10": {
+    "count": 35,
+    "representative_titles": [
+      "1",
+      "Databases",
+      "Add dataset tags"
+    ],
+    "snippets": [
+      "1. ## Adding a Dataset\n- **Name:** *name of the dataset*\n- **Description:** *short description of th",
+      "Databases. ## Adding a Dataset\n- **Name:** *name of the dataset*\n- **Description:** *short descripti",
+      "Add dataset tags. The dataset tags were provided by Peter Clark following the guide."
+    ]
+  },
+  "11": {
+    "count": 20,
+    "representative_titles": [
+      "Add C4",
+      "Adding the conllpp dataset",
+      "Document DatasetInfo attributes"
+    ],
+    "snippets": [
+      "Add C4. ## Adding a Dataset\r\n- **Name:** *C4*\r\n- **Description:** *https://github.com/allenai/allenn",
+      "Adding the conllpp dataset. Adding the conllpp dataset, is a revision from https://github.com/huggin",
+      "Document DatasetInfo attributes. **Is your feature request related to a problem? Please describe.**\r"
+    ]
+  },
+  "12": {
+    "count": 42,
+    "representative_titles": [
+      "MustC Speech Translation",
+      "Add TIMIT",
+      "Add tedlium"
+    ],
+    "snippets": [
+      "MustC Speech Translation. ## Adding a Dataset\r\n- **Name:** *IWSLT19*\r\n- **Description:** *The Speech",
+      "Add TIMIT. ## Adding a Dataset\r\n- **Name:** *TIMIT*\r\n- **Description:** *The TIMIT corpus of read sp",
+      "Add tedlium. ## Adding a Dataset\r\n- **Name:** *tedlium*\r\n- **Description:** *The TED-LIUM 1-3 corpus"
+    ]
+  },
+  "13": {
+    "count": 22,
+    "representative_titles": [
+      "adding ccnet dataset",
+      "CUAD - Contract Understanding Atticus Dataset",
+      "Support for legal NLP datasets (EURLEX, ECtHR cases and EU-REG-IR)"
+    ],
+    "snippets": [
+      "adding ccnet dataset. ## Adding a Dataset\r\n- **Name:**  ccnet\r\n\r\n- **Description:** \r\nCommon Crawl\r\n",
+      "CUAD - Contract Understanding Atticus Dataset. ## Adding a Dataset\r\n- **Name:** CUAD - Contract Unde",
+      "Support for legal NLP datasets (EURLEX, ECtHR cases and EU-REG-IR). Add support for two legal NLP da"
+    ]
+  }
+}

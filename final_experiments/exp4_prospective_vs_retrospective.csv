@@ -1,0 +1,11 @@
+Topic_ID,Discovery_Mode,Retro_Count_Q1,Retro_Count_Q2,Retro_Delta_PP,Prosp_Count_Q1,Prosp_Count_Q2,Prosp_Delta_PP,Direction_Agrees
+R0,Q1-Known Centroid,8,21,3.54,8,7,0.06,True
+R1,Q1-Known Centroid,145,153,7.63,145,139,4.16,True
+R2,Q1-Known Centroid,13,7,-0.98,13,5,-1.48,True
+R3,Q2-Novel Residual,2,18,4.05,0,17,4.22,True
+R4,Q1-Known Centroid,14,15,0.79,14,4,-1.94,False
+R5,Q1-Known Centroid,14,17,1.29,14,10,-0.45,False
+R6,Q1-Known Centroid,60,23,-6.85,60,39,-2.87,True
+R7,Q1-Known Centroid,36,20,-2.57,36,20,-2.57,True
+R8,Q1-Known Centroid,29,15,-2.34,29,8,-4.08,True
+R9,Q1-Known Centroid,22,9,-2.37,22,8,-2.62,True

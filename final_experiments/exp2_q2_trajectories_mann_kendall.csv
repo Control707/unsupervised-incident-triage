@@ -1,0 +1,12 @@
+Cluster_ID,Topic_Label,Count_Q2,Quarter_Prevalence,Start_Prevalence,End_Prevalence,Net_Change,Peak_Date,Peak_Prevalence,Slope_Per_Week_PP,Kendall_Tau,Kendall_Raw_P,Trajectory
+Noise (-1),Noise / Outliers,105,0.2605,0.3026,0.1774,-0.1252,2021-06-13,0.3485,0.0327,0.0652,0.3616856167514755,Noise / Outliers
+R0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,21,0.0521,0.0395,0.1129,0.0734,2021-06-28,0.1273,0.1062,0.1019,0.154655236182937,Emerging
+R1,pickle / dtype / pickle py / python3 pickle,153,0.3797,0.2895,0.3548,0.0654,2021-04-15,0.5,-0.0578,0.0056,0.9371414179702157,Emerging
+R2,rename_column / formatted / foo / add_item,7,0.0174,0.0263,0.0,-0.0263,2021-04-27,0.0727,-0.4204,-0.5788,1.8263268850838924e-14,Declining
+R3,git src / prepare_for_task / textclassification / datasetinfo,18,0.0447,0.0132,0.0645,0.0514,2021-05-26,0.1667,0.5207,0.3589,5.918105864341833e-07,Emerging
+R4,char_error_rate / refs / cer / preds,15,0.0372,0.0658,0.0968,0.031,2021-06-29,0.0984,0.0316,0.0327,0.6482901446577608,Emerging
+R5,minor / readthedocs / readinstruction / bertscore,17,0.0422,0.0263,0.0323,0.0059,2021-05-12,0.0857,-0.0047,0.0025,0.972620113134508,Stable
+R6,numpy / core src / macosx / numpy core,23,0.0571,0.0789,0.0323,-0.0467,2021-04-06,0.1,-0.1289,-0.16,0.025564883903158496,Declining
+R7,coco / rico / cards / add_new_dataset md,20,0.0496,0.0658,0.0645,-0.0013,2021-06-21,0.1096,0.3427,0.3192,8.14174761582571e-06,Stable
+R8,speech / audio / hindi / openslr,15,0.0372,0.0,0.0645,0.0645,2021-05-13,0.0847,-0.2027,-0.1646,0.026699420399788905,Emerging
+R9,pdf / babi / entities / duorc,9,0.0223,0.0921,0.0,-0.0921,2021-04-01,0.0921,-0.2193,-0.2913,5.002737243230905e-05,Declining

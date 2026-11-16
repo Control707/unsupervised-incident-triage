@@ -1,0 +1,12 @@
+Cluster_ID,Topic_Label,Total_Count,Issue_Ratio_Pct,PR_Ratio_Pct,Open_Unresolved_Pct,Median_MTTR_Hours,Mean_MTTR_Hours,Delta_All_Records_PP,Delta_Issues_Only_PP,Dominant_GitHub_Labels
+Noise (-1),Noise / Outliers,240,27.1,72.9,12.1,40.0,255.1,-2.19,-7.21,"bug (12), enhancement (7)"
+R0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,29,58.6,41.4,10.3,32.2,157.3,3.54,6.13,"bug (6), enhancement (3)"
+R1,pickle / dtype / pickle py / python3 pickle,298,52.0,48.0,18.8,65.2,264.4,7.63,11.07,"bug (41), enhancement (19)"
+R2,rename_column / formatted / foo / add_item,20,20.0,80.0,10.0,80.4,269.2,-0.98,0.27,"bug (2), enhancement (2)"
+R3,git src / prepare_for_task / textclassification / datasetinfo,20,30.0,70.0,30.0,122.5,248.1,4.05,3.73,"enhancement (4), Dataset discussion (1)"
+R4,char_error_rate / refs / cer / preds,29,51.7,48.3,20.7,45.2,101.6,0.79,1.57,"enhancement (3), bug (2)"
+R5,minor / readthedocs / readinstruction / bertscore,31,6.5,93.5,0.0,18.5,71.4,1.29,1.24,"documentation (4), bug (1)"
+R6,numpy / core src / macosx / numpy core,83,68.7,31.3,25.3,38.2,422.0,-6.85,-11.07,"bug (6), dataset bug (4)"
+R7,coco / rico / cards / add_new_dataset md,56,35.7,64.3,17.9,61.3,311.9,-2.57,0.25,"dataset request (3), enhancement (3)"
+R8,speech / audio / hindi / openslr,44,34.1,65.9,22.7,68.8,161.8,-2.34,-3.96,"dataset request (2), enhancement (1)"
+R9,pdf / babi / entities / duorc,31,35.5,64.5,9.7,150.8,303.2,-2.37,-2.02,"dataset request (9), good first issue (1)"

@@ -1,0 +1,142 @@
+{
+  "evaluation_window": "180 Days (Quarter 1 Baseline: Jan 1 - Mar 31 vs. Quarter 2 Observation: Apr 1 - Jun 30, 2021)",
+  "total_issues": 881,
+  "Q1_issues": 478,
+  "Q2_issues": 403,
+  "models": {
+    "classical_lda": {
+      "coherence_cv": 0.7448,
+      "diversity_td": 0.73,
+      "silhouette_dense": -0.0247,
+      "silhouette_tfidf": 0.0006
+    },
+    "baseline_kmeans": {
+      "coherence_cv": 0.6341,
+      "diversity_td": 0.82,
+      "silhouette_dense": -0.0194,
+      "silhouette_tfidf": 0.0158
+    },
+    "proposed_bertopic": {
+      "coherence_cv": 0.6401,
+      "diversity_td": 0.8071,
+      "silhouette_dense": 0.0354,
+      "silhouette_5d_manifold": 0.4642,
+      "num_clusters": 14,
+      "noise_ratio": 0.2906
+    }
+  },
+  "top_temporal_shifts": [
+    {
+      "Cluster_ID": 8,
+      "Topic_Label": "pickle / software / mnt / line",
+      "P_Q1": 0.0921,
+      "P_Q2": 0.1514,
+      "Delta_K": 0.0593,
+      "Category": "Emerging Surge (Q2)"
+    },
+    {
+      "Cluster_ID": 2,
+      "Topic_Label": "task / template / datasets / self",
+      "P_Q1": 0.0042,
+      "P_Q2": 0.0447,
+      "Delta_K": 0.0405,
+      "Category": "Emerging Surge (Q2)"
+    },
+    {
+      "Cluster_ID": 0,
+      "Topic_Label": "wikimedia / key / datasets / keys",
+      "P_Q1": 0.0167,
+      "P_Q2": 0.0521,
+      "Delta_K": 0.0354,
+      "Category": "Emerging Surge (Q2)"
+    },
+    {
+      "Cluster_ID": 9,
+      "Topic_Label": "id / int64 / value / dtype",
+      "P_Q1": 0.0858,
+      "P_Q2": 0.1141,
+      "Delta_K": 0.0284,
+      "Category": "Emerging Surge (Q2)"
+    },
+    {
+      "Cluster_ID": 3,
+      "Topic_Label": "subsections / attributes / infos / mnist",
+      "P_Q1": 0.0126,
+      "P_Q2": 0.0298,
+      "Delta_K": 0.0172,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 5,
+      "Topic_Label": "references / predictions / metric / self",
+      "P_Q1": 0.0439,
+      "P_Q2": 0.0521,
+      "Delta_K": 0.0082,
+      "Category": "Persistent Chronic Root Cause"
+    },
+    {
+      "Cluster_ID": 6,
+      "Topic_Label": "docs / fix / docstring / sphinx",
+      "P_Q1": 0.0314,
+      "P_Q2": 0.0347,
+      "Delta_K": 0.0034,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 4,
+      "Topic_Label": "satisfied / requirement / dev0 / lib",
+      "P_Q1": 0.0711,
+      "P_Q2": 0.0695,
+      "Delta_K": -0.0017,
+      "Category": "Persistent Chronic Root Cause"
+    },
+    {
+      "Cluster_ID": 11,
+      "Topic_Label": "huggingface / datasets / https / coco",
+      "P_Q1": 0.0251,
+      "P_Q2": 0.0199,
+      "Delta_K": -0.0053,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 13,
+      "Topic_Label": "dataset / org / https / arxiv",
+      "P_Q1": 0.0293,
+      "P_Q2": 0.0199,
+      "Delta_K": -0.0094,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 1,
+      "Topic_Label": "columns / dataset / added / rename_column",
+      "P_Q1": 0.0314,
+      "P_Q2": 0.0199,
+      "Delta_K": -0.0115,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 10,
+      "Topic_Label": "dataset / data / link / add",
+      "P_Q1": 0.046,
+      "P_Q2": 0.0323,
+      "Delta_K": -0.0138,
+      "Category": "Stable Operational Routine"
+    },
+    {
+      "Cluster_ID": 12,
+      "Topic_Label": "speech / dataset / data / corpus",
+      "P_Q1": 0.0565,
+      "P_Q2": 0.0372,
+      "Delta_K": -0.0193,
+      "Category": "Persistent Chronic Root Cause"
+    },
+    {
+      "Cluster_ID": 7,
+      "Topic_Label": "numpy / core / src / 15",
+      "P_Q1": 0.1255,
+      "P_Q2": 0.0769,
+      "Delta_K": -0.0486,
+      "Category": "Declining / Resolved in Q2"
+    }
+  ]
+}

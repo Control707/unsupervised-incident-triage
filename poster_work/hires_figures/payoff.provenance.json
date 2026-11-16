@@ -1,0 +1,986 @@
+{
+  "purpose": "Poster-specific faithful redraw of original Figure 5; all 10 GitHub points and original 9 IT bars preserved",
+  "canvas": {
+    "inches": [
+      25.0,
+      7.819444444444445
+    ],
+    "dpi": 240,
+    "png_pixels": [
+      6000,
+      1876
+    ],
+    "target_aspect": "1800/563",
+    "fixed_canvas": true,
+    "bbox_inches": null
+  },
+  "inputs_sha256": {
+    "figures/v3_figure5_payoff_triage.pdf": "ce373489ba13744665271a8b8ef1332ffd8ab994bfd6531f7a83691ae2c86b48",
+    "final_experiments/exp6_extrinsic_validation_r10.csv": "7a29e7b64c5c8d96b16a5d68331fd4dacac7a2f08acd85364fd5144e3779f88c",
+    "final_experiments/exp9_it_extrinsic_triage_and_routing.csv": "39680ada04928cb1640dd84bf6ed88081569c6ce0fda78bb6b1faea0d5b1c7e6",
+    "github_issues_180d.csv": "a09b8a48dff17f963aee00b7d2ad2c46202cc0fe4dd055efa63549fe9af388ee",
+    "paper_q2_results/topic_assignments.csv": "f7bf0c1aebc8fed81bda0ce989bdfabdad31d69130d400b402a77c267d21a3dc"
+  },
+  "it_source_note": "Exact original plotted one-decimal percentages recovered from colored PDF vector rectangle widths. No clustering rerun, model download, invented shares, or purity-as-share substitution. Integer outcome counts are consistency checks, not a replacement for plotted percentages.",
+  "it": [
+    {
+      "id": "IT-00",
+      "name": "Training request",
+      "n": 62,
+      "specialist_pct": 100.0,
+      "tier2_pct": 0.0,
+      "unassigned_pct": 0.0,
+      "integer_counts_check": [
+        62,
+        0,
+        0
+      ],
+      "mean_hops": 0.63,
+      "grouped_unassigned": 0
+    },
+    {
+      "id": "IT-02",
+      "name": "DevOps config request",
+      "n": 20,
+      "specialist_pct": 100.0,
+      "tier2_pct": 0.0,
+      "unassigned_pct": 0.0,
+      "integer_counts_check": [
+        20,
+        0,
+        0
+      ],
+      "mean_hops": 0.75,
+      "grouped_unassigned": 0
+    },
+    {
+      "id": "IT-01",
+      "name": "Licensing request",
+      "n": 110,
+      "specialist_pct": 99.1,
+      "tier2_pct": 0.0,
+      "unassigned_pct": 0.9,
+      "integer_counts_check": [
+        109,
+        0,
+        1
+      ],
+      "mean_hops": 0.59,
+      "grouped_unassigned": 1
+    },
+    {
+      "id": "IT-03",
+      "name": "SW install request",
+      "n": 213,
+      "specialist_pct": 97.7,
+      "tier2_pct": 0.0,
+      "unassigned_pct": 2.3,
+      "integer_counts_check": [
+        208,
+        0,
+        5
+      ],
+      "mean_hops": 0.78,
+      "grouped_unassigned": 5
+    },
+    {
+      "id": "IT-10",
+      "name": "RSA/Java outage",
+      "n": 142,
+      "specialist_pct": 4.9,
+      "tier2_pct": 80.3,
+      "unassigned_pct": 14.8,
+      "integer_counts_check": [
+        7,
+        114,
+        21
+      ],
+      "mean_hops": 1.42,
+      "grouped_unassigned": 21
+    },
+    {
+      "id": "IT-07",
+      "name": "OneDrive/Ping error",
+      "n": 72,
+      "specialist_pct": 2.8,
+      "tier2_pct": 75.0,
+      "unassigned_pct": 22.2,
+      "integer_counts_check": [
+        2,
+        54,
+        16
+      ],
+      "mean_hops": 1.49,
+      "grouped_unassigned": 16
+    },
+    {
+      "id": "IT-08",
+      "name": "F5 BIG-IP outage",
+      "n": 33,
+      "specialist_pct": 6.1,
+      "tier2_pct": 30.3,
+      "unassigned_pct": 63.6,
+      "integer_counts_check": [
+        2,
+        10,
+        21
+      ],
+      "mean_hops": 1.52,
+      "grouped_unassigned": 21
+    },
+    {
+      "id": "IT-12",
+      "name": "CrowdStrike alert",
+      "n": 34,
+      "specialist_pct": 0.0,
+      "tier2_pct": 26.5,
+      "unassigned_pct": 73.5,
+      "integer_counts_check": [
+        0,
+        9,
+        25
+      ],
+      "mean_hops": 1.59,
+      "grouped_unassigned": 25
+    },
+    {
+      "id": "IT-13",
+      "name": "IAM role outage",
+      "n": 32,
+      "specialist_pct": 6.2,
+      "tier2_pct": 0.0,
+      "unassigned_pct": 93.8,
+      "integer_counts_check": [
+        2,
+        0,
+        30
+      ],
+      "mean_hops": 1.59,
+      "grouped_unassigned": 30
+    }
+  ],
+  "github_source_note": "x=Exp6 Issue_Ratio_Pct; y=Exp6 Median_MTTR_Hours; color=literal author_association NONE among ALL records (issues and PRs) joined 1:1 by id to saved topic_assignments, rounded to one decimal exactly as original PDF colors (R8 diagnostically confirms rounding); keep_default_na=False is essential. Original YlOrRd color normalization 0\u201356 retained. Original size 60+1.55*Total_Count is uniformly scaled by 4 for poster legibility.",
+  "github": [
+    {
+      "id": "R0",
+      "name": "Duplicate keys",
+      "n": 29,
+      "issue_share_pct": 58.6,
+      "median_resolution_hours": 32.2,
+      "external_author_pct": 41.4,
+      "external_author_pct_unrounded": 41.37931034482759
+    },
+    {
+      "id": "R1",
+      "name": "Pickle / dtype",
+      "n": 298,
+      "issue_share_pct": 52.0,
+      "median_resolution_hours": 65.2,
+      "external_author_pct": 32.9,
+      "external_author_pct_unrounded": 32.88590604026846
+    },
+    {
+      "id": "R2",
+      "name": "Rename column",
+      "n": 20,
+      "issue_share_pct": 20.0,
+      "median_resolution_hours": 80.4,
+      "external_author_pct": 15.0,
+      "external_author_pct_unrounded": 15.0
+    },
+    {
+      "id": "R3",
+      "name": "Task cast",
+      "n": 20,
+      "issue_share_pct": 30.0,
+      "median_resolution_hours": 122.5,
+      "external_author_pct": 0.0,
+      "external_author_pct_unrounded": 0.0
+    },
+    {
+      "id": "R4",
+      "name": "CER metric",
+      "n": 29,
+      "issue_share_pct": 51.7,
+      "median_resolution_hours": 45.2,
+      "external_author_pct": 34.5,
+      "external_author_pct_unrounded": 34.48275862068966
+    },
+    {
+      "id": "R5",
+      "name": "Documentation",
+      "n": 31,
+      "issue_share_pct": 6.5,
+      "median_resolution_hours": 18.5,
+      "external_author_pct": 3.2,
+      "external_author_pct_unrounded": 3.225806451612903
+    },
+    {
+      "id": "R6",
+      "name": "NumPy",
+      "n": 83,
+      "issue_share_pct": 68.7,
+      "median_resolution_hours": 38.2,
+      "external_author_pct": 54.2,
+      "external_author_pct_unrounded": 54.21686746987952
+    },
+    {
+      "id": "R7",
+      "name": "COCO / cards",
+      "n": 56,
+      "issue_share_pct": 35.7,
+      "median_resolution_hours": 61.3,
+      "external_author_pct": 26.8,
+      "external_author_pct_unrounded": 26.785714285714285
+    },
+    {
+      "id": "R8",
+      "name": "Speech / audio",
+      "n": 44,
+      "issue_share_pct": 34.1,
+      "median_resolution_hours": 68.8,
+      "external_author_pct": 11.4,
+      "external_author_pct_unrounded": 11.363636363636363
+    },
+    {
+      "id": "R9",
+      "name": "PDF / DUORC",
+      "n": 31,
+      "issue_share_pct": 35.5,
+      "median_resolution_hours": 150.8,
+      "external_author_pct": 22.6,
+      "external_author_pct_unrounded": 22.58064516129032
+    }
+  ],
+  "pdf_vector_evidence": {
+    "bars": [
+      [
+        {
+          "operation": 1282,
+          "path": [
+            [
+              510.03913,
+              182.3647
+            ],
+            [
+              705.4818,
+              182.3647
+            ],
+            [
+              705.4818,
+              192.24385
+            ],
+            [
+              510.03913,
+              192.24385
+            ]
+          ],
+          "share_from_pdf": 100.0
+        },
+        {
+          "operation": 1298,
+          "path": [
+            [
+              510.03913,
+              164.72338
+            ],
+            [
+              705.4818,
+              164.72338
+            ],
+            [
+              705.4818,
+              174.60253
+            ],
+            [
+              510.03913,
+              174.60253
+            ]
+          ],
+          "share_from_pdf": 100.0
+        },
+        {
+          "operation": 1314,
+          "path": [
+            [
+              510.03913,
+              147.08206
+            ],
+            [
+              703.72286,
+              147.08206
+            ],
+            [
+              703.72286,
+              156.9612
+            ],
+            [
+              510.03913,
+              156.9612
+            ]
+          ],
+          "share_from_pdf": 99.1000225283455
+        },
+        {
+          "operation": 1330,
+          "path": [
+            [
+              510.03913,
+              129.44074
+            ],
+            [
+              700.98666,
+              129.44074
+            ],
+            [
+              700.98666,
+              139.31987
+            ],
+            [
+              510.03913,
+              139.31987
+            ]
+          ],
+          "share_from_pdf": 97.70002118779897
+        },
+        {
+          "operation": 1346,
+          "path": [
+            [
+              510.03913,
+              111.799419
+            ],
+            [
+              519.6158,
+              111.799419
+            ],
+            [
+              519.6158,
+              121.67856
+            ],
+            [
+              510.03913,
+              121.67856
+            ]
+          ],
+          "share_from_pdf": 4.899989342143163
+        },
+        {
+          "operation": 1362,
+          "path": [
+            [
+              510.03913,
+              94.15809
+            ],
+            [
+              515.51156,
+              94.15809
+            ],
+            [
+              515.51156,
+              104.03723
+            ],
+            [
+              510.03913,
+              104.03723
+            ]
+          ],
+          "share_from_pdf": 2.800018030862979
+        },
+        {
+          "operation": 1378,
+          "path": [
+            [
+              510.03913,
+              76.51677
+            ],
+            [
+              521.9611,
+              76.51677
+            ],
+            [
+              521.9611,
+              86.39591
+            ],
+            [
+              510.03913,
+              86.39591
+            ]
+          ],
+          "share_from_pdf": 6.099983181768846
+        },
+        {
+          "operation": 1394,
+          "path": [
+            [
+              510.03913,
+              58.875448
+            ],
+            [
+              510.03913,
+              58.875448
+            ],
+            [
+              510.03913,
+              68.754589
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1409,
+          "path": [
+            [
+              510.03913,
+              41.234125
+            ],
+            [
+              522.15658,
+              41.234125
+            ],
+            [
+              522.15658,
+              51.113267
+            ],
+            [
+              510.03913,
+              51.113267
+            ]
+          ],
+          "share_from_pdf": 6.200002281999096
+        }
+      ],
+      [
+        {
+          "operation": 1425,
+          "path": [
+            [
+              705.4818,
+              182.3647
+            ],
+            [
+              705.4818,
+              182.3647
+            ],
+            [
+              705.4818,
+              192.24385
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1440,
+          "path": [
+            [
+              705.4818,
+              164.72338
+            ],
+            [
+              705.4818,
+              164.72338
+            ],
+            [
+              705.4818,
+              174.60253
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1455,
+          "path": [
+            [
+              703.72286,
+              147.08206
+            ],
+            [
+              703.72286,
+              147.08206
+            ],
+            [
+              703.72286,
+              156.9612
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1470,
+          "path": [
+            [
+              700.98666,
+              129.44074
+            ],
+            [
+              700.98666,
+              129.44074
+            ],
+            [
+              700.98666,
+              139.31987
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1485,
+          "path": [
+            [
+              519.6158,
+              111.799419
+            ],
+            [
+              676.5563,
+              111.799419
+            ],
+            [
+              676.5563,
+              121.67856
+            ],
+            [
+              519.6158,
+              121.67856
+            ]
+          ],
+          "share_from_pdf": 80.30001841460717
+        },
+        {
+          "operation": 1501,
+          "path": [
+            [
+              515.51156,
+              94.15809
+            ],
+            [
+              662.09359,
+              94.15809
+            ],
+            [
+              662.09359,
+              104.03723
+            ],
+            [
+              515.51156,
+              104.03723
+            ]
+          ],
+          "share_from_pdf": 75.0000140706223
+        },
+        {
+          "operation": 1517,
+          "path": [
+            [
+              521.9611,
+              76.51677
+            ],
+            [
+              581.18026,
+              76.51677
+            ],
+            [
+              581.18026,
+              86.39591
+            ],
+            [
+              521.9611,
+              86.39591
+            ]
+          ],
+          "share_from_pdf": 30.30001585631223
+        },
+        {
+          "operation": 1533,
+          "path": [
+            [
+              510.03913,
+              58.875448
+            ],
+            [
+              561.8314,
+              58.875448
+            ],
+            [
+              561.8314,
+              68.754589
+            ],
+            [
+              510.03913,
+              68.754589
+            ]
+          ],
+          "share_from_pdf": 26.499980787204773
+        },
+        {
+          "operation": 1549,
+          "path": [
+            [
+              522.15658,
+              41.234125
+            ],
+            [
+              522.15658,
+              41.234125
+            ],
+            [
+              522.15658,
+              51.113267
+            ]
+          ],
+          "share_from_pdf": 0.0
+        }
+      ],
+      [
+        {
+          "operation": 1564,
+          "path": [
+            [
+              705.4818,
+              182.3647
+            ],
+            [
+              705.4818,
+              182.3647
+            ],
+            [
+              705.4818,
+              192.24385
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1579,
+          "path": [
+            [
+              705.4818,
+              164.72338
+            ],
+            [
+              705.4818,
+              164.72338
+            ],
+            [
+              705.4818,
+              174.60253
+            ]
+          ],
+          "share_from_pdf": 0.0
+        },
+        {
+          "operation": 1594,
+          "path": [
+            [
+              703.72286,
+              147.08206
+            ],
+            [
+              705.4818,
+              147.08206
+            ],
+            [
+              705.4818,
+              156.9612
+            ],
+            [
+              703.72286,
+              156.9612
+            ]
+          ],
+          "share_from_pdf": 0.8999774716545021
+        },
+        {
+          "operation": 1610,
+          "path": [
+            [
+              700.98666,
+              129.44074
+            ],
+            [
+              705.4818,
+              129.44074
+            ],
+            [
+              705.4818,
+              139.31987
+            ],
+            [
+              700.98666,
+              139.31987
+            ]
+          ],
+          "share_from_pdf": 2.2999788122010365
+        },
+        {
+          "operation": 1626,
+          "path": [
+            [
+              676.5563,
+              111.799419
+            ],
+            [
+              705.4818,
+              111.799419
+            ],
+            [
+              705.4818,
+              121.67856
+            ],
+            [
+              676.5563,
+              121.67856
+            ]
+          ],
+          "share_from_pdf": 14.79999224324967
+        },
+        {
+          "operation": 1642,
+          "path": [
+            [
+              662.09359,
+              94.15809
+            ],
+            [
+              705.4818,
+              94.15809
+            ],
+            [
+              705.4818,
+              104.03723
+            ],
+            [
+              662.09359,
+              104.03723
+            ]
+          ],
+          "share_from_pdf": 22.199967898514725
+        },
+        {
+          "operation": 1658,
+          "path": [
+            [
+              581.18026,
+              76.51677
+            ],
+            [
+              705.4818,
+              76.51677
+            ],
+            [
+              705.4818,
+              86.39591
+            ],
+            [
+              581.18026,
+              86.39591
+            ]
+          ],
+          "share_from_pdf": 63.60000096191892
+        },
+        {
+          "operation": 1674,
+          "path": [
+            [
+              561.8314,
+              58.875448
+            ],
+            [
+              705.4818,
+              58.875448
+            ],
+            [
+              705.4818,
+              68.754589
+            ],
+            [
+              561.8314,
+              68.754589
+            ]
+          ],
+          "share_from_pdf": 73.50001921279524
+        },
+        {
+          "operation": 1690,
+          "path": [
+            [
+              522.15658,
+              41.234125
+            ],
+            [
+              705.4818,
+              41.234125
+            ],
+            [
+              705.4818,
+              51.113267
+            ],
+            [
+              522.15658,
+              51.113267
+            ]
+          ],
+          "share_from_pdf": 93.79999771800091
+        }
+      ]
+    ],
+    "x0": 510.03913,
+    "x100": 705.4818,
+    "scatter": [
+      {
+        "rgb": [
+          0.8971165,
+          0.11635525,
+          0.11367936
+        ],
+        "center": [
+          224.72522,
+          68.26817
+        ],
+        "radius_pt": 5.1222449999999995,
+        "size_pt2": 104.94957536009998
+      },
+      {
+        "rgb": [
+          0.9893887,
+          0.3785467,
+          0.18546713
+        ],
+        "center": [
+          204.29701,
+          108.98598
+        ],
+        "radius_pt": 11.422561000000002,
+        "size_pt2": 521.8995991948841
+      },
+      {
+        "rgb": [
+          0.99607846,
+          0.8305882,
+          0.4407843
+        ],
+        "center": [
+          105.25113,
+          127.740848
+        ],
+        "radius_pt": 4.769698000000005,
+        "size_pt2": 91.0000760448162
+      },
+      {
+        "rgb": [
+          1.0,
+          1.0,
+          0.8
+        ],
+        "center": [
+          136.20298,
+          179.68689
+        ],
+        "radius_pt": 4.7697,
+        "size_pt2": 91.00015236000002
+      },
+      {
+        "rgb": [
+          0.9885275,
+          0.32429067,
+          0.1699654
+        ],
+        "center": [
+          203.36846,
+          84.308528
+        ],
+        "radius_pt": 5.122258000000002,
+        "size_pt2": 104.9501080742561
+      },
+      {
+        "rgb": [
+          1.0,
+          0.9689965,
+          0.7242138
+        ],
+        "center": [
+          63.466154,
+          51.36412
+        ],
+        "radius_pt": 5.197355000000002,
+        "size_pt2": 108.04999598410006
+      },
+      {
+        "rgb": [
+          0.5619992,
+          0.0,
+          0.14901962
+        ],
+        "center": [
+          255.98657,
+          75.67142
+        ],
+        "radius_pt": 6.867499999999993,
+        "size_pt2": 188.6502249999996
+      },
+      {
+        "rgb": [
+          0.99283358,
+          0.5779777,
+          0.24612072
+        ],
+        "center": [
+          153.84552,
+          104.173877
+        ],
+        "radius_pt": 6.058057000000005,
+        "size_pt2": 146.80021846099626
+      },
+      {
+        "rgb": [
+          0.997524,
+          0.87989237,
+          0.5234602
+        ],
+        "center": [
+          148.89322,
+          113.427928
+        ],
+        "radius_pt": 5.661277999999996,
+        "size_pt2": 128.2002743731358
+      },
+      {
+        "rgb": [
+          0.99517109,
+          0.6644675,
+          0.2835217
+        ],
+        "center": [
+          153.22647,
+          214.6055
+        ],
+        "radius_pt": 5.197360000000003,
+        "size_pt2": 108.05020387840014
+      }
+    ],
+    "pdf_page_pt": [
+      0.0,
+      0.0,
+      864.0041,
+      269.87623
+    ]
+  },
+  "checks": {
+    "github_join_records": 881,
+    "github_cluster_sizes_match_exp6": true,
+    "github_xy_match_pdf": true,
+    "github_color_match_pdf": true,
+    "github_bubble_sizes_match_pdf": true,
+    "it_rounded_width_max_error_pct": 3.2101485274438346e-05,
+    "it_row_sums_100": true,
+    "it_unassigned_counts_match_exp9": true,
+    "it_integer_counts_reproduce_widths": true,
+    "scatter_label_overlaps": [],
+    "out_of_canvas_text": [],
+    "fontsize_min_pt": 22
+  },
+  "outputs_sha256": {
+    "payoff.png": "2cbca3212fabf301b9bc367f3955347b74321846b257060f804b1912cb8c92d7",
+    "payoff.pdf": "7e848c0ca078c96fa204cd854e88f9df6b6bf673cadbbdc4e38a8927a9bf3ddb",
+    "payoff.svg": "2b43f1047cec577e70c658d98c198e256809b234463a36a02522af189b0ba2f6"
+  }
+}

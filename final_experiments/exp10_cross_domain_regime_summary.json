@@ -1,0 +1,42 @@
+{
+  "total_real_tickets": 2261,
+  "total_tickets_with_synthetic_control": 3353,
+  "regime_1_enterprise_it": {
+    "dataset": "it_incident_tickets.csv",
+    "total_records": 1380,
+    "q1_2021_records": 1338,
+    "long_horizon_2024_records": 42,
+    "eom_k14_noise_ratio": 0.1487,
+    "eom_k14_sil_5d": 0.5594,
+    "bounded_eom_k22_sil_5d": 0.5875,
+    "purity_type": 0.9658,
+    "purity_category": 0.9438,
+    "purity_subcategory": 0.7603,
+    "purity_support_team": 0.6918,
+    "nmi_support_team_bounded_eom": 0.5155,
+    "unassigned_tickets_auto_routed": 237,
+    "coarse_fdr_significant_shifts": 0,
+    "monthly_fdr_significant_shifts": 4,
+    "long_horizon_2024_piv_recall": 1.0,
+    "prospective_naive_mar_coverage": 0.8478,
+    "prospective_hybrid_mar_coverage": 0.7255,
+    "prospective_hybrid_mar_ari": 0.9831,
+    "prospective_delta_spearman_rho": 0.9604,
+    "prospective_delta_spearman_p": 5.08105389232908e-08
+  },
+  "regime_2_open_source_engineering": {
+    "dataset": "github_issues_180d.csv",
+    "total_records": 881,
+    "q1_2021_records": 478,
+    "q2_2021_records": 403,
+    "eom_k10_noise_ratio": 0.2724,
+    "bounded_eom_k14_noise_ratio": 0.3814,
+    "eom_k10_sil_5d": 0.378,
+    "bounded_eom_k14_sil_5d": 0.5312,
+    "quarterly_fdr_significant_shifts": 4,
+    "prospective_naive_q2_coverage": 0.3127,
+    "prospective_hybrid_q2_coverage": 0.6377,
+    "prospective_hybrid_q2_ari": 0.6623,
+    "prospective_delta_spearman_rho": 0.8909
+  }
+}

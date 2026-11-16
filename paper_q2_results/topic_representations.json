@@ -1,0 +1,342 @@
+[
+  {
+    "Cluster_ID": 0,
+    "Topic_Label": "wikimedia / duplicatedkeyserror / timit_asr / duplicate",
+    "Keywords": [
+      "wikimedia",
+      "duplicatedkeyserror",
+      "timit_asr",
+      "duplicate",
+      "foundation title",
+      "online wikidump",
+      "refusal useful",
+      "refusal",
+      "foundation",
+      "title wikimedia"
+    ],
+    "Count": 29,
+    "Representative_Tickets": [
+      {
+        "id": 931595872,
+        "title": "Better DuplicateKeysError error to help the user debug the issue",
+        "datetime": "2021-06-28T13:50:57"
+      },
+      {
+        "id": 928540382,
+        "title": "`datasets.keyhash.DuplicatedKeysError` for `drop` and `adversarial_qa/adversarialQA`",
+        "datetime": "2021-06-23T18:41:16"
+      },
+      {
+        "id": 907413691,
+        "title": "DuplicatedKeysError when trying to load adversarial_qa",
+        "datetime": "2021-05-31T12:11:19"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 1,
+    "Topic_Label": "pickle / dtype / pickle py / python3 pickle",
+    "Keywords": [
+      "pickle",
+      "dtype",
+      "pickle py",
+      "python3 pickle",
+      "save",
+      "obj",
+      "value dtype",
+      "int64",
+      "envs env",
+      "programdata anaconda3"
+    ],
+    "Count": 298,
+    "Representative_Tickets": [
+      {
+        "id": 843242849,
+        "title": "Saving large in-memory datasets with save_to_disk crashes because of pickling",
+        "datetime": "2021-03-29T10:43:15"
+      },
+      {
+        "id": 830169387,
+        "title": "ValueError: datasets' indices [1] come from memory and datasets' indices [0] come from disk",
+        "datetime": "2021-03-12T14:27:00"
+      },
+      {
+        "id": 854070194,
+        "title": "KeyError: '_indices_files' in `arrow_dataset.py`",
+        "datetime": "2021-04-09T01:37:12"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 2,
+    "Topic_Label": "rename_column / formatted / foo / add_item",
+    "Keywords": [
+      "rename_column",
+      "formatted",
+      "foo",
+      "add_item",
+      "comparison",
+      "transforms",
+      "preserve",
+      "applying",
+      "map function",
+      "datasetdict"
+    ],
+    "Count": 20,
+    "Representative_Tickets": [
+      {
+        "id": 828490444,
+        "title": "Update format columns in Dataset.rename_columns",
+        "datetime": "2021-03-10T23:50:59"
+      },
+      {
+        "id": 844603518,
+        "title": "Implement Dataset add_column",
+        "datetime": "2021-03-30T14:02:14"
+      },
+      {
+        "id": 819752761,
+        "title": "'Dataset' object has no attribute 'rename_column'",
+        "datetime": "2021-03-02T08:01:49"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 3,
+    "Topic_Label": "git src / prepare_for_task / textclassification / datasetinfo",
+    "Keywords": [
+      "git src",
+      "prepare_for_task",
+      "textclassification",
+      "datasetinfo",
+      "git",
+      "question answering",
+      "answering",
+      "cast",
+      "schema",
+      "templates"
+    ],
+    "Count": 20,
+    "Representative_Tickets": [
+      {
+        "id": 925015004,
+        "title": "Datasets with tricky task templates",
+        "datetime": "2021-06-18T15:33:57"
+      },
+      {
+        "id": 866242892,
+        "title": "Task casting for text classification & question answering",
+        "datetime": "2021-04-23T16:00:41"
+      },
+      {
+        "id": 907505531,
+        "title": "Insert Extractive QA templates for SQuAD-like datasets",
+        "datetime": "2021-05-31T14:09:11"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 4,
+    "Topic_Label": "char_error_rate / refs / cer / preds",
+    "Keywords": [
+      "char_error_rate",
+      "refs",
+      "cer",
+      "preds",
+      "compute predictions",
+      "seqeval",
+      "bleurt",
+      "char_error_rate cer",
+      "cer compute",
+      "info tensorflow"
+    ],
+    "Count": 29,
+    "Representative_Tickets": [
+      {
+        "id": 924069353,
+        "title": "seqeval metric does not work with a recent version of sklearn: classification_report() got an unexpected keyword argument 'output_dict'",
+        "datetime": "2021-06-17T15:36:02"
+      },
+      {
+        "id": 787631412,
+        "title": "Issue while Creating Custom Metric",
+        "datetime": "2021-01-17T07:01:14"
+      },
+      {
+        "id": 892391232,
+        "title": "Trying to use metric.compute but get OSError",
+        "datetime": "2021-05-15T08:39:06"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 5,
+    "Topic_Label": "minor / readthedocs / readinstruction / bertscore",
+    "Keywords": [
+      "minor",
+      "readthedocs",
+      "readinstruction",
+      "bertscore",
+      "cer",
+      "checksums",
+      "turn",
+      "gh",
+      "docstrings",
+      "xtreme"
+    ],
+    "Count": 31,
+    "Representative_Tickets": [
+      {
+        "id": 835112968,
+        "title": "Fix docstrings issues",
+        "datetime": "2021-03-18T18:11:01"
+      },
+      {
+        "id": 834054837,
+        "title": "Fix docstring issues",
+        "datetime": "2021-03-17T18:13:44"
+      },
+      {
+        "id": 918334431,
+        "title": "Fix docs custom stable version",
+        "datetime": "2021-06-11T07:26:03"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 6,
+    "Topic_Label": "numpy / core src / macosx / numpy core",
+    "Keywords": [
+      "numpy",
+      "core src",
+      "macosx",
+      "numpy core",
+      "macosx 10",
+      "15",
+      "x86_64 numpy",
+      "15 x86_64",
+      "10 15",
+      "_configtest"
+    ],
+    "Count": 83,
+    "Representative_Tickets": [
+      {
+        "id": 931365926,
+        "title": "load_dataset(\"web_nlg\") NonMatchingChecksumError",
+        "datetime": "2021-06-28T09:26:46"
+      },
+      {
+        "id": 781494476,
+        "title": "Error when downloading a large dataset on slow connection.",
+        "datetime": "2021-01-07T17:48:15"
+      },
+      {
+        "id": 839027834,
+        "title": "Trouble loading wiki_movies",
+        "datetime": "2021-03-23T18:59:54"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 7,
+    "Topic_Label": "coco / rico / cards / add_new_dataset md",
+    "Keywords": [
+      "coco",
+      "rico",
+      "cards",
+      "add_new_dataset md",
+      "add_new_dataset",
+      "master add_new_dataset",
+      "c4",
+      "instructions huggingface",
+      "link paper",
+      "detection"
+    ],
+    "Count": 56,
+    "Representative_Tickets": [
+      {
+        "id": 872974907,
+        "title": "1",
+        "datetime": "2021-04-30T17:53:49"
+      },
+      {
+        "id": 923762133,
+        "title": "Add C4",
+        "datetime": "2021-06-17T10:31:04"
+      },
+      {
+        "id": 822554473,
+        "title": "Adding the conllpp dataset",
+        "datetime": "2021-03-04T22:19:43"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 8,
+    "Topic_Label": "speech / audio / hindi / openslr",
+    "Keywords": [
+      "speech",
+      "audio",
+      "hindi",
+      "openslr",
+      "switchboard",
+      "recognition",
+      "speech recognition",
+      "interested",
+      "asr",
+      "swda"
+    ],
+    "Count": 44,
+    "Representative_Tickets": [
+      {
+        "id": 803565393,
+        "title": "MustC Speech Translation",
+        "datetime": "2021-02-08T13:27:45"
+      },
+      {
+        "id": 804292971,
+        "title": "Add TIMIT",
+        "datetime": "2021-02-09T07:29:41"
+      },
+      {
+        "id": 803555650,
+        "title": "Add VCTK",
+        "datetime": "2021-02-08T13:15:28"
+      }
+    ]
+  },
+  {
+    "Cluster_ID": 9,
+    "Topic_Label": "pdf / babi / entities / duorc",
+    "Keywords": [
+      "pdf",
+      "babi",
+      "entities",
+      "duorc",
+      "question answering",
+      "movie",
+      "answering",
+      "question",
+      "tasks",
+      "add_new_dataset md"
+    ],
+    "Count": 31,
+    "Representative_Tickets": [
+      {
+        "id": 848851962,
+        "title": "adding ccnet dataset",
+        "datetime": "2021-04-01T23:28:36"
+      },
+      {
+        "id": 835750671,
+        "title": "CUAD - Contract Understanding Atticus Dataset",
+        "datetime": "2021-03-19T09:27:43"
+      },
+      {
+        "id": 806171311,
+        "title": "Add WikiCREM",
+        "datetime": "2021-02-11T08:16:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+Cluster_ID,Top_Keywords,Topic_Label,Count_Period_A,Count_Period_B,P_A,P_B,Delta_K,Pct_Change,Category
+15,"performance, hardware, data, optimization, slow, optimization team",performance / hardware / data / optimization,53,111,0.1088,0.1304,0.0216,19.9,Persistent Root Cause
+2,"specific needs, department, customizing, department specific, specific, customizations",specific needs / department / customizing / department specific,4,16,0.0082,0.0188,0.0106,128.9,Stable Routine
+7,"licenses, additional, license, request additional, request, team",licenses / additional / license / request additional,11,28,0.0226,0.0329,0.0103,45.7,Stable Routine
+8,"save, crashes, files, saving, try save, save files",save / crashes / files / saving,47,89,0.0965,0.1046,0.0081,8.4,Persistent Root Cause
+4,"marketing, licenses, marketing department, licenses marketing, department, additional",marketing / licenses / marketing department / licenses marketing,7,17,0.0144,0.02,0.0056,39.0,Stable Routine
+13,"endpoint, falcon, crowdstrike, crowdstrike falcon, security, threats",endpoint / falcon / crowdstrike / crowdstrike falcon,10,22,0.0205,0.0259,0.0053,25.9,Stable Routine
+1,"reports, format, exporting reports, exporting, export, issue exporting",reports / format / exporting reports / exporting,6,15,0.0123,0.0176,0.0053,43.1,Stable Routine
+9,"outlook, error, websocket, emails, tried, email",outlook / error / websocket / emails,9,17,0.0185,0.02,0.0015,8.1,Stable Routine
+17,"credentials, invalid credentials, invalid, credentials error, login, error",credentials / invalid credentials / invalid / credentials error,16,29,0.0329,0.0341,0.0012,3.7,Stable Routine
+12,"data, permissions, insightidr, rapid7 insightidr, rapid7, role",data / permissions / insightidr / rapid7 insightidr,21,36,0.0431,0.0423,-0.0008,-1.9,Persistent Root Cause
+3,"installation, version, request, upgrade, request installation, software",installation / version / request / upgrade,78,135,0.1602,0.1586,-0.0015,-1.0,Persistent Root Cause
+11,"error, java, error message, enterprise, message, range",error / java / error message / enterprise,14,22,0.0287,0.0259,-0.0029,-10.1,Stable Routine
+18,"error, harmony endpoint, harmony, point harmony, check point, kernel",error / harmony endpoint / harmony / point harmony,14,18,0.0287,0.0212,-0.0076,-26.4,Stable Routine
+14,"network, nessus, ve, persistent, tableau, connectivity",network / nessus / ve / persistent,10,11,0.0205,0.0129,-0.0076,-37.1,Stable Routine
+5,"licenses, new hires, hires, request, bulk, licenses new",licenses / new hires / hires / request,11,12,0.0226,0.0141,-0.0085,-37.6,Stable Routine
+6,"licenses, accounting, accounting department, department, licenses accounting, request",licenses / accounting / accounting department / department,10,10,0.0205,0.0118,-0.0088,-42.8,Stable Routine
+10,"error, onedrive, business, onedrive business, google, acrobat",error / onedrive / business / onedrive business,16,20,0.0329,0.0235,-0.0094,-28.5,Stable Routine
+19,"rsa, error, token, rsa token, rsa secureid, vault",rsa / error / token / rsa token,18,17,0.037,0.02,-0.017,-46.0,Stable Routine
+16,"error, mail, error message, com, message, ping",error / mail / error message / com,17,15,0.0349,0.0176,-0.0173,-49.5,Stable Routine
+0,"training, advanced, session, features, advanced features, request",training / advanced / session / features,30,32,0.0616,0.0376,-0.024,-39.0,Stable Routine

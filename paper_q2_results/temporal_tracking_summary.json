@@ -1,0 +1,71 @@
+{
+  "analysis_basis": "retrospective_joint_space",
+  "config": {
+    "window_days": 14,
+    "step_days": 1,
+    "min_window_tickets": 5,
+    "surge_threshold": 0.025,
+    "persistence_threshold": 0.035
+  },
+  "date_column": "datetime",
+  "topic_column": "hdbscan_cluster",
+  "total_input_tickets": 881,
+  "total_valid_tickets": 881,
+  "dropped_invalid_dates": 0,
+  "topic_count": 11,
+  "non_noise_topic_count": 10,
+  "noise_ticket_count": 240,
+  "topic_labels": {
+    "-1": "Noise / Outliers",
+    "0": "wikimedia / duplicatedkeyserror / timit_asr / duplicate",
+    "1": "pickle / dtype / pickle py / python3 pickle",
+    "2": "rename_column / formatted / foo / add_item",
+    "3": "git src / prepare_for_task / textclassification / datasetinfo",
+    "4": "char_error_rate / refs / cer / preds",
+    "5": "minor / readthedocs / readinstruction / bertscore",
+    "6": "numpy / core src / macosx / numpy core",
+    "7": "coco / rico / cards / add_new_dataset md",
+    "8": "speech / audio / hindi / openslr",
+    "9": "pdf / babi / entities / duorc"
+  },
+  "coverage_start": "2021-01-01",
+  "coverage_end": "2021-06-30",
+  "coverage": {
+    "start_date": "2021-01-01",
+    "end_date": "2021-06-30",
+    "start_timestamp_utc": "2021-01-01T10:25:07Z",
+    "end_timestamp_utc": "2021-06-30T14:48:19Z",
+    "calendar_days": 181,
+    "partial_quarters": [],
+    "inferred_from_ticket_date_bounds": true,
+    "completeness_established": false,
+    "timezone": "UTC (timestamps stored timezone-naive after conversion)"
+  },
+  "quarter_count": 2,
+  "observed_quarter_count": 2,
+  "missing_quarter_count": 0,
+  "quarter_counts": {
+    "2021Q1": 478,
+    "2021Q2": 403
+  },
+  "partial_quarter_count": 0,
+  "rolling_endpoint_count": 181,
+  "partial_window_count": 13,
+  "low_support_window_count": 1,
+  "prevalence_denominator": "all valid-date tickets, including noise (-1), in the period",
+  "delta_units": "proportion (0.025 = 2.5 percentage points)",
+  "pct_change_units": "percent relative to preceding quarterly prevalence; null when prior is zero",
+  "trajectory_rules": {
+    "emerging_declining": "first-to-last observed quarter net change reaches surge_threshold",
+    "persistent": "at least two quarters, no missing quarters, all prevalences >= persistence_threshold",
+    "slope": "least-squares prevalence per calendar quarter; missing quarters excluded without compressing time",
+    "noise": "separate Noise / Outliers trajectory"
+  },
+  "caveats": [
+    "Retrospective joint-space analysis: topic IDs must be assigned in a single stable joint topic space; no topic model is re-fit here. Joint fitting may use future information, so these are not leakage-free online emergence estimates.",
+    "Coverage and partial-period flags are inferred from minimum and maximum UTC ticket dates. Ticket dates do not prove complete collection, and partial-period comparisons can be biased.",
+    "All valid-date tickets, including noise (-1), are included in prevalence denominators.",
+    "An empty calendar quarter is missing data, not a zero-prevalence observation. Changes never bridge a missing immediate predecessor.",
+    "Thresholds are descriptive proportion-scale heuristics, not significance tests. Overlapping rolling windows are dependent observations."
+  ]
+}

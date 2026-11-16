@@ -1,0 +1,1093 @@
+Window_Start,Window_End,Quarter,Cluster_ID,Topic_Label,Count,Total_Tickets,Prevalence,Delta_K,Category,Is_Partial_Window,Is_Low_Support
+2021-09-18,2021-10-01,2021Q4,-1,Noise / Outliers,1,4,0.25,,Initial Observation,True,False
+2021-09-18,2021-10-01,2021Q4,0,SYNTHETIC: declining legacy failures,2,4,0.5,,Initial Observation,True,False
+2021-09-18,2021-10-01,2021Q4,1,SYNTHETIC: persistent dependency failures,1,4,0.25,,Initial Observation,True,False
+2021-09-18,2021-10-01,2021Q4,2,SYNTHETIC: emerging memory failures,0,4,0.0,,Initial Observation,True,False
+2021-09-19,2021-10-02,2021Q4,-1,Noise / Outliers,2,8,0.25,0.0,Persistent,True,False
+2021-09-19,2021-10-02,2021Q4,0,SYNTHETIC: declining legacy failures,4,8,0.5,0.0,Persistent,True,False
+2021-09-19,2021-10-02,2021Q4,1,SYNTHETIC: persistent dependency failures,2,8,0.25,0.0,Persistent,True,False
+2021-09-19,2021-10-02,2021Q4,2,SYNTHETIC: emerging memory failures,0,8,0.0,0.0,Stable,True,False
+2021-09-20,2021-10-03,2021Q4,-1,Noise / Outliers,3,12,0.25,0.0,Persistent,True,False
+2021-09-20,2021-10-03,2021Q4,0,SYNTHETIC: declining legacy failures,6,12,0.5,0.0,Persistent,True,False
+2021-09-20,2021-10-03,2021Q4,1,SYNTHETIC: persistent dependency failures,3,12,0.25,0.0,Persistent,True,False
+2021-09-20,2021-10-03,2021Q4,2,SYNTHETIC: emerging memory failures,0,12,0.0,0.0,Stable,True,False
+2021-09-21,2021-10-04,2021Q4,-1,Noise / Outliers,4,16,0.25,0.0,Persistent,True,False
+2021-09-21,2021-10-04,2021Q4,0,SYNTHETIC: declining legacy failures,8,16,0.5,0.0,Persistent,True,False
+2021-09-21,2021-10-04,2021Q4,1,SYNTHETIC: persistent dependency failures,4,16,0.25,0.0,Persistent,True,False
+2021-09-21,2021-10-04,2021Q4,2,SYNTHETIC: emerging memory failures,0,16,0.0,0.0,Stable,True,False
+2021-09-22,2021-10-05,2021Q4,-1,Noise / Outliers,5,20,0.25,0.0,Persistent,True,False
+2021-09-22,2021-10-05,2021Q4,0,SYNTHETIC: declining legacy failures,10,20,0.5,0.0,Persistent,True,False
+2021-09-22,2021-10-05,2021Q4,1,SYNTHETIC: persistent dependency failures,5,20,0.25,0.0,Persistent,True,False
+2021-09-22,2021-10-05,2021Q4,2,SYNTHETIC: emerging memory failures,0,20,0.0,0.0,Stable,True,False
+2021-09-23,2021-10-06,2021Q4,-1,Noise / Outliers,6,24,0.25,0.0,Persistent,True,False
+2021-09-23,2021-10-06,2021Q4,0,SYNTHETIC: declining legacy failures,12,24,0.5,0.0,Persistent,True,False
+2021-09-23,2021-10-06,2021Q4,1,SYNTHETIC: persistent dependency failures,6,24,0.25,0.0,Persistent,True,False
+2021-09-23,2021-10-06,2021Q4,2,SYNTHETIC: emerging memory failures,0,24,0.0,0.0,Stable,True,False
+2021-09-24,2021-10-07,2021Q4,-1,Noise / Outliers,7,28,0.25,0.0,Persistent,True,False
+2021-09-24,2021-10-07,2021Q4,0,SYNTHETIC: declining legacy failures,14,28,0.5,0.0,Persistent,True,False
+2021-09-24,2021-10-07,2021Q4,1,SYNTHETIC: persistent dependency failures,7,28,0.25,0.0,Persistent,True,False
+2021-09-24,2021-10-07,2021Q4,2,SYNTHETIC: emerging memory failures,0,28,0.0,0.0,Stable,True,False
+2021-09-25,2021-10-08,2021Q4,-1,Noise / Outliers,8,32,0.25,0.0,Persistent,True,False
+2021-09-25,2021-10-08,2021Q4,0,SYNTHETIC: declining legacy failures,16,32,0.5,0.0,Persistent,True,False
+2021-09-25,2021-10-08,2021Q4,1,SYNTHETIC: persistent dependency failures,8,32,0.25,0.0,Persistent,True,False
+2021-09-25,2021-10-08,2021Q4,2,SYNTHETIC: emerging memory failures,0,32,0.0,0.0,Stable,True,False
+2021-09-26,2021-10-09,2021Q4,-1,Noise / Outliers,9,36,0.25,0.0,Persistent,True,False
+2021-09-26,2021-10-09,2021Q4,0,SYNTHETIC: declining legacy failures,18,36,0.5,0.0,Persistent,True,False
+2021-09-26,2021-10-09,2021Q4,1,SYNTHETIC: persistent dependency failures,9,36,0.25,0.0,Persistent,True,False
+2021-09-26,2021-10-09,2021Q4,2,SYNTHETIC: emerging memory failures,0,36,0.0,0.0,Stable,True,False
+2021-09-27,2021-10-10,2021Q4,-1,Noise / Outliers,10,40,0.25,0.0,Persistent,True,False
+2021-09-27,2021-10-10,2021Q4,0,SYNTHETIC: declining legacy failures,20,40,0.5,0.0,Persistent,True,False
+2021-09-27,2021-10-10,2021Q4,1,SYNTHETIC: persistent dependency failures,10,40,0.25,0.0,Persistent,True,False
+2021-09-27,2021-10-10,2021Q4,2,SYNTHETIC: emerging memory failures,0,40,0.0,0.0,Stable,True,False
+2021-09-28,2021-10-11,2021Q4,-1,Noise / Outliers,11,44,0.25,0.0,Persistent,True,False
+2021-09-28,2021-10-11,2021Q4,0,SYNTHETIC: declining legacy failures,22,44,0.5,0.0,Persistent,True,False
+2021-09-28,2021-10-11,2021Q4,1,SYNTHETIC: persistent dependency failures,11,44,0.25,0.0,Persistent,True,False
+2021-09-28,2021-10-11,2021Q4,2,SYNTHETIC: emerging memory failures,0,44,0.0,0.0,Stable,True,False
+2021-09-29,2021-10-12,2021Q4,-1,Noise / Outliers,12,48,0.25,0.0,Persistent,True,False
+2021-09-29,2021-10-12,2021Q4,0,SYNTHETIC: declining legacy failures,24,48,0.5,0.0,Persistent,True,False
+2021-09-29,2021-10-12,2021Q4,1,SYNTHETIC: persistent dependency failures,12,48,0.25,0.0,Persistent,True,False
+2021-09-29,2021-10-12,2021Q4,2,SYNTHETIC: emerging memory failures,0,48,0.0,0.0,Stable,True,False
+2021-09-30,2021-10-13,2021Q4,-1,Noise / Outliers,13,52,0.25,0.0,Persistent,True,False
+2021-09-30,2021-10-13,2021Q4,0,SYNTHETIC: declining legacy failures,26,52,0.5,0.0,Persistent,True,False
+2021-09-30,2021-10-13,2021Q4,1,SYNTHETIC: persistent dependency failures,13,52,0.25,0.0,Persistent,True,False
+2021-09-30,2021-10-13,2021Q4,2,SYNTHETIC: emerging memory failures,0,52,0.0,0.0,Stable,True,False
+2021-10-01,2021-10-14,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-01,2021-10-14,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-01,2021-10-14,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-01,2021-10-14,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-02,2021-10-15,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-02,2021-10-15,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-02,2021-10-15,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-02,2021-10-15,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-03,2021-10-16,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-03,2021-10-16,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-03,2021-10-16,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-03,2021-10-16,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-04,2021-10-17,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-04,2021-10-17,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-04,2021-10-17,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-04,2021-10-17,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-05,2021-10-18,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-05,2021-10-18,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-05,2021-10-18,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-05,2021-10-18,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-06,2021-10-19,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-06,2021-10-19,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-06,2021-10-19,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-06,2021-10-19,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-07,2021-10-20,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-07,2021-10-20,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-07,2021-10-20,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-07,2021-10-20,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-08,2021-10-21,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-08,2021-10-21,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-08,2021-10-21,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-08,2021-10-21,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-09,2021-10-22,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-09,2021-10-22,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-09,2021-10-22,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-09,2021-10-22,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-10,2021-10-23,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-10,2021-10-23,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-10,2021-10-23,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-10,2021-10-23,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-11,2021-10-24,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-11,2021-10-24,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-11,2021-10-24,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-11,2021-10-24,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-12,2021-10-25,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-12,2021-10-25,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-12,2021-10-25,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-12,2021-10-25,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-13,2021-10-26,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-13,2021-10-26,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-13,2021-10-26,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-13,2021-10-26,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-14,2021-10-27,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-14,2021-10-27,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-14,2021-10-27,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-14,2021-10-27,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-15,2021-10-28,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-15,2021-10-28,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-15,2021-10-28,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-15,2021-10-28,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-16,2021-10-29,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-16,2021-10-29,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-16,2021-10-29,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-16,2021-10-29,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-17,2021-10-30,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-17,2021-10-30,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-17,2021-10-30,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-17,2021-10-30,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-18,2021-10-31,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-18,2021-10-31,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-18,2021-10-31,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-18,2021-10-31,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-19,2021-11-01,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-19,2021-11-01,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-19,2021-11-01,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-19,2021-11-01,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-20,2021-11-02,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-20,2021-11-02,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-20,2021-11-02,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-20,2021-11-02,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-21,2021-11-03,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-21,2021-11-03,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-21,2021-11-03,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-21,2021-11-03,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-22,2021-11-04,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-22,2021-11-04,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-22,2021-11-04,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-22,2021-11-04,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-23,2021-11-05,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-23,2021-11-05,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-23,2021-11-05,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-23,2021-11-05,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-24,2021-11-06,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-24,2021-11-06,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-24,2021-11-06,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-24,2021-11-06,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-25,2021-11-07,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-25,2021-11-07,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-25,2021-11-07,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-25,2021-11-07,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-26,2021-11-08,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-26,2021-11-08,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-26,2021-11-08,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-26,2021-11-08,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-27,2021-11-09,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-27,2021-11-09,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-27,2021-11-09,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-27,2021-11-09,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-28,2021-11-10,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-28,2021-11-10,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-28,2021-11-10,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-28,2021-11-10,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-29,2021-11-11,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-29,2021-11-11,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-29,2021-11-11,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-29,2021-11-11,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-30,2021-11-12,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-30,2021-11-12,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-30,2021-11-12,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-30,2021-11-12,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-10-31,2021-11-13,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-10-31,2021-11-13,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-10-31,2021-11-13,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-10-31,2021-11-13,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-01,2021-11-14,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-01,2021-11-14,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-01,2021-11-14,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-01,2021-11-14,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-02,2021-11-15,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-02,2021-11-15,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-02,2021-11-15,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-02,2021-11-15,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-03,2021-11-16,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-03,2021-11-16,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-03,2021-11-16,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-03,2021-11-16,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-04,2021-11-17,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-04,2021-11-17,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-04,2021-11-17,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-04,2021-11-17,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-05,2021-11-18,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-05,2021-11-18,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-05,2021-11-18,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-05,2021-11-18,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-06,2021-11-19,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-06,2021-11-19,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-06,2021-11-19,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-06,2021-11-19,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-07,2021-11-20,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-07,2021-11-20,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-07,2021-11-20,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-07,2021-11-20,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-08,2021-11-21,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-08,2021-11-21,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-08,2021-11-21,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-08,2021-11-21,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-09,2021-11-22,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-09,2021-11-22,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-09,2021-11-22,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-09,2021-11-22,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-10,2021-11-23,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-10,2021-11-23,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-10,2021-11-23,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-10,2021-11-23,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-11,2021-11-24,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-11,2021-11-24,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-11,2021-11-24,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-11,2021-11-24,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-12,2021-11-25,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-12,2021-11-25,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-12,2021-11-25,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-12,2021-11-25,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-13,2021-11-26,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-13,2021-11-26,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-13,2021-11-26,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-13,2021-11-26,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-14,2021-11-27,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-14,2021-11-27,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-14,2021-11-27,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-14,2021-11-27,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-15,2021-11-28,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-15,2021-11-28,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-15,2021-11-28,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-15,2021-11-28,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-16,2021-11-29,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-16,2021-11-29,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-16,2021-11-29,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-16,2021-11-29,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-17,2021-11-30,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-17,2021-11-30,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-17,2021-11-30,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-17,2021-11-30,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-18,2021-12-01,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-18,2021-12-01,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-18,2021-12-01,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-18,2021-12-01,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-19,2021-12-02,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-19,2021-12-02,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-19,2021-12-02,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-19,2021-12-02,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-20,2021-12-03,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-20,2021-12-03,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-20,2021-12-03,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-20,2021-12-03,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-21,2021-12-04,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-21,2021-12-04,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-21,2021-12-04,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-21,2021-12-04,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-22,2021-12-05,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-22,2021-12-05,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-22,2021-12-05,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-22,2021-12-05,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-23,2021-12-06,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-23,2021-12-06,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-23,2021-12-06,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-23,2021-12-06,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-24,2021-12-07,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-24,2021-12-07,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-24,2021-12-07,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-24,2021-12-07,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-25,2021-12-08,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-25,2021-12-08,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-25,2021-12-08,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-25,2021-12-08,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-26,2021-12-09,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-26,2021-12-09,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-26,2021-12-09,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-26,2021-12-09,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-27,2021-12-10,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-27,2021-12-10,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-27,2021-12-10,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-27,2021-12-10,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-28,2021-12-11,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-28,2021-12-11,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-28,2021-12-11,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-28,2021-12-11,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-29,2021-12-12,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-29,2021-12-12,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-29,2021-12-12,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-29,2021-12-12,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-11-30,2021-12-13,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-11-30,2021-12-13,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-11-30,2021-12-13,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-11-30,2021-12-13,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-01,2021-12-14,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-01,2021-12-14,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-01,2021-12-14,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-01,2021-12-14,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-02,2021-12-15,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-02,2021-12-15,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-02,2021-12-15,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-02,2021-12-15,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-03,2021-12-16,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-03,2021-12-16,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-03,2021-12-16,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-03,2021-12-16,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-04,2021-12-17,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-04,2021-12-17,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-04,2021-12-17,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-04,2021-12-17,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-05,2021-12-18,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-05,2021-12-18,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-05,2021-12-18,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-05,2021-12-18,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-06,2021-12-19,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-06,2021-12-19,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-06,2021-12-19,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-06,2021-12-19,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-07,2021-12-20,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-07,2021-12-20,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-07,2021-12-20,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-07,2021-12-20,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-08,2021-12-21,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-08,2021-12-21,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-08,2021-12-21,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-08,2021-12-21,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-09,2021-12-22,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-09,2021-12-22,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-09,2021-12-22,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-09,2021-12-22,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-10,2021-12-23,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-10,2021-12-23,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-10,2021-12-23,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-10,2021-12-23,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-11,2021-12-24,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-11,2021-12-24,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-11,2021-12-24,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-11,2021-12-24,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-12,2021-12-25,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-12,2021-12-25,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-12,2021-12-25,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-12,2021-12-25,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-13,2021-12-26,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-13,2021-12-26,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-13,2021-12-26,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-13,2021-12-26,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-14,2021-12-27,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-14,2021-12-27,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-14,2021-12-27,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-14,2021-12-27,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-15,2021-12-28,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-15,2021-12-28,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-15,2021-12-28,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-15,2021-12-28,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-16,2021-12-29,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-16,2021-12-29,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-16,2021-12-29,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-16,2021-12-29,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-17,2021-12-30,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-17,2021-12-30,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-17,2021-12-30,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-17,2021-12-30,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-18,2021-12-31,2021Q4,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-18,2021-12-31,2021Q4,0,SYNTHETIC: declining legacy failures,28,56,0.5,0.0,Persistent,False,False
+2021-12-18,2021-12-31,2021Q4,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-18,2021-12-31,2021Q4,2,SYNTHETIC: emerging memory failures,0,56,0.0,0.0,Stable,False,False
+2021-12-19,2022-01-01,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-19,2022-01-01,2022Q1,0,SYNTHETIC: declining legacy failures,27,56,0.48214285714285715,-0.01785714285714285,Persistent,False,False
+2021-12-19,2022-01-01,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-19,2022-01-01,2022Q1,2,SYNTHETIC: emerging memory failures,1,56,0.017857142857142856,0.017857142857142856,Stable,False,False
+2021-12-20,2022-01-02,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-20,2022-01-02,2022Q1,0,SYNTHETIC: declining legacy failures,26,56,0.4642857142857143,-0.01785714285714285,Persistent,False,False
+2021-12-20,2022-01-02,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-20,2022-01-02,2022Q1,2,SYNTHETIC: emerging memory failures,2,56,0.03571428571428571,0.017857142857142856,Stable,False,False
+2021-12-21,2022-01-03,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-21,2022-01-03,2022Q1,0,SYNTHETIC: declining legacy failures,25,56,0.44642857142857145,-0.01785714285714285,Persistent,False,False
+2021-12-21,2022-01-03,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-21,2022-01-03,2022Q1,2,SYNTHETIC: emerging memory failures,3,56,0.05357142857142857,0.017857142857142856,Persistent,False,False
+2021-12-22,2022-01-04,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-22,2022-01-04,2022Q1,0,SYNTHETIC: declining legacy failures,24,56,0.42857142857142855,-0.017857142857142905,Persistent,False,False
+2021-12-22,2022-01-04,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-22,2022-01-04,2022Q1,2,SYNTHETIC: emerging memory failures,4,56,0.07142857142857142,0.017857142857142856,Persistent,False,False
+2021-12-23,2022-01-05,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-23,2022-01-05,2022Q1,0,SYNTHETIC: declining legacy failures,23,56,0.4107142857142857,-0.01785714285714285,Persistent,False,False
+2021-12-23,2022-01-05,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-23,2022-01-05,2022Q1,2,SYNTHETIC: emerging memory failures,5,56,0.08928571428571429,0.017857142857142863,Persistent,False,False
+2021-12-24,2022-01-06,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-24,2022-01-06,2022Q1,0,SYNTHETIC: declining legacy failures,22,56,0.39285714285714285,-0.01785714285714285,Persistent,False,False
+2021-12-24,2022-01-06,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-24,2022-01-06,2022Q1,2,SYNTHETIC: emerging memory failures,6,56,0.10714285714285714,0.01785714285714285,Persistent,False,False
+2021-12-25,2022-01-07,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-25,2022-01-07,2022Q1,0,SYNTHETIC: declining legacy failures,21,56,0.375,-0.01785714285714285,Persistent,False,False
+2021-12-25,2022-01-07,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-25,2022-01-07,2022Q1,2,SYNTHETIC: emerging memory failures,7,56,0.125,0.017857142857142863,Persistent,False,False
+2021-12-26,2022-01-08,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-26,2022-01-08,2022Q1,0,SYNTHETIC: declining legacy failures,20,56,0.35714285714285715,-0.01785714285714285,Persistent,False,False
+2021-12-26,2022-01-08,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-26,2022-01-08,2022Q1,2,SYNTHETIC: emerging memory failures,8,56,0.14285714285714285,0.01785714285714285,Persistent,False,False
+2021-12-27,2022-01-09,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-27,2022-01-09,2022Q1,0,SYNTHETIC: declining legacy failures,19,56,0.3392857142857143,-0.01785714285714285,Persistent,False,False
+2021-12-27,2022-01-09,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-27,2022-01-09,2022Q1,2,SYNTHETIC: emerging memory failures,9,56,0.16071428571428573,0.017857142857142877,Persistent,False,False
+2021-12-28,2022-01-10,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-28,2022-01-10,2022Q1,0,SYNTHETIC: declining legacy failures,18,56,0.32142857142857145,-0.01785714285714285,Persistent,False,False
+2021-12-28,2022-01-10,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-28,2022-01-10,2022Q1,2,SYNTHETIC: emerging memory failures,10,56,0.17857142857142858,0.01785714285714285,Persistent,False,False
+2021-12-29,2022-01-11,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-29,2022-01-11,2022Q1,0,SYNTHETIC: declining legacy failures,17,56,0.30357142857142855,-0.017857142857142905,Persistent,False,False
+2021-12-29,2022-01-11,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-29,2022-01-11,2022Q1,2,SYNTHETIC: emerging memory failures,11,56,0.19642857142857142,0.01785714285714285,Persistent,False,False
+2021-12-30,2022-01-12,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-30,2022-01-12,2022Q1,0,SYNTHETIC: declining legacy failures,16,56,0.2857142857142857,-0.01785714285714285,Persistent,False,False
+2021-12-30,2022-01-12,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-30,2022-01-12,2022Q1,2,SYNTHETIC: emerging memory failures,12,56,0.21428571428571427,0.01785714285714285,Persistent,False,False
+2021-12-31,2022-01-13,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2021-12-31,2022-01-13,2022Q1,0,SYNTHETIC: declining legacy failures,15,56,0.26785714285714285,-0.01785714285714285,Persistent,False,False
+2021-12-31,2022-01-13,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2021-12-31,2022-01-13,2022Q1,2,SYNTHETIC: emerging memory failures,13,56,0.23214285714285715,0.017857142857142877,Persistent,False,False
+2022-01-01,2022-01-14,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-01,2022-01-14,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,-0.01785714285714285,Persistent,False,False
+2022-01-01,2022-01-14,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-01,2022-01-14,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.01785714285714285,Persistent,False,False
+2022-01-02,2022-01-15,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-02,2022-01-15,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-02,2022-01-15,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-02,2022-01-15,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-03,2022-01-16,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-03,2022-01-16,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-03,2022-01-16,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-03,2022-01-16,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-04,2022-01-17,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-04,2022-01-17,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-04,2022-01-17,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-04,2022-01-17,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-05,2022-01-18,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-05,2022-01-18,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-05,2022-01-18,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-05,2022-01-18,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-06,2022-01-19,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-06,2022-01-19,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-06,2022-01-19,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-06,2022-01-19,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-07,2022-01-20,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-07,2022-01-20,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-07,2022-01-20,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-07,2022-01-20,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-08,2022-01-21,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-08,2022-01-21,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-08,2022-01-21,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-08,2022-01-21,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-09,2022-01-22,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-09,2022-01-22,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-09,2022-01-22,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-09,2022-01-22,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-10,2022-01-23,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-10,2022-01-23,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-10,2022-01-23,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-10,2022-01-23,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-11,2022-01-24,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-11,2022-01-24,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-11,2022-01-24,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-11,2022-01-24,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-12,2022-01-25,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-12,2022-01-25,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-12,2022-01-25,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-12,2022-01-25,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-13,2022-01-26,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-13,2022-01-26,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-13,2022-01-26,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-13,2022-01-26,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-14,2022-01-27,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-14,2022-01-27,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-14,2022-01-27,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-14,2022-01-27,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-15,2022-01-28,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-15,2022-01-28,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-15,2022-01-28,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-15,2022-01-28,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-16,2022-01-29,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-16,2022-01-29,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-16,2022-01-29,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-16,2022-01-29,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-17,2022-01-30,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-17,2022-01-30,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-17,2022-01-30,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-17,2022-01-30,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-18,2022-01-31,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-18,2022-01-31,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-18,2022-01-31,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-18,2022-01-31,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-19,2022-02-01,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-19,2022-02-01,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-19,2022-02-01,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-19,2022-02-01,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-20,2022-02-02,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-20,2022-02-02,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-20,2022-02-02,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-20,2022-02-02,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-21,2022-02-03,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-21,2022-02-03,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-21,2022-02-03,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-21,2022-02-03,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-22,2022-02-04,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-22,2022-02-04,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-22,2022-02-04,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-22,2022-02-04,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-23,2022-02-05,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-23,2022-02-05,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-23,2022-02-05,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-23,2022-02-05,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-24,2022-02-06,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-24,2022-02-06,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-24,2022-02-06,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-24,2022-02-06,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-25,2022-02-07,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-25,2022-02-07,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-25,2022-02-07,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-25,2022-02-07,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-26,2022-02-08,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-26,2022-02-08,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-26,2022-02-08,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-26,2022-02-08,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-27,2022-02-09,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-27,2022-02-09,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-27,2022-02-09,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-27,2022-02-09,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-28,2022-02-10,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-28,2022-02-10,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-28,2022-02-10,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-28,2022-02-10,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-29,2022-02-11,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-29,2022-02-11,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-29,2022-02-11,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-29,2022-02-11,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-30,2022-02-12,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-30,2022-02-12,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-30,2022-02-12,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-30,2022-02-12,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-31,2022-02-13,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-01-31,2022-02-13,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-31,2022-02-13,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-01-31,2022-02-13,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-01,2022-02-14,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-01,2022-02-14,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-01,2022-02-14,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-01,2022-02-14,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-02,2022-02-15,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-02,2022-02-15,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-02,2022-02-15,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-02,2022-02-15,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-03,2022-02-16,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-03,2022-02-16,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-03,2022-02-16,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-03,2022-02-16,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-04,2022-02-17,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-04,2022-02-17,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-04,2022-02-17,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-04,2022-02-17,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-05,2022-02-18,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-05,2022-02-18,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-05,2022-02-18,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-05,2022-02-18,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-06,2022-02-19,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-06,2022-02-19,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-06,2022-02-19,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-06,2022-02-19,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-07,2022-02-20,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-07,2022-02-20,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-07,2022-02-20,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-07,2022-02-20,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-08,2022-02-21,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-08,2022-02-21,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-08,2022-02-21,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-08,2022-02-21,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-09,2022-02-22,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-09,2022-02-22,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-09,2022-02-22,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-09,2022-02-22,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-10,2022-02-23,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-10,2022-02-23,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-10,2022-02-23,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-10,2022-02-23,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-11,2022-02-24,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-11,2022-02-24,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-11,2022-02-24,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-11,2022-02-24,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-12,2022-02-25,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-12,2022-02-25,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-12,2022-02-25,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-12,2022-02-25,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-13,2022-02-26,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-13,2022-02-26,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-13,2022-02-26,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-13,2022-02-26,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-14,2022-02-27,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-14,2022-02-27,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-14,2022-02-27,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-14,2022-02-27,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-15,2022-02-28,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-15,2022-02-28,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-15,2022-02-28,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-15,2022-02-28,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-16,2022-03-01,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-16,2022-03-01,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-16,2022-03-01,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-16,2022-03-01,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-17,2022-03-02,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-17,2022-03-02,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-17,2022-03-02,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-17,2022-03-02,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-18,2022-03-03,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-18,2022-03-03,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-18,2022-03-03,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-18,2022-03-03,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-19,2022-03-04,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-19,2022-03-04,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-19,2022-03-04,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-19,2022-03-04,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-20,2022-03-05,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-20,2022-03-05,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-20,2022-03-05,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-20,2022-03-05,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-21,2022-03-06,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-21,2022-03-06,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-21,2022-03-06,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-21,2022-03-06,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-22,2022-03-07,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-22,2022-03-07,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-22,2022-03-07,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-22,2022-03-07,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-23,2022-03-08,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-23,2022-03-08,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-23,2022-03-08,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-23,2022-03-08,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-24,2022-03-09,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-24,2022-03-09,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-24,2022-03-09,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-24,2022-03-09,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-25,2022-03-10,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-25,2022-03-10,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-25,2022-03-10,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-25,2022-03-10,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-26,2022-03-11,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-26,2022-03-11,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-26,2022-03-11,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-26,2022-03-11,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-27,2022-03-12,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-27,2022-03-12,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-27,2022-03-12,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-27,2022-03-12,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-28,2022-03-13,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-02-28,2022-03-13,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-28,2022-03-13,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-02-28,2022-03-13,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-01,2022-03-14,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-01,2022-03-14,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-01,2022-03-14,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-01,2022-03-14,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-02,2022-03-15,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-02,2022-03-15,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-02,2022-03-15,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-02,2022-03-15,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-03,2022-03-16,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-03,2022-03-16,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-03,2022-03-16,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-03,2022-03-16,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-04,2022-03-17,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-04,2022-03-17,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-04,2022-03-17,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-04,2022-03-17,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-05,2022-03-18,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-05,2022-03-18,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-05,2022-03-18,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-05,2022-03-18,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-06,2022-03-19,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-06,2022-03-19,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-06,2022-03-19,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-06,2022-03-19,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-07,2022-03-20,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-07,2022-03-20,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-07,2022-03-20,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-07,2022-03-20,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-08,2022-03-21,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-08,2022-03-21,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-08,2022-03-21,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-08,2022-03-21,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-09,2022-03-22,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-09,2022-03-22,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-09,2022-03-22,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-09,2022-03-22,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-10,2022-03-23,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-10,2022-03-23,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-10,2022-03-23,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-10,2022-03-23,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-11,2022-03-24,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-11,2022-03-24,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-11,2022-03-24,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-11,2022-03-24,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-12,2022-03-25,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-12,2022-03-25,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-12,2022-03-25,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-12,2022-03-25,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-13,2022-03-26,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-13,2022-03-26,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-13,2022-03-26,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-13,2022-03-26,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-14,2022-03-27,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-14,2022-03-27,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-14,2022-03-27,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-14,2022-03-27,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-15,2022-03-28,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-15,2022-03-28,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-15,2022-03-28,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-15,2022-03-28,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-16,2022-03-29,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-16,2022-03-29,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-16,2022-03-29,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-16,2022-03-29,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-17,2022-03-30,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-17,2022-03-30,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-17,2022-03-30,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-17,2022-03-30,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-18,2022-03-31,2022Q1,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-18,2022-03-31,2022Q1,0,SYNTHETIC: declining legacy failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-18,2022-03-31,2022Q1,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-18,2022-03-31,2022Q1,2,SYNTHETIC: emerging memory failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-19,2022-04-01,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-19,2022-04-01,2022Q2,0,SYNTHETIC: declining legacy failures,13,56,0.23214285714285715,-0.01785714285714285,Persistent,False,False
+2022-03-19,2022-04-01,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-19,2022-04-01,2022Q2,2,SYNTHETIC: emerging memory failures,15,56,0.26785714285714285,0.01785714285714285,Persistent,False,False
+2022-03-20,2022-04-02,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-20,2022-04-02,2022Q2,0,SYNTHETIC: declining legacy failures,12,56,0.21428571428571427,-0.017857142857142877,Persistent,False,False
+2022-03-20,2022-04-02,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-20,2022-04-02,2022Q2,2,SYNTHETIC: emerging memory failures,16,56,0.2857142857142857,0.01785714285714285,Persistent,False,False
+2022-03-21,2022-04-03,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-21,2022-04-03,2022Q2,0,SYNTHETIC: declining legacy failures,11,56,0.19642857142857142,-0.01785714285714285,Persistent,False,False
+2022-03-21,2022-04-03,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-21,2022-04-03,2022Q2,2,SYNTHETIC: emerging memory failures,17,56,0.30357142857142855,0.01785714285714285,Persistent,False,False
+2022-03-22,2022-04-04,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-22,2022-04-04,2022Q2,0,SYNTHETIC: declining legacy failures,10,56,0.17857142857142858,-0.01785714285714285,Persistent,False,False
+2022-03-22,2022-04-04,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-22,2022-04-04,2022Q2,2,SYNTHETIC: emerging memory failures,18,56,0.32142857142857145,0.017857142857142905,Persistent,False,False
+2022-03-23,2022-04-05,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-23,2022-04-05,2022Q2,0,SYNTHETIC: declining legacy failures,9,56,0.16071428571428573,-0.01785714285714285,Persistent,False,False
+2022-03-23,2022-04-05,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-23,2022-04-05,2022Q2,2,SYNTHETIC: emerging memory failures,19,56,0.3392857142857143,0.01785714285714285,Persistent,False,False
+2022-03-24,2022-04-06,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-24,2022-04-06,2022Q2,0,SYNTHETIC: declining legacy failures,8,56,0.14285714285714285,-0.017857142857142877,Persistent,False,False
+2022-03-24,2022-04-06,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-24,2022-04-06,2022Q2,2,SYNTHETIC: emerging memory failures,20,56,0.35714285714285715,0.01785714285714285,Persistent,False,False
+2022-03-25,2022-04-07,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-25,2022-04-07,2022Q2,0,SYNTHETIC: declining legacy failures,7,56,0.125,-0.01785714285714285,Persistent,False,False
+2022-03-25,2022-04-07,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-25,2022-04-07,2022Q2,2,SYNTHETIC: emerging memory failures,21,56,0.375,0.01785714285714285,Persistent,False,False
+2022-03-26,2022-04-08,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-26,2022-04-08,2022Q2,0,SYNTHETIC: declining legacy failures,6,56,0.10714285714285714,-0.017857142857142863,Persistent,False,False
+2022-03-26,2022-04-08,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-26,2022-04-08,2022Q2,2,SYNTHETIC: emerging memory failures,22,56,0.39285714285714285,0.01785714285714285,Persistent,False,False
+2022-03-27,2022-04-09,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-27,2022-04-09,2022Q2,0,SYNTHETIC: declining legacy failures,5,56,0.08928571428571429,-0.01785714285714285,Persistent,False,False
+2022-03-27,2022-04-09,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-27,2022-04-09,2022Q2,2,SYNTHETIC: emerging memory failures,23,56,0.4107142857142857,0.01785714285714285,Persistent,False,False
+2022-03-28,2022-04-10,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-28,2022-04-10,2022Q2,0,SYNTHETIC: declining legacy failures,4,56,0.07142857142857142,-0.017857142857142863,Persistent,False,False
+2022-03-28,2022-04-10,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-28,2022-04-10,2022Q2,2,SYNTHETIC: emerging memory failures,24,56,0.42857142857142855,0.01785714285714285,Persistent,False,False
+2022-03-29,2022-04-11,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-29,2022-04-11,2022Q2,0,SYNTHETIC: declining legacy failures,3,56,0.05357142857142857,-0.017857142857142856,Persistent,False,False
+2022-03-29,2022-04-11,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-29,2022-04-11,2022Q2,2,SYNTHETIC: emerging memory failures,25,56,0.44642857142857145,0.017857142857142905,Persistent,False,False
+2022-03-30,2022-04-12,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-30,2022-04-12,2022Q2,0,SYNTHETIC: declining legacy failures,2,56,0.03571428571428571,-0.017857142857142856,Persistent,False,False
+2022-03-30,2022-04-12,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-30,2022-04-12,2022Q2,2,SYNTHETIC: emerging memory failures,26,56,0.4642857142857143,0.01785714285714285,Persistent,False,False
+2022-03-31,2022-04-13,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-03-31,2022-04-13,2022Q2,0,SYNTHETIC: declining legacy failures,1,56,0.017857142857142856,-0.017857142857142856,Stable,False,False
+2022-03-31,2022-04-13,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-03-31,2022-04-13,2022Q2,2,SYNTHETIC: emerging memory failures,27,56,0.48214285714285715,0.01785714285714285,Persistent,False,False
+2022-04-01,2022-04-14,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-01,2022-04-14,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,-0.017857142857142856,Stable,False,False
+2022-04-01,2022-04-14,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-01,2022-04-14,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.01785714285714285,Persistent,False,False
+2022-04-02,2022-04-15,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-02,2022-04-15,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-02,2022-04-15,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-02,2022-04-15,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-03,2022-04-16,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-03,2022-04-16,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-03,2022-04-16,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-03,2022-04-16,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-04,2022-04-17,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-04,2022-04-17,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-04,2022-04-17,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-04,2022-04-17,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-05,2022-04-18,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-05,2022-04-18,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-05,2022-04-18,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-05,2022-04-18,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-06,2022-04-19,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-06,2022-04-19,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-06,2022-04-19,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-06,2022-04-19,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-07,2022-04-20,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-07,2022-04-20,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-07,2022-04-20,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-07,2022-04-20,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-08,2022-04-21,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-08,2022-04-21,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-08,2022-04-21,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-08,2022-04-21,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-09,2022-04-22,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-09,2022-04-22,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-09,2022-04-22,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-09,2022-04-22,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-10,2022-04-23,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-10,2022-04-23,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-10,2022-04-23,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-10,2022-04-23,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-11,2022-04-24,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-11,2022-04-24,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-11,2022-04-24,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-11,2022-04-24,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-12,2022-04-25,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-12,2022-04-25,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-12,2022-04-25,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-12,2022-04-25,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-13,2022-04-26,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-13,2022-04-26,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-13,2022-04-26,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-13,2022-04-26,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-14,2022-04-27,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-14,2022-04-27,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-14,2022-04-27,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-14,2022-04-27,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-15,2022-04-28,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-15,2022-04-28,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-15,2022-04-28,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-15,2022-04-28,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-16,2022-04-29,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-16,2022-04-29,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-16,2022-04-29,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-16,2022-04-29,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-17,2022-04-30,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-17,2022-04-30,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-17,2022-04-30,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-17,2022-04-30,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-18,2022-05-01,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-18,2022-05-01,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-18,2022-05-01,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-18,2022-05-01,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-19,2022-05-02,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-19,2022-05-02,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-19,2022-05-02,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-19,2022-05-02,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-20,2022-05-03,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-20,2022-05-03,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-20,2022-05-03,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-20,2022-05-03,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-21,2022-05-04,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-21,2022-05-04,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-21,2022-05-04,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-21,2022-05-04,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-22,2022-05-05,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-22,2022-05-05,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-22,2022-05-05,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-22,2022-05-05,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-23,2022-05-06,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-23,2022-05-06,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-23,2022-05-06,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-23,2022-05-06,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-24,2022-05-07,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-24,2022-05-07,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-24,2022-05-07,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-24,2022-05-07,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-25,2022-05-08,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-25,2022-05-08,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-25,2022-05-08,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-25,2022-05-08,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-26,2022-05-09,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-26,2022-05-09,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-26,2022-05-09,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-26,2022-05-09,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-27,2022-05-10,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-27,2022-05-10,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-27,2022-05-10,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-27,2022-05-10,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-28,2022-05-11,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-28,2022-05-11,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-28,2022-05-11,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-28,2022-05-11,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-29,2022-05-12,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-29,2022-05-12,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-29,2022-05-12,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-29,2022-05-12,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-04-30,2022-05-13,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-04-30,2022-05-13,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-04-30,2022-05-13,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-04-30,2022-05-13,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-01,2022-05-14,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-01,2022-05-14,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-01,2022-05-14,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-01,2022-05-14,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-02,2022-05-15,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-02,2022-05-15,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-02,2022-05-15,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-02,2022-05-15,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-03,2022-05-16,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-03,2022-05-16,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-03,2022-05-16,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-03,2022-05-16,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-04,2022-05-17,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-04,2022-05-17,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-04,2022-05-17,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-04,2022-05-17,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-05,2022-05-18,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-05,2022-05-18,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-05,2022-05-18,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-05,2022-05-18,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-06,2022-05-19,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-06,2022-05-19,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-06,2022-05-19,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-06,2022-05-19,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-07,2022-05-20,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-07,2022-05-20,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-07,2022-05-20,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-07,2022-05-20,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-08,2022-05-21,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-08,2022-05-21,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-08,2022-05-21,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-08,2022-05-21,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-09,2022-05-22,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-09,2022-05-22,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-09,2022-05-22,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-09,2022-05-22,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-10,2022-05-23,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-10,2022-05-23,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-10,2022-05-23,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-10,2022-05-23,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-11,2022-05-24,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-11,2022-05-24,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-11,2022-05-24,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-11,2022-05-24,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-12,2022-05-25,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-12,2022-05-25,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-12,2022-05-25,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-12,2022-05-25,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-13,2022-05-26,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-13,2022-05-26,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-13,2022-05-26,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-13,2022-05-26,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-14,2022-05-27,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-14,2022-05-27,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-14,2022-05-27,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-14,2022-05-27,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-15,2022-05-28,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-15,2022-05-28,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-15,2022-05-28,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-15,2022-05-28,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-16,2022-05-29,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-16,2022-05-29,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-16,2022-05-29,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-16,2022-05-29,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-17,2022-05-30,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-17,2022-05-30,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-17,2022-05-30,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-17,2022-05-30,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-18,2022-05-31,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-18,2022-05-31,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-18,2022-05-31,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-18,2022-05-31,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-19,2022-06-01,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-19,2022-06-01,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-19,2022-06-01,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-19,2022-06-01,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-20,2022-06-02,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-20,2022-06-02,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-20,2022-06-02,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-20,2022-06-02,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-21,2022-06-03,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-21,2022-06-03,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-21,2022-06-03,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-21,2022-06-03,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-22,2022-06-04,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-22,2022-06-04,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-22,2022-06-04,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-22,2022-06-04,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-23,2022-06-05,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-23,2022-06-05,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-23,2022-06-05,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-23,2022-06-05,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-24,2022-06-06,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-24,2022-06-06,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-24,2022-06-06,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-24,2022-06-06,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-25,2022-06-07,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-25,2022-06-07,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-25,2022-06-07,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-25,2022-06-07,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-26,2022-06-08,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-26,2022-06-08,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-26,2022-06-08,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-26,2022-06-08,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-27,2022-06-09,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-27,2022-06-09,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-27,2022-06-09,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-27,2022-06-09,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-28,2022-06-10,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-28,2022-06-10,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-28,2022-06-10,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-28,2022-06-10,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-29,2022-06-11,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-29,2022-06-11,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-29,2022-06-11,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-29,2022-06-11,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-30,2022-06-12,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-30,2022-06-12,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-30,2022-06-12,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-30,2022-06-12,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-05-31,2022-06-13,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-05-31,2022-06-13,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-05-31,2022-06-13,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-05-31,2022-06-13,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-01,2022-06-14,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-01,2022-06-14,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-01,2022-06-14,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-01,2022-06-14,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-02,2022-06-15,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-02,2022-06-15,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-02,2022-06-15,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-02,2022-06-15,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-03,2022-06-16,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-03,2022-06-16,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-03,2022-06-16,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-03,2022-06-16,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-04,2022-06-17,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-04,2022-06-17,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-04,2022-06-17,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-04,2022-06-17,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-05,2022-06-18,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-05,2022-06-18,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-05,2022-06-18,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-05,2022-06-18,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-06,2022-06-19,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-06,2022-06-19,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-06,2022-06-19,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-06,2022-06-19,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-07,2022-06-20,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-07,2022-06-20,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-07,2022-06-20,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-07,2022-06-20,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-08,2022-06-21,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-08,2022-06-21,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-08,2022-06-21,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-08,2022-06-21,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-09,2022-06-22,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-09,2022-06-22,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-09,2022-06-22,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-09,2022-06-22,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-10,2022-06-23,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-10,2022-06-23,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-10,2022-06-23,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-10,2022-06-23,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-11,2022-06-24,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-11,2022-06-24,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-11,2022-06-24,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-11,2022-06-24,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-12,2022-06-25,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-12,2022-06-25,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-12,2022-06-25,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-12,2022-06-25,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-13,2022-06-26,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-13,2022-06-26,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-13,2022-06-26,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-13,2022-06-26,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-14,2022-06-27,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-14,2022-06-27,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-14,2022-06-27,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-14,2022-06-27,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-15,2022-06-28,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-15,2022-06-28,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-15,2022-06-28,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-15,2022-06-28,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-16,2022-06-29,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-16,2022-06-29,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-16,2022-06-29,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-16,2022-06-29,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False
+2022-06-17,2022-06-30,2022Q2,-1,Noise / Outliers,14,56,0.25,0.0,Persistent,False,False
+2022-06-17,2022-06-30,2022Q2,0,SYNTHETIC: declining legacy failures,0,56,0.0,0.0,Stable,False,False
+2022-06-17,2022-06-30,2022Q2,1,SYNTHETIC: persistent dependency failures,14,56,0.25,0.0,Persistent,False,False
+2022-06-17,2022-06-30,2022Q2,2,SYNTHETIC: emerging memory failures,28,56,0.5,0.0,Persistent,False,False

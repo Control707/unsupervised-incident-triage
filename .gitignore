@@ -1,0 +1,44 @@
+# OS & Local Virtualenv / Caches
+.DS_Store
+.venv-q2/
+.cache-q2/
+.build-q2/
+.paperbanana/
+__pycache__/
+*.py[cod]
+
+# Backups & Intermediate Draft Artifacts
+backups/
+poster_work/swift-cache/
+poster_work/mpl-cache/
+poster_work/incident-triage-poster/
+poster_work/preview/
+poster_work/preview-figures/
+poster_work/paper_figures/
+poster_work/Poster_High_Resolution_Figures.zip
+figures/paperbanana_*/
+figures/v2_figure1_*
+figures/v4_figure1_*
+figures/v5_figure1_*
+figures/midterm_pipeline_*
+Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage/
+Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-2/
+Overcoming-Template-Mega-Clusters-and-Pooling-Cancellation-in-Unsupervised-Incident-Triage-3/
+
+# Redundant / Earlier Report PDFs (canonical report is Final_Project_Report_V2.pdf)
+final_report_v2.pdf
+main.pdf
+Final_Project_Report_Draft.pdf
+midterm_report.pdf
+midterm_report_acl.pdf
+midterm_report_acm.pdf
+
+# LaTeX Build Intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

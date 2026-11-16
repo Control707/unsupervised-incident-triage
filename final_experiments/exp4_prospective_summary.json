@@ -1,0 +1,13 @@
+{
+  "naive_umap_transform_q2_coverage": 0.3127,
+  "naive_umap_transform_ari": 0.6489,
+  "naive_umap_transform_nmi": 0.791,
+  "hybrid_prospective_q2_coverage": 0.6377,
+  "hybrid_prospective_ari": 0.6623,
+  "hybrid_prospective_nmi": 0.7153,
+  "delta_k_spearman_rho": 0.8909,
+  "delta_k_spearman_p": 0.0005421442248338671,
+  "delta_k_pearson_r": 0.8615,
+  "delta_k_pearson_p": 0.0013584533787832022,
+  "sign_agreement_rate": 0.8
+}

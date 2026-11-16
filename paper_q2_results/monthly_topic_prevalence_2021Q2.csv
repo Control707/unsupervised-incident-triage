@@ -1,0 +1,34 @@
+Month,Quarter,Cluster_ID,Topic_Label,Count,Total_Tickets,Prevalence,Is_Partial_Month
+2021-04,2021Q2,-1,Noise / Outliers,38,139,0.2733812949640288,False
+2021-04,2021Q2,0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,6,139,0.04316546762589928,False
+2021-04,2021Q2,1,pickle / dtype / pickle py / python3 pickle,58,139,0.4172661870503597,False
+2021-04,2021Q2,2,rename_column / formatted / foo / add_item,5,139,0.03597122302158273,False
+2021-04,2021Q2,3,git src / prepare_for_task / textclassification / datasetinfo,2,139,0.014388489208633094,False
+2021-04,2021Q2,4,char_error_rate / refs / cer / preds,4,139,0.02877697841726619,False
+2021-04,2021Q2,5,minor / readthedocs / readinstruction / bertscore,7,139,0.050359712230215826,False
+2021-04,2021Q2,6,numpy / core src / macosx / numpy core,7,139,0.050359712230215826,False
+2021-04,2021Q2,7,coco / rico / cards / add_new_dataset md,4,139,0.02877697841726619,False
+2021-04,2021Q2,8,speech / audio / hindi / openslr,6,139,0.04316546762589928,False
+2021-04,2021Q2,9,pdf / babi / entities / duorc,2,139,0.014388489208633094,False
+2021-05,2021Q2,-1,Noise / Outliers,33,130,0.25384615384615383,False
+2021-05,2021Q2,0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,6,130,0.046153846153846156,False
+2021-05,2021Q2,1,pickle / dtype / pickle py / python3 pickle,41,130,0.3153846153846154,False
+2021-05,2021Q2,2,rename_column / formatted / foo / add_item,2,130,0.015384615384615385,False
+2021-05,2021Q2,3,git src / prepare_for_task / textclassification / datasetinfo,12,130,0.09230769230769231,False
+2021-05,2021Q2,4,char_error_rate / refs / cer / preds,5,130,0.038461538461538464,False
+2021-05,2021Q2,5,minor / readthedocs / readinstruction / bertscore,4,130,0.03076923076923077,False
+2021-05,2021Q2,6,numpy / core src / macosx / numpy core,8,130,0.06153846153846154,False
+2021-05,2021Q2,7,coco / rico / cards / add_new_dataset md,8,130,0.06153846153846154,False
+2021-05,2021Q2,8,speech / audio / hindi / openslr,5,130,0.038461538461538464,False
+2021-05,2021Q2,9,pdf / babi / entities / duorc,6,130,0.046153846153846156,False
+2021-06,2021Q2,-1,Noise / Outliers,34,134,0.2537313432835821,False
+2021-06,2021Q2,0,wikimedia / duplicatedkeyserror / timit_asr / duplicate,9,134,0.06716417910447761,False
+2021-06,2021Q2,1,pickle / dtype / pickle py / python3 pickle,54,134,0.40298507462686567,False
+2021-06,2021Q2,2,rename_column / formatted / foo / add_item,0,134,0.0,False
+2021-06,2021Q2,3,git src / prepare_for_task / textclassification / datasetinfo,4,134,0.029850746268656716,False
+2021-06,2021Q2,4,char_error_rate / refs / cer / preds,6,134,0.04477611940298507,False
+2021-06,2021Q2,5,minor / readthedocs / readinstruction / bertscore,6,134,0.04477611940298507,False
+2021-06,2021Q2,6,numpy / core src / macosx / numpy core,8,134,0.05970149253731343,False
+2021-06,2021Q2,7,coco / rico / cards / add_new_dataset md,8,134,0.05970149253731343,False
+2021-06,2021Q2,8,speech / audio / hindi / openslr,4,134,0.029850746268656716,False
+2021-06,2021Q2,9,pdf / babi / entities / duorc,1,134,0.007462686567164179,False

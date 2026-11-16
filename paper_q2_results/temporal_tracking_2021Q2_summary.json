@@ -1,0 +1,54 @@
+{
+  "focus_quarter": "2021Q2",
+  "analysis_basis": "retrospective_joint_space",
+  "config": {
+    "window_days": 14,
+    "step_days": 1,
+    "min_window_tickets": 5,
+    "surge_threshold": 0.025,
+    "persistence_threshold": 0.035
+  },
+  "quarter_start": "2021-04-01",
+  "quarter_end": "2021-06-30",
+  "coverage_start": "2021-04-01",
+  "coverage_end": "2021-06-30",
+  "endpoint_start": "2021-04-01",
+  "endpoint_end": "2021-06-30",
+  "target_ticket_count": 403,
+  "topic_count": 11,
+  "non_noise_topic_count": 10,
+  "noise_ticket_count": 105,
+  "endpoint_count": 91,
+  "supported_endpoint_count": 91,
+  "low_support_endpoint_count": 0,
+  "partial_window_count": 0,
+  "is_partial_quarter": false,
+  "month_counts": {
+    "2021-04": 139,
+    "2021-05": 130,
+    "2021-06": 134
+  },
+  "history_policy": "trailing windows retain prior-quarter context",
+  "source_coverage_start": "2021-01-01",
+  "source_coverage_end": "2021-06-30",
+  "source_valid_tickets": 881,
+  "dropped_invalid_dates": 0,
+  "prevalence_denominator": "all valid-date tickets, including noise (-1), within each window or calendar month",
+  "trajectory_rules": {
+    "start_end": "first and last supported target-quarter endpoints; not calendar-quarter averages",
+    "net_change": "end minus start; null when fewer than two supported endpoints",
+    "slope": "least-squares prevalence per actual elapsed day times seven; unsupported endpoints excluded",
+    "persistent": "at least two supported endpoints, all selected endpoints supported, all positive prevalences >= persistence_threshold",
+    "noise": "separate Noise / Outliers trajectory"
+  },
+  "caveats": [
+    "Retrospective joint-space analysis: topic IDs must be assigned in a single stable joint topic space; no topic model is re-fit here. Joint fitting may use future information, so these are not leakage-free online emergence estimates.",
+    "Coverage and partial-period flags are inferred from minimum and maximum UTC ticket dates. Ticket dates do not prove complete collection, and partial-period comparisons can be biased.",
+    "All valid-date tickets, including noise (-1), are included in prevalence denominators.",
+    "An empty calendar quarter is missing data, not a zero-prevalence observation. Changes never bridge a missing immediate predecessor.",
+    "Thresholds are descriptive proportion-scale heuristics, not significance tests. Overlapping rolling windows are dependent observations.",
+    "Retrospective within-quarter trajectories retain prior-quarter trailing-window context; they do not estimate a quarter-to-quarter slope.",
+    "Monthly and target-quarter counts are nonoverlapping original-ticket counts. Rolling counts overlap and must not be added as ticket totals.",
+    "Coverage bounds are inferred from source ticket dates, not proof of complete collection."
+  ]
+}

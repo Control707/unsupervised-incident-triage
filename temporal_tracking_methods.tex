@@ -1,0 +1,36 @@
+% Shared methodology: same paper corpus; within-quarter trajectories, not extra data.
+\subsection{Within-Q2 Topic Trajectories with Rolling Windows}
+\label{sec:rolling_trajectories}
+The Q1-to-Q2 aggregate shift identifies which topics change in prevalence, but does not show when those changes occur within the observation quarter. We therefore examine \textbf{within-Q2 trajectories on the same corpus}, without collecting additional quarters or injecting synthetic tickets into this analysis. The topic space is fitted jointly on the same 881 dated records (478 in Q1 and 403 in Q2 2021). The trajectory display focuses on April 1--June 30, 2021 (91 calendar days), while preserving Q1 as historical context. This within-quarter analysis is distinct from extrapolating a multi-quarter trend from only two quarterly aggregates.
+
+Let $t$ denote a UTC calendar date and $w$ the lookback in days. The end-of-day trailing window and topic prevalence are
+\begin{equation}
+\begin{aligned}
+ W_t &= \{d_i : t-w+1 \leq \mathrm{date}(d_i) \leq t\},\\
+ p_{k,t} &= \frac{|\{d_i \in W_t : y_i=k\}|}{|W_t|}.
+\end{aligned}
+\end{equation}
+We use a 14-day lookback sampled daily, then retain only endpoints in Q2. Crucially, windows are calculated before selecting endpoints: the April 1 window retains March 19--31 records rather than resetting at the quarter boundary. All topics retain their shared-model identities throughout the quarter. Noise ($y_i=-1$) remains in every denominator and is exported as an explicit series. Windows containing fewer than five total tickets have missing prevalence estimates rather than unstable rate estimates.
+
+For each topic, the within-Q2 summary includes the non-overlapping Q2 ticket count and quarter prevalence; first and last supported rolling prevalence; net change between those endpoints; peak prevalence and date; and a least-squares rolling-prevalence slope per elapsed week. The slope uses the actual endpoint dates, not a quarterly slope fitted to one observation. Supported endpoints and partial-window flags are reported. April, May, and June counts and prevalence are also exported as non-overlapping monthly summaries, whose counts sum to Q2 counts. Rolling-window counts overlap and must not be summed as distinct incidents. These trajectories complement, rather than replace, the original $\Delta K=P(k\mid Q2)-P(k\mid Q1)$ comparison.
+
+\paragraph{Option 1: Q1-relative excess prevalence.}
+To distinguish high absolute prevalence from elevation relative to the preceding baseline, we subtract each topic's overall Q1 share from every supported full-length Q2 rolling estimate:
+\begin{equation}
+\begin{aligned}
+ b_k &= \frac{|D_{Q1,k}|}{|D_{Q1}|},\\
+ E_k(t) &= p_{k,t}-b_k, \qquad t\in Q2.
+\end{aligned}
+\end{equation}
+We report $100E_k(t)$ in percentage points, retaining both positive and negative values relative to a horizontal zero line. The Q1 baseline uses all 478 original Q1 records, including noise in its denominator, rather than an unweighted average of overlapping Q1 windows. Positive excess indicates an elevated share, not necessarily an increase in the absolute number of incidents. A two-panel display pairs actual Q2 prevalence with its baseline-relative excess.
+
+\paragraph{Option 2: aligned trajectory subtraction.}
+As an exploratory comparison of timing within quarters, we match full-length rolling estimates at the same one-based calendar day of each quarter. If $s_q$ is the first day of quarter $q$, the comparison at ordinal day $u$ is
+\begin{equation}
+ D_k(u)=p_{k,s_{Q2}+u-1}-p_{k,s_{Q1}+u-1}.
+\end{equation}
+No interpolation, quarter-length rescaling, or stretching is applied. Both estimates must be supported and non-partial. The corpus starts on January 1, so the first 13 Q1 windows lack a full 14-day history and are excluded. Q1 has 90 days and Q2 has 91; Q2 day 91 is retained as unmatched in the table but has no difference estimate. With daily sampling this yields 77 comparable pairs (days 14--90). Table rows preserve actual baseline and target dates, counts, denominators, and exclusion reasons. Different sampling steps can yield fewer exact matches. Ordinal alignment does not align weekdays, holidays, releases, or external events; it should not be interpreted as a causal or seasonal-control design.
+
+Both options reuse the same saved 10-topic rerun assignments in both quarters, without another model fit, additional records, or transfer of historical 14-topic IDs. Their mean differences and above-baseline fractions are descriptive summaries of dependent, overlapping windows, not independent observations or statistical significance tests. Missing/unsupported comparisons remain missing, not zero. The implementation accepts any year-aware quarter as a configuration parameter; \texttt{2021Q2} is the fixed paper setting. CSV tables, JSON configuration and coverage metadata, and focused line-chart/heatmap figures are exported. Per-ticket topic assignments are saved so the quarter or lookback can be changed without refitting the model. No additional empirical quarters are required for within-Q2 analysis.
+
+\textbf{Scope and validation.} These are retrospective \emph{prevalence} trajectories, not within-topic semantic drift or independently verified root causes. The shared topic model is fitted to the combined corpus and may incorporate future information; the charts do not establish leakage-free prospective detection performance. Overlapping windows are dependent, threshold categories are descriptive heuristics rather than significance tests, and date coverage does not establish collection completeness. A fresh fit on the same records can change numeric topic IDs or memberships across software environments; historical labels must not be transferred by numeric ID without verification. Focused tests check quarter selection, preservation of March context, noise denominators, monthly count reconciliation, missing support, elapsed-time slopes, exports, and command-line usage.

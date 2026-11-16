@@ -1,0 +1,71 @@
+{
+  "baseline_quarter": "2021Q1",
+  "target_quarter": "2021Q2",
+  "analysis_basis": "retrospective_joint_space",
+  "refit_performed": false,
+  "config": {
+    "window_days": 14,
+    "step_days": 1,
+    "min_window_tickets": 5,
+    "surge_threshold": 0.025,
+    "persistence_threshold": 0.035
+  },
+  "baseline_ticket_count": 478,
+  "target_ticket_count": 403,
+  "topic_count": 11,
+  "non_noise_topic_count": 10,
+  "baseline_excess_endpoint_count": 91,
+  "baseline_excess_comparable_endpoint_count": 91,
+  "aligned_endpoint_count": 91,
+  "aligned_comparable_pair_count": 77,
+  "baseline_excess_exclusion_counts": {
+    "Comparable": 91
+  },
+  "aligned_exclusion_counts": {
+    "Comparable": 77,
+    "No Baseline Endpoint": 1,
+    "Partial Window": 13
+  },
+  "baseline_is_partial_quarter": false,
+  "target_is_partial_quarter": false,
+  "source_coverage_start": "2021-01-01",
+  "source_coverage_end": "2021-06-30",
+  "baseline_quarter_start": "2021-01-01",
+  "baseline_quarter_end": "2021-03-31",
+  "target_quarter_start": "2021-04-01",
+  "target_quarter_end": "2021-06-30",
+  "alignment_policy": "exact one-based day-of-quarter; no interpolation or normalized stretching",
+  "history_policy": "original full-input trailing windows retain prior-quarter context",
+  "baseline_excess_policy": "target rolling prevalence minus observed aggregate baseline-quarter prevalence",
+  "comparison_units": "proportion; PP columns multiply proportions by 100",
+  "prevalence_denominator": "all original tickets in the relevant period/window, including noise (-1)",
+  "sample_count_units": "unique sampled target endpoints, not topic rows or independent tickets",
+  "summary_weighting": "unweighted descriptive means/fractions over comparable sampled endpoints",
+  "exclusion_precedence": [
+    "No Baseline Endpoint",
+    "Partial Window",
+    "Low Support",
+    "Comparable"
+  ],
+  "baseline_coverage_warning": "Source date bounds span the baseline quarter; dates do not prove complete collection.",
+  "caveats": [
+    "Retrospective joint-space comparison of one unchanged set of assigned topic IDs; no refit. Joint fitting may use future information, so these are not leakage-free online estimates.",
+    "Baseline-excess uses the observed aggregate baseline, including any partial-quarter coverage; no missing tickets are extrapolated.",
+    "Matched trajectories align ordinal days, not identical calendar dates or causal event time. Unequal quarter lengths and sparse sampling leave unmatched target days missing.",
+    "Partial startup and low-support windows retain their raw values for audit but are excluded from comparisons.",
+    "Overlapping trailing windows are dependent; unweighted means and peak/fraction summaries are descriptive, not significance tests. Rolling counts are never summed as distinct ticket counts or interpreted as an AUC of distinct incidents.",
+    "All prevalence denominators retain noise (-1). Figures select non-noise topics only; tables keep every topic."
+  ],
+  "assignment_provenance": {
+    "path": "/Users/zakaria/Downloads/NLP_Incident_Topic_Discovery/paper_q2_results/topic_assignments.csv",
+    "sha256": "f7bf0c1aebc8fed81bda0ce989bdfabdad31d69130d400b402a77c267d21a3dc",
+    "bytes": 34635,
+    "refit_performed": false
+  },
+  "topic_labels_provenance": {
+    "path": "/Users/zakaria/Downloads/NLP_Incident_Topic_Discovery/paper_q2_results/topic_labels.json",
+    "sha256": "b54f7d1d5a138b03fc03077b6540ed6a38d7843aac552001a4d6d4c965de62fd",
+    "bytes": 537,
+    "refit_performed": false
+  }
+}

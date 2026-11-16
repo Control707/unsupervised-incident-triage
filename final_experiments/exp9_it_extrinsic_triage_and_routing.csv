@@ -1,0 +1,16 @@
+Cluster_ID,Topic_Keywords,Total_Tickets,Incident_Pct,Dominant_Subcategory,Subcategory_Purity_Pct,Dominant_Support_Team,Team_Purity_Pct,Unassigned_Tickets_Routed,High_Critical_Priority_Pct,Median_Resolution_Mins,Mean_Resolution_Mins,Mean_Reassigned_Count,Mean_Close_Note_Info_Score
+Noise (-1),Noise / Outliers,199,78.9,ERROR,76.9,IT Service Management,59.8,77,27.1,9942.0,13794.8,1.44,0.771
+IT-00,"training, advanced, session, features",62,0.0,CONFIGURATION,58.1,IT Service Management,58.1,0,0.0,145.6,249.2,0.63,0.523
+IT-01,"licenses, license, licensing, marketing",110,0.9,ACCESS,85.5,Asset & Vendor Management,67.0,1,0.0,221.8,450.9,0.59,0.742
+IT-02,"specific needs, customizing, department specific, customizations",20,0.0,CONFIGURATION,100.0,Software Development & DevOps,75.0,0,0.0,250.2,389.8,0.75,0.71
+IT-03,"installation, upgrade, installed, latest version",213,14.1,INSTALLATION,85.9,End User Computing,48.6,5,5.6,168.5,524.8,0.78,0.798
+IT-04,"format, reports, exporting reports, exporting",21,100.0,CONFIGURATION,38.1,Application Support,87.5,5,4.8,256.7,2278.1,1.48,0.81
+IT-05,"save, crashes, saving, save files",139,100.0,ERROR,66.2,Application Support,62.9,15,59.0,203.1,2079.5,0.84,0.806
+IT-06,"outlook, websocket, emails, error websocket",26,100.0,ERROR,73.1,IT Service Management,50.0,8,30.8,7825.3,8485.8,1.46,0.854
+IT-07,"onedrive, mail, ping, ping identity",72,98.6,ERROR,97.2,IT Service Management,96.4,16,33.3,15311.7,14554.1,1.49,0.858
+IT-08,"f5, f5 big, big ip, ip",33,100.0,ERROR,97.0,IT Service Management,83.3,21,57.6,8169.9,8771.5,1.52,0.855
+IT-09,"performance, hardware, slow, optimization",187,100.0,ERROR,47.1,Cloud & Infrastructure,85.6,76,34.2,416.5,3136.9,1.22,0.809
+IT-10,"rsa, enterprise, java, token",142,95.1,ERROR,95.8,IT Service Management,94.2,21,40.8,11944.1,13925.4,1.42,0.844
+IT-11,"credentials, invalid credentials, invalid, credentials error",48,100.0,ERROR,50.0,Security & Compliance,44.1,14,37.5,695.2,4517.6,1.08,0.804
+IT-12,"falcon, crowdstrike falcon, crowdstrike, threats",34,100.0,ERROR,100.0,IT Service Management,100.0,25,55.9,8271.5,10287.0,1.59,0.862
+IT-13,"permissions, role, dashboards, roles",32,100.0,ERROR,93.8,Identity & Access Management,50.0,30,50.0,7709.7,7977.2,1.59,0.844

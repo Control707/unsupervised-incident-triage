@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+
+% Official *ACL / *SEM 2-column format
+\usepackage[preprint]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\setlist{noitemsep,topsep=2pt,parsep=0pt,partopsep=0pt}
+
+\title{Dynamic Unsupervised Topic Discovery and Temporal Shift Detection in Short Technical Incident Streams}
+
+\author{
+  Zakaria Sherif \quad Nicholas Cosereanu \quad Wyatt Barker \\
+  Department of Computer Science \\
+  College of Computing and Software Engineering \\
+  Kennesaw State University \\
+  \texttt{\{zsherif, ncoserea, wbarker8\}@students.kennesaw.edu}
+}
+
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Customer support systems generate a large number of technical incident reports. This makes it difficult to identify recurring problems and recognize changes in issue frequency. This project explores unsupervised natural language processing to discover commonalities in incident reports and track how they change over time. Our system implements Sentence-BERT (SBERT) embeddings, UMAP dimensionality reduction, HDBSCAN clustering, and class-based TF-IDF (c-TF-IDF) to group similar instances without predefined labels. We tested our system against a traditional TF-IDF and $K$-Means baseline on a dataset of 1,380 IT support tickets. The results showed better cluster separation, with a silhouette score of 0.6047 compared to a $K$-Means score of 0.0547. However, the baseline achieved higher topic coherence and diversity. Through additional tests, the system demonstrated the ability to identify an artificially introduced increase in incident frequency. This suggests that embedding-based clustering can help identify recurring technical issues. It can also help detect emerging patterns within the support data.
+\end{abstract}
+
+\section{Introduction}
+IT support teams receive a constant stream of incident reports from users. Each ticket describes a problem in the user's own words, so the same technical issue can be reported in many different ways. As the number of tickets grows, it becomes difficult for support staff to read every report, recognize which problems keep coming back, and notice when a specific issue starts to occur more often. Most ticketing systems rely on predefined categories that are chosen by the user or the support agent. These categories are often too broad or are selected incorrectly. They also cannot capture new types of problems that did not exist when the categories were created.
+
+This project addresses the following question: Can unsupervised natural language processing be used to discover recurring technical issues in support tickets and detect when the frequency of those issues changes over time? Our approach groups tickets based on their meaning rather than shared keywords or assigned labels. We do this using sentence embeddings, dimensionality reduction, and density-based clustering. We then compare how often each discovered topic appears between a baseline period and a later observation period. Topics that grow in proportion between the two periods can be flagged as possible emerging issues.
+
+This work is important because early detection of a growing problem allows IT teams to respond before it affects more users. For example, a faulty software update or a failing service may first appear as a small number of scattered tickets with different descriptions. A system that groups these tickets together and recognizes their increase could alert the team sooner than manual review. Since our approach does not require labeled training data, it can be applied to new organizations or ticket systems without the cost of annotation. More broadly, this project shows how established topic modeling methods can be extended with temporal analysis to support practical, real-world tasks.
+
+\section{Related Work}
+Prior research in natural language processing has established methods for representing text, reducing dimensionality, and discovering patterns within a dataset. Our project builds on these methods by combining semantic embeddings, density-based clustering, and topic modeling in order to analyze technical incident reports across different time periods.
+
+\citet{reimers2019sentence} introduced Sentence-BERT (SBERT); this modification of BERT uses Siamese and triplet network structures to produce meaningful sentence embeddings. Compared to traditional keyword-based representations, SBERT captures semantic relationships between sentences. This allows text with different wording but similar meaning to be represented by neighboring vectors. Their research showed that SBERT could significantly reduce the computational cost of semantic similarity comparisons. It did this while maintaining strong performance on semantic textual similarity tasks. This is useful for our project because customers often describe the same technical problem using different terms and wording. We use the pretrained \texttt{all-MiniLM-L6-v2} model to represent each incident report as a 384-dimensional embedding. This allows our clustering algorithm to group incidents based on semantic similarity as opposed to shared keywords alone.
+
+Sentence embeddings provide useful semantic information. However, clustering directly in a high-dimensional space can be difficult. \citet{mcinnes2018umap} created Uniform Manifold Approximation and Projection (UMAP). This is a nonlinear dimensionality reduction technique designed to maintain relationships between data points while also representing the relationships in fewer dimensions. Their work demonstrated that UMAP could produce a meaningful, low-dimensional representation while also offering lower computational cost. In our pipeline, UMAP reduces 384-dimensional embeddings to only five dimensions before clustering. This makes the density-based clustering manageable while also preserving the underlying structure of the data.
+
+For clustering, our approach uses Hierarchical Density-Based Spatial Clustering of Applications with Noise (HDBSCAN), described by \citet{mcinnes2017hdbscan}. Compared to $K$-Means, which requires the number of clusters to be specified beforehand, HDBSCAN identifies groups by examining the density and connectivity of data points. It can detect clusters with different densities and classify points that do not belong as noise. This makes HDBSCAN useful for technical support data because the number of incident categories may not be known in advance and some of the reports contain unrelated problems. By allowing the clustering structure to emerge from the data, HDBSCAN provides a more flexible alternative to methods that assume a fixed number of categories.
+
+\citet{grootendorst2022bertopic} introduced BERTopic, a topic modeling framework that combines transformer-based document embeddings, dimensionality reduction, clustering, and class-based TF-IDF (c-TF-IDF). Rather than relying on word frequency to identify topics, BERTopic groups semantically similar documents and then extracts representative keywords from each group. The c-TF-IDF component measures how important certain terms are to a cluster relative to the rest of the dataset. This makes the resulting topics easier to interpret. Our implementation follows this general architecture by using SBERT, UMAP, HDBSCAN, and c-TF-IDF on technical incident reports.
+
+Our project also uses topic coherence to evaluate the quality of discovered topics. \citet{roder2015exploring} studied different ways to measure topic coherence and found that combining statistical methods can help determine how clear and understandable generated topics are. We use the $C_v$ coherence metric alongside topic diversity and silhouette scores to evaluate the performance of our model.
+
+While these studies provide the groundwork for semantic topic discovery, our project is focused on an additional problem: how do we identify how the frequency of technical issues changes over time? Instead of clustering each observation period separately, we cluster the combined dataset in a shared embedding space so that the topic assignment remains consistent across periods. Then, we calculate the difference in each topic's proportional frequency between a baseline period and a later observation period. This allows us to distinguish between recurring technical problems and issues that are becoming more common. By combining established topic modeling techniques with temporal frequency analysis, we aim to develop a method for identifying emerging problems within technical support systems.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/midterm_pipeline_paperbanana.png}
+\caption{Overview of the five-stage unsupervised topic discovery and temporal shift detection pipeline (top) and the experimental evaluation framework (bottom).}
+\label{fig:pipeline}
+\end{figure*}
+
+\section{Methodology}
+
+\subsection{Datasets}
+We sourced an IT Service Management (ITSM) dataset used for incident tickets by \citet{vogel2024itsm}. This dataset contains 1,380 technical support tickets with timestamps covering a period of three months. It records the summary, description, urgency, and category. We preprocess these feature columns by concatenating the summary and description, lowercasing everything, and normalizing memory addresses and paths. We partition this into two windows for comparison:
+\begin{itemize}
+    \item \textbf{Baseline Period ($D_a$):} Month 1 ($N_a = 487$ tickets).
+    \item \textbf{Observation Period ($D_b$):} Months 2 and 3 ($N_b = 851$ tickets).
+\end{itemize}
+The total evaluation corpus is $N = 1,338$ preprocessed documents.
+
+\subsection{Pipeline Architecture}
+Our pipeline has five sequential components (illustrated in Figure~\ref{fig:pipeline}):
+\begin{enumerate}
+    \item \textbf{Document Embedding:} Tickets are encoded into 384-dimensional dense vectors using \texttt{all-MiniLM-L6-v2}:
+    \begin{equation}
+        \mathbf{e}_i = \text{SBERT}(d_i) \in \mathbb{R}^{384}, \quad \|\mathbf{e}_i\|_2 = 1
+    \end{equation}
+    \item \textbf{Dimensionality Reduction (384D $\rightarrow$ 5D):} Clustering in raw 384D space fails due to distance concentration ($d_{\max} \approx d_{\min}$). Conversely, reducing to 2D forces topological tearing. Following \citet{grootendorst2022bertopic}, reducing to $d = 5$ dimensions via UMAP preserves local manifold structure while lowering ambient dimensionality for density estimation:
+    \begin{equation}
+        \mathbf{u}_i = \text{UMAP}(\mathbf{e}_i; d = 5, k = 15)
+    \end{equation}
+    \item \textbf{Joint-Space HDBSCAN Clustering:} Clustering $D_a$ and $D_b$ independently causes cluster IDs to mismatch across time. To eliminate temporal label drift, we perform Joint-Space Clustering across the combined corpus $D = D_a \cup D_b$:
+    \begin{equation}
+        y_i = \text{HDBSCAN}(\mathbf{u}_i; m_{\text{pts}} = 6, m_{\text{cl}} = 20)
+    \end{equation}
+    where $y_i \in \{-1, 1, \dots, K\}$, with $-1$ representing noise. Cluster identities remain identical across both windows.
+    \item \textbf{Topic Representation (c-TF-IDF):} Documents in cluster $c$ are pooled to compute class-based term weights:
+    \begin{equation}
+        W_{t,c} = \text{tf}_{t,c} \times \log\left( 1 + \frac{A}{\text{cf}_t} \right)
+    \end{equation}
+    where $\text{tf}_{t,c}$ is term frequency in cluster $c$, $A$ is the average token count per cluster, and $\text{cf}_t$ is term frequency across all clusters.
+    \item \textbf{Temporal Shift Metric ($\Delta K$):} For each cluster $k$, we compute representation proportions in periods $A$ and $B$:
+    \begin{equation}
+        P(k \mid D_a) = \frac{|D_{a,k}|}{|D_a|}, \quad P(k \mid D_b) = \frac{|D_{b,k}|}{|D_b|}
+    \end{equation}
+    The temporal delta is $\Delta K = P(k \mid D_b) - P(k \mid D_a)$. We identify both \textbf{Emerging Surges} ($\Delta K \ge 0.025$) and \textbf{Persistent Chronic Root Causes} ($P_A \ge 0.04 \land P_B \ge 0.04 \land |\Delta K| < 0.025$).
+\end{enumerate}
+
+\section{Preliminary Results}
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model Pipeline} & \textbf{$C_v$ Coherence} & \textbf{Diversity} & \textbf{Silhouette} \\
+\midrule
+Baseline ($K$-Means on TF-IDF) & \textbf{0.7951} & \textbf{0.8700} & 0.0547 \\
+Proposed (BERTopic Framework) & 0.6936 & 0.8250 & \textbf{0.6047} \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Preliminary benchmark comparison on incident corpus.}
+\label{tab:prelim_results}
+\end{table}
+
+\subsection{Evaluation Metrics and Hypotheses}
+Models are evaluated using three primary metrics:
+\begin{enumerate}
+    \item \textbf{Topic Coherence ($C_v$):} Evaluated using sliding-window NPMI and Boolean context vectors \citep{roder2015exploring} via \texttt{gensim}.
+    \item \textbf{Topic Diversity ($TD$):} The proportion of unique words across top keywords of all topics.
+    \item \textbf{Silhouette Coefficient:} Cluster density separation in embedding space.
+\end{enumerate}
+
+\noindent \textbf{Hypotheses:}
+\begin{itemize}
+    \item \textbf{H1:} SBERT+UMAP+HDBSCAN will achieve higher cluster silhouette separation than a sparse $K$-Means baseline.
+    \item \textbf{H2:} Joint-space density clustering will achieve high topic diversity ($TD \ge 0.75$) while isolating unassigned noise points.
+    \item \textbf{H3:} The temporal shift engine will reliably rank acute synthetic incident surges among the top-ranked positive deltas ($\Delta K$).
+\end{itemize}
+
+\subsection{Preliminary Benchmark and Findings}
+We evaluated our pipeline on the 1,380-ticket incident dataset (1,338 preprocessed tickets) against a sparse $K$-Means baseline ($K = 10$) on TF-IDF (Table~\ref{tab:prelim_results}).
+\begin{itemize}
+    \item \textbf{Cluster Separation:} The proposed pipeline achieves a silhouette score of 0.6047, an $11\times$ improvement over $K$-Means (0.0547). $K$-Means forces spherical boundaries on sparse text, whereas HDBSCAN on 5D UMAP identifies dense, separated manifolds.
+    \item \textbf{Noise Filtering:} HDBSCAN isolated 264 outlier tickets (19.7\%), keeping topics clean.
+    \item \textbf{Root-Cause Persistence:} The model identified persistent chronic issues, including Topic 15 (\textit{System Performance / Optimization}, $P_A = 10.9\%, P_B = 13.0\%$) and Topic 8 (\textit{Editor Save Crashes}, $P_A = 9.7\%, P_B = 10.5\%$).
+    \item \textbf{Perturbation Test:} Injecting 30 synthetic Kubernetes container memory error tickets into Period $B$ resulted in the surge engine isolating the anomaly at rank \#1 ($\Delta K = +0.0216$), confirming preliminary sensitivity.
+\end{itemize}
+
+\section{Progress Report}
+
+\subsection{Work Implemented So Far}
+We have implemented the full prototype pipeline in Python on Google Colab using a Tesla T4 GPU. The dataset is loaded directly from Hugging Face, and the summary and description of each ticket are combined into a single document. Tickets without a valid timestamp or outside of January through March 2021 are removed, which leaves 1,338 of the original 1,380 tickets. These are split into the baseline period (January, 487 tickets) and the observation period (February and March, 851 tickets).
+
+Each ticket is embedded with \texttt{all-MiniLM-L6-v2} and reduced to five dimensions with UMAP using 15 neighbors, cosine distance, and a fixed random seed. HDBSCAN is then run once on the combined corpus with a minimum cluster size of 20 and a minimum sample count of 6. This keeps cluster identities consistent across both periods. Keywords for each cluster are extracted with our own c-TF-IDF implementation.
+
+For comparison, we implemented a baseline that applies $K$-Means ($K = 10$) to TF-IDF vectors with a vocabulary of 2,500 terms. The same c-TF-IDF keyword extraction is used for both models so that their topics are evaluated in the same way. We compute $C_v$ coherence with \texttt{gensim}, topic diversity from the top ten keywords of each topic, and the silhouette score with \texttt{scikit-learn}.
+
+We also implemented the temporal shift metric $\Delta K$ and the rules for labeling clusters as emerging surges or persistent root causes. To test this, we added 30 synthetic Kubernetes memory error tickets to the observation period, projected them with the already-fitted UMAP model, and re-ran HDBSCAN. The injected tickets formed the cluster with the largest increase ($\Delta K = +0.0216$).
+
+\subsection{Remaining Work for Final Submission}
+Several tasks remain before the final report on December 2, 2026. First, our current dataset covers only three months. Our plan to compare two full quarters requires a dataset that covers at least 180 days, which we have not yet obtained. Second, we plan to add Latent Dirichlet Allocation (LDA) as a second baseline alongside $K$-Means. Third, we will test UMAP neighbor values from 5 to 30 and HDBSCAN minimum cluster sizes from 10 to 30. These settings affect how many topics are found and how many tickets are labeled as noise. Fourth, we will compare our discovered clusters against the category labels included in the dataset to obtain an external measure of cluster quality. Finally, we need to recompute the silhouette scores for both models in the same space, as described below.
+
+\subsection{Blockers and Feasibility}
+Early in development, a matrix broadcasting bug in our c-TF-IDF implementation produced incorrect keyword weights. This has been resolved. We have no hardware or resource blockers, since the full pipeline runs in about 4.5 seconds on a Colab GPU.
+
+While reviewing our results, we found several issues that need to be addressed before the final report. First, the silhouette scores in Table~\ref{tab:prelim_results} are not directly comparable. The score for our pipeline was calculated in the five-dimensional UMAP space with noise points excluded. The $K$-Means score was calculated in the sparse TF-IDF space using every ticket. Both of these differences favor our pipeline, so the $11\times$ improvement likely overstates the real difference. We plan to compute both scores in the same embedding space and report results with and without noise points.
+
+Second, our pipeline scored lower than the baseline in topic coherence (0.6936 vs.\ 0.7951) and diversity (0.8250 vs.\ 0.8700). Our diversity score still meets the threshold set in H2, but we need to investigate why coherence is lower. The hyperparameter sweep and the label-based evaluation should help explain this.
+
+Third, the injection test needs to be strengthened. The injected cluster ranked first, but its $\Delta K$ of 0.0216 falls below our own surge threshold of 0.025. This means the system would not have labeled it as an emerging surge. In addition, the 30 injected tickets were made from three sentences repeated ten times each. Identical text is much easier to cluster than real tickets, which describe the same problem in different ways. We plan to use more varied synthetic tickets, test different injection sizes, and reconsider how the surge threshold is set.
+
+Finally, all results come from a single random seed. Since UMAP and HDBSCAN results can change between runs, we plan to repeat our experiments across several seeds and report the average.
+
+Overall, we are on track to complete the project by the final deadline. The core pipeline and evaluation code are finished, and the remaining work focuses on correcting and extending our results. Our first priority is fixing the silhouette comparison and running the hyperparameter sweep, since these affect how every other result is interpreted. The main risk is finding a longer dataset. If we cannot obtain one in time, we will instead split the current three months into monthly windows so that we can still test the shift metric across more than two periods.
+
+\section{Conclusion}
+The main goal of this project is to determine how unsupervised natural language processing can help identify common technical issues and track how often they occur over time. Our system implements SBERT, UMAP, HDBSCAN, and c-TF-IDF to group support tickets based on their meaning without the need for predefined categories or labeled data. We also implemented a method to compare how often different topics appear across two time periods.
+
+Our initial results showed that the system performed well in separating tickets into distinct clusters. It achieved a silhouette score of 0.6047, which is substantially higher than the TF-IDF and $K$-Means score of 0.0547. In addition, 264 tickets (19.7\% of the dataset) were identified as noise using HDBSCAN. This was useful because it separated tickets that did not belong to any of the main topics. However, $K$-Means performed better in topic coherence and diversity.
+
+We also tested whether the system could detect a sudden increase in certain technical issues. After adding 30 synthetic Kubernetes-related tickets to the observation period, our system identified this topic as having the largest increase. It calculated a proportional change of $+0.0216$. Additional persistent problems, such as system performance issues and editor crashes, were also identified.
+
+Although our results are promising, there is still more testing that needs to be performed. One plan is to test longer time periods and compare our system with LDA. Another idea is to experiment with different UMAP and HDBSCAN settings. Overall, our project shows that this approach can help with support ticket categorization, which in turn would help IT teams optimize their workflow by not having to manually assess every support ticket.
+
+\bibliography{midterm_references}
+
+\end{document}

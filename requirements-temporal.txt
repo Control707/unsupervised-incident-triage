@@ -1,0 +1,4 @@
+# Lightweight temporal analysis (no transformer downloads or GPU required).
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.7

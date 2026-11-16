@@ -1,0 +1,13 @@
+Quarter,Cluster_ID,Topic_Label,Count,Total_Tickets,Prevalence,Previous_Quarter,Delta_K,Pct_Change,Category,Is_Partial_Quarter
+2021Q4,-1,Noise / Outliers,92,368,0.25,,,,Initial Observation,False
+2021Q4,0,SYNTHETIC: declining legacy failures,184,368,0.5,,,,Initial Observation,False
+2021Q4,1,SYNTHETIC: persistent dependency failures,92,368,0.25,,,,Initial Observation,False
+2021Q4,2,SYNTHETIC: emerging memory failures,0,368,0.0,,,,Initial Observation,False
+2022Q1,-1,Noise / Outliers,90,360,0.25,2021Q4,0.0,0.0,Persistent,False
+2022Q1,0,SYNTHETIC: declining legacy failures,90,360,0.25,2021Q4,-0.25,-50.0,Declining,False
+2022Q1,1,SYNTHETIC: persistent dependency failures,90,360,0.25,2021Q4,0.0,0.0,Persistent,False
+2022Q1,2,SYNTHETIC: emerging memory failures,90,360,0.25,2021Q4,0.25,,Emerging Surge,False
+2022Q2,-1,Noise / Outliers,91,364,0.25,2022Q1,0.0,0.0,Persistent,False
+2022Q2,0,SYNTHETIC: declining legacy failures,0,364,0.0,2022Q1,-0.25,-100.0,Declining,False
+2022Q2,1,SYNTHETIC: persistent dependency failures,91,364,0.25,2022Q1,0.0,0.0,Persistent,False
+2022Q2,2,SYNTHETIC: emerging memory failures,182,364,0.5,2022Q1,0.25,100.0,Emerging Surge,False
