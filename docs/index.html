@@ -30,6 +30,7 @@
         <a href="#trap2">Shift tracking</a>
         <a href="#payoff">Validation</a>
         <a href="#artifacts">Cite &amp; QR</a>
+        <a href="#references">References</a>
         <button class="theme-btn" id="themeToggle" type="button">Dark Mode</button>
       </div>
     </div>
@@ -131,12 +132,12 @@
           <div class="stage-card">
             <span class="stage-num">STAGE 01 &bull; DISCOVER</span>
             <h3>Manifold Projection &amp; Bounded EOM</h3>
-            <p>Encode tickets with <code>all-MiniLM-L6-v2</code> (384D), project to 5D via cosine UMAP, cap HDBSCAN cluster size at <code>M_max = 120</code> (~14% workload), and extract domain-pruned c-TF-IDF descriptors.</p>
+            <p>Encode tickets with <code>all-MiniLM-L6-v2</code> (384D) <span class="citations" role="group" aria-label="References"><a href="#ref-sbert" aria-label="Reference 1: Sentence-BERT: Sentence Embeddings Using Siamese BERT-Networks">[1]</a><a href="#ref-minilm" aria-label="Reference 2: MiniLM: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-Trained Transformers">[2]</a></span>, project to 5D via cosine UMAP <span class="citations" role="group" aria-label="References"><a href="#ref-umap" aria-label="Reference 3: UMAP: Uniform Manifold Approximation and Projection">[3]</a></span>, cap HDBSCAN cluster size at <code>M_max = 120</code> (~14% workload) <span class="citations" role="group" aria-label="References"><a href="#ref-density" aria-label="Reference 4: Density-Based Clustering Based on Hierarchical Density Estimates">[4]</a><a href="#ref-hdbscan" aria-label="Reference 5: hdbscan: Hierarchical Density Based Clustering">[5]</a></span>, and extract domain-pruned c-TF-IDF descriptors <span class="citations" role="group" aria-label="References"><a href="#ref-bertopic" aria-label="Reference 6: BERTopic: Neural Topic Modeling with a Class-Based TF-IDF Procedure">[6]</a></span>.</p>
           </div>
           <div class="stage-card">
             <span class="stage-num">STAGE 02 &bull; TRACK</span>
             <h3>Multi-Horizon FDR &amp; Rolling Windows</h3>
-            <p>Run two-sided Fisher exact tests with Benjamini–Hochberg FDR control (<code>q &lt; 0.10</code>) across quarterly and sequential monthly splits, paired with 14-day trailing rolling trajectories and Mann–Kendall <code>&tau;_MK</code>.</p>
+            <p>Run two-sided Fisher exact tests with Benjamini–Hochberg FDR control (<code>q &lt; 0.10</code>) <span class="citations" role="group" aria-label="References"><a href="#ref-fisher" aria-label="Reference 11: On the Interpretation of χ² from Contingency Tables, and the Calculation of P">[11]</a><a href="#ref-fdr" aria-label="Reference 12: Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing">[12]</a></span> across quarterly and sequential monthly splits, paired with 14-day trailing rolling trajectories and Mann–Kendall <code>&tau;_MK</code> <span class="citations" role="group" aria-label="References"><a href="#ref-trend" aria-label="Reference 13: Nonparametric Tests Against Trend">[13]</a></span>.</p>
           </div>
           <div class="stage-card">
             <span class="stage-num">STAGE 03 &bull; VALIDATE</span>
@@ -150,7 +151,7 @@
           <div class="wide-fig-scroll" role="button" tabindex="0" aria-label="Enlarge pipeline diagram" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
             <img src="assets/figures/v6_figure1_architecture.png" alt="Three Stage Incident Discovery, Shift Tracking, and Validation Pipeline" loading="lazy" />
           </div>
-          <div class="caption-text"><strong>Figure 1 (tap to zoom &amp; pan):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380).</div>
+          <div class="caption-text"><strong>Figure 1 (tap to zoom &amp; pan):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380). Source context: the Hugging Face <a href="https://github.com/huggingface/datasets" target="_blank" rel="noopener">datasets repository</a> <span class="citations" role="group" aria-label="References"><a href="#ref-datasets" aria-label="Reference 15: Datasets: A Community Library for Natural Language Processing">[15]</a></span> and the publicly released <strong>synthetic</strong> IT ticket corpus <span class="citations" role="group" aria-label="References"><a href="#ref-it-data" aria-label="Reference 16: Synthetic IT Call Center Tickets Dataset">[16]</a></span>.</div>
         </div>
       </div>
     </section>
@@ -177,7 +178,7 @@
             </div>
             <div id="spatialPlot" class="plot-box"></div>
             <p class="caption-text" id="spatialCaption">
-              Hover or tap any ticket to inspect its GitHub issue ID, title, cluster assignment, quarter, and author status. Bounded EOM keeps 9 clusters untouched (<code>ARI = 1.000</code>) while splitting the 298-ticket <code>R1</code> parent into 5 subsystems (<code>C5</code> Pool.map, <code>C7</code> Arrow Index, <code>C2</code> Tensor Cast, <code>C3</code> PyArrow ABI, <code>C8</code> Tokenizer).
+              Hover or tap any ticket to inspect its GitHub issue ID, title, cluster assignment, quarter, and author status. Bounded EOM keeps 9 clusters untouched (<code>ARI = 1.000</code>) <span class="citations" role="group" aria-label="References"><a href="#ref-ari" aria-label="Reference 14: Comparing Partitions">[14]</a></span> while splitting the 298-ticket <code>R1</code> parent into 5 subsystems (<code>C5</code> Pool.map, <code>C7</code> Arrow Index, <code>C2</code> Tensor Cast, <code>C3</code> PyArrow ABI, <code>C8</code> Tokenizer).
             </p>
           </div>
 
@@ -195,7 +196,7 @@
               <div class="table-wrap"><table id="benchTable" aria-label="Model benchmark results"></table></div>
             </details>
             <p class="caption-text">
-              Notice the inversion: LDA achieves the highest <em>C_v</em> coherence (<code>0.948</code> SWE / <code>0.905</code> IT) by grouping boilerplate tokens, yet suffers negative 5D Silhouette (<code>-0.225</code>) and lowest IT purity.
+              Notice the inversion: LDA achieves the highest <em>C_v</em> coherence (<code>0.948</code> SWE / <code>0.905</code> IT) by grouping boilerplate tokens, yet suffers negative 5D Silhouette (<code>-0.225</code>) and lowest IT purity. Methodological background: LDA <span class="citations" role="group" aria-label="References"><a href="#ref-lda" aria-label="Reference 7: Latent Dirichlet Allocation">[7]</a></span>, <em>C_v</em> coherence <span class="citations" role="group" aria-label="References"><a href="#ref-coherence" aria-label="Reference 8: Exploring the Space of Topic Coherence Measures">[8]</a></span>, limitations of automated coherence <span class="citations" role="group" aria-label="References"><a href="#ref-evaluation" aria-label="Reference 9: Is Automated Topic Model Evaluation Broken? The Incoherence of Coherence">[9]</a></span>, and silhouette analysis <span class="citations" role="group" aria-label="References"><a href="#ref-silhouette" aria-label="Reference 10: Silhouettes: A Graphical Aid to the Interpretation and Validation of Cluster Analysis">[10]</a></span>.
             </p>
           </div>
         </div>
@@ -344,6 +345,135 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
 }</pre>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="block" id="references" aria-labelledby="references-heading">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <div class="sec-eyebrow">07 / Sources &amp; foundations</div>
+            <h2 class="sec-title" id="references-heading">References</h2>
+            <p class="sec-desc">Selected sources from the preprint supporting the methods, evaluation metrics, and data shown here. Numbered citations link directly to these entries; website numbering is independent of the paper.</p>
+          </div>
+          <a class="mini-btn" href="https://github.com/Control707/unsupervised-incident-triage/blob/main/references.bib" target="_blank" rel="noopener">Full paper bibliography (.bib) &nearr;</a>
+        </div>
+        <div class="reference-note">The charts and numerical findings are results of this project, not findings claimed by the references below. Bounded EOM is the project’s size-capped use of HDBSCAN tree selection; the cited papers provide its methodological foundations. The enterprise IT benchmark is synthetic, not a production helpdesk deployment.</div>
+        <ol class="reference-list">
+          <li id="ref-sbert">
+            <div class="reference-body">
+              <span class="reference-topic">Sentence embeddings</span>
+              <p class="reference-title"><a href="https://aclanthology.org/D19-1410/" target="_blank" rel="noopener">Sentence-BERT: Sentence Embeddings Using Siamese BERT-Networks <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Nils Reimers and Iryna Gurevych. 2019. <em>EMNLP-IJCNLP, pp. 3982–3992.</em></p>
+            </div>
+          </li>
+          <li id="ref-minilm">
+            <div class="reference-body">
+              <span class="reference-topic">Encoder architecture</span>
+              <p class="reference-title"><a href="https://arxiv.org/abs/2002.10957" target="_blank" rel="noopener">MiniLM: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-Trained Transformers <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan Yang, and Ming Zhou. 2020. <em>NeurIPS 33, pp. 5776–5788.</em></p>
+            </div>
+          </li>
+          <li id="ref-umap">
+            <div class="reference-body">
+              <span class="reference-topic">Manifold projection</span>
+              <p class="reference-title"><a href="https://doi.org/10.21105/joss.00861" target="_blank" rel="noopener">UMAP: Uniform Manifold Approximation and Projection <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Leland McInnes, John Healy, Nathaniel Saul, and Lukas Großberger. 2018. <em>Journal of Open Source Software 3(29), 861.</em></p>
+            </div>
+          </li>
+          <li id="ref-density">
+            <div class="reference-body">
+              <span class="reference-topic">Hierarchical density clustering</span>
+              <p class="reference-title"><a href="https://doi.org/10.1007/978-3-642-37456-2_14" target="_blank" rel="noopener">Density-Based Clustering Based on Hierarchical Density Estimates <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Ricardo J. G. B. Campello, Davoud Moulavi, and Joerg Sander. 2013. <em>PAKDD, pp. 160–172.</em></p>
+            </div>
+          </li>
+          <li id="ref-hdbscan">
+            <div class="reference-body">
+              <span class="reference-topic">Clustering implementation</span>
+              <p class="reference-title"><a href="https://doi.org/10.21105/joss.00205" target="_blank" rel="noopener">hdbscan: Hierarchical Density Based Clustering <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Leland McInnes, John Healy, and Steve Astels. 2017. <em>Journal of Open Source Software 2(11), 205.</em></p>
+            </div>
+          </li>
+          <li id="ref-bertopic">
+            <div class="reference-body">
+              <span class="reference-topic">Topic representations</span>
+              <p class="reference-title"><a href="https://arxiv.org/abs/2203.05794" target="_blank" rel="noopener">BERTopic: Neural Topic Modeling with a Class-Based TF-IDF Procedure <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Maarten Grootendorst. 2022. <em>arXiv:2203.05794 (preprint).</em></p>
+            </div>
+          </li>
+          <li id="ref-lda">
+            <div class="reference-body">
+              <span class="reference-topic">Baseline topic model</span>
+              <p class="reference-title"><a href="https://www.jmlr.org/papers/v3/blei03a.html" target="_blank" rel="noopener">Latent Dirichlet Allocation <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">David M. Blei, Andrew Y. Ng, and Michael I. Jordan. 2003. <em>Journal of Machine Learning Research 3, pp. 993–1022.</em></p>
+            </div>
+          </li>
+          <li id="ref-coherence">
+            <div class="reference-body">
+              <span class="reference-topic">Coherence metric</span>
+              <p class="reference-title"><a href="https://doi.org/10.1145/2684822.2685324" target="_blank" rel="noopener">Exploring the Space of Topic Coherence Measures <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Michael Röder, Andreas Both, and Alexander Hinneburg. 2015. <em>WSDM, pp. 399–408.</em></p>
+            </div>
+          </li>
+          <li id="ref-evaluation">
+            <div class="reference-body">
+              <span class="reference-topic">Coherence limitations</span>
+              <p class="reference-title"><a href="https://arxiv.org/abs/2107.02173" target="_blank" rel="noopener">Is Automated Topic Model Evaluation Broken? The Incoherence of Coherence <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Alexander Hoyle, Pranav Goel, Denis Peskov, Andrew Hian-Cheong, Jordan Boyd-Graber, and Philip Resnik. 2021. <em>NeurIPS 34, pp. 2018–2033.</em></p>
+            </div>
+          </li>
+          <li id="ref-silhouette">
+            <div class="reference-body">
+              <span class="reference-topic">Cluster separation</span>
+              <p class="reference-title"><a href="https://doi.org/10.1016/0377-0427(87)90125-7" target="_blank" rel="noopener">Silhouettes: A Graphical Aid to the Interpretation and Validation of Cluster Analysis <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Peter J. Rousseeuw. 1987. <em>Journal of Computational and Applied Mathematics 20, pp. 53–65.</em></p>
+            </div>
+          </li>
+          <li id="ref-fisher">
+            <div class="reference-body">
+              <span class="reference-topic">Contingency testing</span>
+              <p class="reference-title"><a href="https://doi.org/10.2307/2340521" target="_blank" rel="noopener">On the Interpretation of χ² from Contingency Tables, and the Calculation of P <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Ronald A. Fisher. 1922. <em>Journal of the Royal Statistical Society 85(1), pp. 87–94.</em></p>
+            </div>
+          </li>
+          <li id="ref-fdr">
+            <div class="reference-body">
+              <span class="reference-topic">Multiple-testing correction</span>
+              <p class="reference-title"><a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x" target="_blank" rel="noopener">Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Yoav Benjamini and Yosef Hochberg. 1995. <em>Journal of the Royal Statistical Society, Series B 57(1), pp. 289–300.</em></p>
+            </div>
+          </li>
+          <li id="ref-trend">
+            <div class="reference-body">
+              <span class="reference-topic">Trend testing</span>
+              <p class="reference-title"><a href="https://doi.org/10.2307/1907187" target="_blank" rel="noopener">Nonparametric Tests Against Trend <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Henry B. Mann. 1945. <em>Econometrica 13(3), pp. 245–259.</em></p>
+            </div>
+          </li>
+          <li id="ref-ari">
+            <div class="reference-body">
+              <span class="reference-topic">Adjusted Rand index</span>
+              <p class="reference-title"><a href="https://doi.org/10.1007/BF01908075" target="_blank" rel="noopener">Comparing Partitions <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Lawrence Hubert and Phipps Arabie. 1985. <em>Journal of Classification 2, pp. 193–218.</em></p>
+            </div>
+          </li>
+          <li id="ref-datasets">
+            <div class="reference-body">
+              <span class="reference-topic">GitHub project context</span>
+              <p class="reference-title"><a href="https://aclanthology.org/2021.emnlp-demo.21/" target="_blank" rel="noopener">Datasets: A Community Library for Natural Language Processing <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Quentin Lhoest et al.. 2021. <em>EMNLP: System Demonstrations, pp. 175–184.</em></p>
+            </div>
+          </li>
+          <li id="ref-it-data">
+            <div class="reference-body">
+              <span class="reference-topic">Enterprise IT data source</span>
+              <p class="reference-title"><a href="https://huggingface.co/datasets/lvogelFH/synthetic-it-callcenter-tickets" target="_blank" rel="noopener">Synthetic IT Call Center Tickets Dataset <span aria-hidden="true">↗</span></a></p>
+              <p class="reference-meta">Kameron Brooks and Leon Vogel. 2024. <em>Hugging Face Datasets; lvogelFH copy of KameronB’s synthetic dataset.</em></p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
   </main>

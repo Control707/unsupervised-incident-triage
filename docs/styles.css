@@ -218,3 +218,23 @@ footer p { max-width: 850px; margin: auto; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* In-context citations and a single-column, mobile-readable bibliography. */
+.citations { display: inline; white-space: nowrap; font-size: .8em; font-weight: 650; }
+.citations a { padding: 2px 3px; border-radius: 3px; }
+.citations a:hover { background: var(--accent-soft); }
+.reference-note { padding: 16px 20px; border-left: 3px solid var(--teal); background: var(--surface-alt); color: var(--text-muted); font-size: .8rem; line-height: 1.8; max-width: 1000px; margin-bottom: 28px; }
+.reference-list { list-style: none; counter-reset: reference; margin: 0; padding: 0; max-width: 1000px; }
+.reference-list > li { counter-increment: reference; display: grid; grid-template-columns: 38px minmax(0,1fr); gap: 14px; padding: 22px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 105px; }
+.reference-list > li::before { content: '[' counter(reference) ']'; font: 500 .78rem 'JetBrains Mono',monospace; color: var(--text-muted); padding-top: 3px; }
+.reference-list > li:target { background: var(--accent-soft); box-shadow: 0 0 0 12px var(--accent-soft); border-radius: 4px; }
+.reference-topic { color: var(--teal); font-size: .63rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 650; }
+.reference-title { font-size: .9rem; font-weight: 600; line-height: 1.6; margin: 4px 0 7px; }
+.reference-title a { overflow-wrap: anywhere; }
+.reference-meta { margin: 0; font-size: .78rem; color: var(--text-muted); line-height: 1.8; }
+@media (max-width: 768px) {
+  .reference-list > li { grid-template-columns: 28px minmax(0,1fr); gap: 10px; padding: 20px 0; }
+  .reference-note { padding: 14px 16px; }
+  .reference-title { font-size: .85rem; }
+  .reference-meta { font-size: .75rem; }
+}
