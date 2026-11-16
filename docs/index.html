@@ -389,8 +389,71 @@
       gap: 1.25rem;
       align-items: start;
     }
+    .qr-share-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .qr-share-card img {
+      width: 96px;
+      height: 96px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 4px;
+      flex-shrink: 0;
+      cursor: zoom-in;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #ffffff;
+      color: #0f172a;
+      border: none;
+      border-radius: 999px;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
     @media (max-width: 960px) {
       .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      html, body { overflow-x: hidden; }
+      .container { padding: 0 1rem; }
+      .nav-inner { padding: 0.65rem 1rem; gap: 0.6rem; }
+      .brand span:last-child { font-size: 0.85rem; }
+      .nav-links {
+        gap: 0.85rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        padding-bottom: 0.15rem;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links a { white-space: nowrap; font-size: 0.8rem; }
+      .hero { padding: 2.25rem 0 2rem; }
+      .hero-sub { font-size: 0.96rem; }
+      .cta-row { gap: 0.55rem; }
+      .cta-row .btn { width: 100%; justify-content: center; min-height: 44px; font-size: 0.88rem; }
+      section.block { padding: 2.3rem 0; }
+      .card { padding: 1rem; }
+      .plot-box { min-height: 340px; }
+      .seg-group { width: 100%; }
+      .seg-btn { flex: 1 1 auto; text-align: center; min-height: 38px; font-size: 0.78rem; padding: 0.4rem 0.55rem; }
+      .qr-share-card { flex-direction: column; text-align: center; }
+      .gallery-grid { grid-template-columns: 1fr; }
     }
 
     /* Tables */
@@ -548,8 +611,14 @@
           Zakaria Sherif
           <a class="linkedin-badge" href="https://www.linkedin.com/in/zakaria-sherif/" target="_blank" rel="noopener">in LinkedIn</a>
         </span>
-        <span class="author-chip">Nicholas Cosereanu</span>
-        <span class="author-chip">Wyatt Barker</span>
+        <span class="author-chip">
+          Nicholas Cosereanu
+          <a class="linkedin-badge" href="https://www.linkedin.com/in/nick-cosereanu-69b968325/" target="_blank" rel="noopener">in LinkedIn</a>
+        </span>
+        <span class="author-chip">
+          Wyatt Barker
+          <a class="linkedin-badge" href="https://www.linkedin.com/in/james-wyatt-barker/" target="_blank" rel="noopener">in LinkedIn</a>
+        </span>
       </div>
 
       <div class="cta-row">
@@ -557,7 +626,7 @@
           Open End-to-End Notebook (.ipynb)
         </a>
         <a class="btn" href="assets/Final_Project_Report_V2.pdf" target="_blank" rel="noopener">
-          Read Full Paper (PDF)
+          Read Preprint Paper (PDF)
         </a>
         <a class="btn" href="assets/Incident_Triage_Poster_High_Resolution_Final.pptx" target="_blank" rel="noopener">
           Download Showcase Poster (PPTX)
@@ -565,6 +634,9 @@
         <a class="btn" href="https://github.com/Control707/unsupervised-incident-triage" target="_blank" rel="noopener">
           GitHub Repository
         </a>
+        <button class="btn" type="button" onclick="openLightbox('assets/showcase_qr.png')">
+          Mobile QR Code
+        </button>
       </div>
 
       <div class="kpi-grid">
@@ -796,6 +868,16 @@
           </div>
         </div>
 
+        <div class="qr-share-card">
+          <img src="assets/showcase_qr.png" alt="QR Code for Unsupervised Incident Triage Showcase" onclick="openLightbox('assets/showcase_qr.png')" />
+          <div>
+            <strong>Scan to Open Showcase on Mobile</strong>
+            <p style="margin:0.25rem 0 0; font-size:0.88rem; color:var(--text-muted);">
+              Points directly to <a href="https://control707.github.io/unsupervised-incident-triage/">control707.github.io/unsupervised-incident-triage</a> (also embedded on the top right of the showcase poster slide).
+            </p>
+          </div>
+        </div>
+
         <div class="two-col" style="grid-template-columns: 1fr 1fr;">
           <div class="card">
             <div class="copy-row">
@@ -835,13 +917,16 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     <div class="container">
       <p>
         Built for <strong>Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage</strong> &bull;
-        <a href="https://www.linkedin.com/in/zakaria-sherif/" target="_blank" rel="noopener">Zakaria Sherif</a>, Nicholas Cosereanu, Wyatt Barker &bull;
+        <a href="https://www.linkedin.com/in/zakaria-sherif/" target="_blank" rel="noopener">Zakaria Sherif</a>,
+        <a href="https://www.linkedin.com/in/nick-cosereanu-69b968325/" target="_blank" rel="noopener">Nicholas Cosereanu</a>,
+        <a href="https://www.linkedin.com/in/james-wyatt-barker/" target="_blank" rel="noopener">Wyatt Barker</a> &bull;
         <a href="https://github.com/Control707/unsupervised-incident-triage" target="_blank" rel="noopener">GitHub</a>
       </p>
     </div>
   </footer>
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
     <img id="lightboxImg" src="" alt="Expanded Figure" />
   </div>
 
@@ -856,6 +941,14 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       '#1f77b4','#aec7e8','#ff7f0e','#ffbb78','#2ca02c','#98df8a','#d62728',
       '#ff9896','#9467bd','#c5b0d5','#8c564b','#c49c94','#e377c2','#17becf'
     ];
+
+    function isMobile() {
+      return window.innerWidth < 640;
+    }
+
+    function plotConfig() {
+      return { responsive: true, displayModeBar: false, scrollZoom: false };
+    }
 
     function themeColors() {
       const dark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -968,13 +1061,14 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
 
       Plotly.newPlot('spatialPlot', traces, {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        font: { color: tc.text, family: 'Inter, sans-serif', size: 11 },
-        margin: { l: 42, r: 10, t: 10, b: 42 },
+        font: { color: tc.text, family: 'Inter, sans-serif', size: isMobile() ? 10 : 11 },
+        margin: { l: isMobile() ? 34 : 42, r: 8, t: 10, b: isMobile() ? 36 : 42 },
+        dragmode: isMobile() ? false : 'zoom',
         xaxis: { title: 'UMAP Dimension 1', gridcolor: tc.grid, zeroline: false },
         yaxis: { title: 'UMAP Dimension 2', gridcolor: tc.grid, zeroline: false, scaleanchor: 'x', scaleratio: 1 },
-        legend: { orientation: 'h', y: -0.18, font: { size: 10 } },
+        legend: { orientation: 'h', y: isMobile() ? -0.28 : -0.18, font: { size: isMobile() ? 9 : 10 } },
         hovermode: 'closest',
-      }, { responsive: true, displayModeBar: false });
+      }, plotConfig());
     }
 
     function renderBench() {
@@ -991,9 +1085,10 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           { x: labels, y: sil, type: 'bar', name: '5D Silhouette (↑)', marker: { color: '#1768ac' } }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
+          dragmode: isMobile() ? false : 'zoom',
           font: { color: tc.text, size: 10.5 }, margin: { l: 38, r: 8, t: 10, b: 62 },
           yaxis: { gridcolor: tc.grid, range: [-0.3, 1.05] }, legend: { orientation: 'h', y: 1.15 }
-        }, { responsive: true, displayModeBar: false });
+        }, plotConfig());
 
         document.getElementById('benchTable').innerHTML = `
           <thead><tr><th>Model (Pruned)</th><th>Noise</th><th>C_v</th><th>Div.</th><th>Sil.5D &uarr;</th></tr></thead>
@@ -1013,9 +1108,10 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           { x: labels, y: rows.map(r => r.Sil_UMAP_5D), type: 'scatter', mode: 'lines+markers', name: '5D Silhouette', marker: { color: '#1768ac', size: 7 } }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
+          dragmode: isMobile() ? false : 'zoom',
           font: { color: tc.text, size: 10.5 }, margin: { l: 38, r: 8, t: 10, b: 62 },
           yaxis: { gridcolor: tc.grid, range: [-0.12, 1.08] }, legend: { orientation: 'h', y: 1.15 }
-        }, { responsive: true, displayModeBar: false });
+        }, plotConfig());
 
         document.getElementById('benchTable').innerHTML = `
           <thead><tr><th>Model (IT Pruned)</th><th>Noise</th><th>C_v</th><th>Sil.5D</th><th>Type / Sub. &uarr;</th></tr></thead>
@@ -1050,11 +1146,12 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       });
       Plotly.newPlot('rollingPlot', traces, {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
+        dragmode: isMobile() ? false : 'zoom',
         font: { color: tc.text, size: 11 }, margin: { l: 48, r: 12, t: 16, b: 42 },
         yaxis: { title: currentRollingView === 'excess' ? 'Excess vs. Q1 Baseline (pp)' : '14-Day Rolling Share (%)', gridcolor: tc.grid, zeroline: true },
         xaxis: { gridcolor: tc.grid },
         legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
-      }, { responsive: true, displayModeBar: false });
+      }, plotConfig());
     }
 
     function renderPooling() {
@@ -1081,11 +1178,12 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         });
         Plotly.newPlot('poolingPlot', traces, {
           paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
+          dragmode: isMobile() ? false : 'zoom',
           font: { color: tc.text, size: 11 }, margin: { l: 48, r: 12, t: 16, b: 42 },
           yaxis: { title: 'Monthly Ticket Share (%)', gridcolor: tc.grid },
           xaxis: { gridcolor: tc.grid },
           legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
-        }, { responsive: true, displayModeBar: false });
+        }, plotConfig());
       } else {
         const ids = ['IT-03', 'IT-02', 'IT-08', 'IT-10'];
         const sub = ids.map(id => rows.find(r => r.Cluster_ID === id));
@@ -1102,10 +1200,11 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
+          dragmode: isMobile() ? false : 'zoom',
           font: { color: tc.text, size: 11 }, margin: { l: 55, r: 14, t: 16, b: 45 },
           xaxis: { title: 'Share Shift (Percentage Points)', gridcolor: tc.grid, zeroline: true },
           legend: { orientation: 'h', y: -0.22, font: { size: 10 } }
-        }, { responsive: true, displayModeBar: false });
+        }, plotConfig());
       }
     }
 
@@ -1145,27 +1244,32 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         }
       }], {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        font: { color: tc.text, size: 11 }, margin: { l: 50, r: 10, t: 14, b: 44 },
+        dragmode: isMobile() ? false : 'zoom',
+        font: { color: tc.text, size: isMobile() ? 10 : 11 }, margin: { l: 48, r: 10, t: 14, b: 44 },
         xaxis: { title: 'User Bug Issue Share (%) [vs. PRs]', gridcolor: tc.grid, range: [0, 80] },
         yaxis: { title: 'Median MTTR (Hours)', gridcolor: tc.grid, range: [0, 170] }
-      }, { responsive: true, displayModeBar: false });
+      }, plotConfig());
 
       const keep = ['IT-00','IT-01','IT-02','IT-03','IT-10','IT-07','IT-08','IT-12','IT-13'];
       const it = keep.map(k => DATA.exp9_it_triage.find(r => r.Cluster_ID === k));
       Plotly.newPlot('itPayoffPlot', [{
         y: it.map(r => r.Cluster_ID),
         x: it.map(r => r.Unassigned_Tickets_Routed),
-        text: it.map(r => `${r.Unassigned_Tickets_Routed} unassigned | ${r.Mean_Reassigned_Count.toFixed(2)} hops | ${r.Subcategory_Purity_Pct.toFixed(0)}% purity`),
+        text: it.map(r => isMobile()
+          ? `${r.Unassigned_Tickets_Routed} · ${r.Subcategory_Purity_Pct.toFixed(0)}%`
+          : `${r.Unassigned_Tickets_Routed} unassigned | ${r.Mean_Reassigned_Count.toFixed(2)} hops | ${r.Subcategory_Purity_Pct.toFixed(0)}% purity`),
         textposition: 'outside',
         type: 'bar', orientation: 'h',
         marker: { color: it.map(r => ['IT-00','IT-01','IT-02','IT-03'].includes(r.Cluster_ID) ? '#0f766e' : '#c62828') },
         hovertemplate: '%{y}: %{x} orphaned tickets<br>%{text}<extra></extra>'
       }], {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        font: { color: tc.text, size: 11 }, margin: { l: 52, r: 110, t: 14, b: 44 },
-        xaxis: { title: 'Orphaned Unassigned Tickets Grouped', gridcolor: tc.grid, range: [0, 44] },
+        dragmode: isMobile() ? false : 'zoom',
+        font: { color: tc.text, size: isMobile() ? 10 : 11 },
+        margin: { l: 48, r: isMobile() ? 48 : 110, t: 14, b: 44 },
+        xaxis: { title: 'Orphaned Unassigned Tickets Grouped', gridcolor: tc.grid, range: [0, isMobile() ? 38 : 44] },
         yaxis: { autorange: 'reversed' }
-      }, { responsive: true, displayModeBar: false });
+      }, plotConfig());
     }
 
     function renderAllPlots() {
@@ -1176,6 +1280,18 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       renderShiftsTable();
       renderPayoff();
     }
+
+    let resizeTimer;
+    let lastMobile = isMobile();
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (DATA && isMobile() !== lastMobile) {
+          lastMobile = isMobile();
+          renderAllPlots();
+        }
+      }, 200);
+    });
 
     bindSeg('spatialModeGroup', d => { currentSpatialMode = d.mode; renderSpatial(); });
     bindSeg('benchStreamGroup', d => { currentBenchStream = d.stream; renderBench(); });

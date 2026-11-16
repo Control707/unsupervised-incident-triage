@@ -22,7 +22,7 @@ elements:
     content: {text: 'TBD', fontFamily: Arial, fontSize: 120, bold: true, align: [center, middle], margins: [0, 0, 0, 0]}
   - elementId: paper-title
     elementType: text
-    bounds: [516, 39, 2888, 207]
+    bounds: [516, 39, 2580, 207]
     content:
       text: "Overcoming Template Mega Clusters and Pooling\nCancellation in Unsupervised Incident Triage"
       fontFamily: Arial
@@ -31,6 +31,21 @@ elements:
       align: [left, middle]
       wrap: true
       margins: [0, 0, 0, 0]
+  - elementId: qr-box
+    elementType: shape
+    bounds: [3156, 20, 252, 246]
+    shapeName: rect
+    fill: {type: solid, color: '#FFFFFF'}
+    border: {style: solid, width: 3, color: '#000000'}
+  - elementId: qr-code
+    elementType: image
+    bounds: [3184, 28, 196, 196]
+    src: media/showcase-qr.png
+    fit: {mode: contain}
+  - elementId: qr-label
+    elementType: text
+    bounds: [3164, 224, 236, 36]
+    content: {text: 'SCAN FOR WEB & CODE', fontFamily: Arial, fontSize: 18, bold: true, color: '#000000', align: [center, middle], margins: [0, 0, 0, 0]}
   - elementId: divider-one
     elementType: shape
     bounds: [1156, 340, 2, 996]

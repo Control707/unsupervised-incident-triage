@@ -5,7 +5,7 @@
 [![Paper PDF](https://img.shields.io/badge/Paper-Preprint_PDF-0f766e?style=flat-square)](Final_Project_Report_V2.pdf)
 [![Tests](https://img.shields.io/badge/Unit_Tests-90_Passing-16a34a?style=flat-square)](tests/)
 
-**Authors:** [Zakaria Sherif](https://www.linkedin.com/in/zakaria-sherif/) · Nicholas Cosereanu · Wyatt Barker  
+**Authors:** [Zakaria Sherif](https://www.linkedin.com/in/zakaria-sherif/) · [Nicholas Cosereanu](https://www.linkedin.com/in/nick-cosereanu-69b968325/) · [Wyatt Barker](https://www.linkedin.com/in/james-wyatt-barker/)  
 **Showcase Webpage:** https://control707.github.io/unsupervised-incident-triage/
 
 ---
