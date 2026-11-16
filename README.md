@@ -80,7 +80,7 @@ python -m http.server --directory docs 8080
   title  = {Overcoming Template Mega Clusters and Pooling Cancellation in Unsupervised Incident Triage},
   author = {Sherif, Zakaria and Cosereanu, Nicholas and Barker, Wyatt},
   year   = {2026},
-  note   = {Preprint, Kennesaw State University},
+  note   = {Preprint, College of Computing and Software Engineering (CCSE), Kennesaw State University},
   url    = {https://github.com/Control707/unsupervised-incident-triage}
 }
 ```
