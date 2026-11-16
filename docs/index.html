@@ -453,6 +453,12 @@
       padding: 0 0.9rem;
       font-size: 0.85rem;
     }
+    .swipe-hint {
+      display: none;
+    }
+    .wide-fig-scroll {
+      width: 100%;
+    }
     @media (max-width: 960px) {
       .two-col, .two-col.even { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
@@ -479,13 +485,84 @@
       .cta-row .btn { width: 100%; justify-content: center; min-height: 44px; font-size: 0.88rem; }
       section.block { padding: 2.2rem 0; }
       .card { padding: 0.85rem; }
-      .arch-frame { padding: 0.45rem; }
+      .arch-frame { padding: 0.5rem; }
       .gallery-card { padding: 0.75rem; }
-      .plot-box { min-height: 390px; }
+      .plot-box { min-height: 410px; }
       .seg-group { width: 100%; }
       .seg-btn { flex: 1 1 auto; text-align: center; min-height: 38px; font-size: 0.78rem; padding: 0.4rem 0.55rem; }
       .qr-share-card { flex-direction: column; text-align: center; }
       .gallery-grid { grid-template-columns: 1fr; }
+      .swipe-hint {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-align: center;
+        margin-bottom: 0.4rem;
+      }
+      .wide-fig-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #ffffff;
+      }
+      .wide-fig-scroll img {
+        max-width: none !important;
+        width: 720px;
+        height: auto;
+        border: none !important;
+      }
+      .wide-fig-scroll.ultra-wide img {
+        width: 960px;
+      }
+      .wide-fig-scroll.single-panel img {
+        width: 520px;
+      }
+      /* Stacked responsive cards for tables on narrow screens */
+      .table-wrap {
+        border: none;
+        background: transparent;
+        overflow-x: visible;
+      }
+      .table-wrap table,
+      .table-wrap thead,
+      .table-wrap tbody,
+      .table-wrap tr,
+      .table-wrap td {
+        display: block;
+        width: 100%;
+      }
+      .table-wrap thead { display: none; }
+      .table-wrap tr {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.55rem 0.75rem;
+        margin-bottom: 0.6rem;
+      }
+      .table-wrap td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        white-space: normal;
+        text-align: right;
+        padding: 0.34rem 0;
+        border-bottom: 1px dashed var(--border);
+        font-size: 0.82rem;
+      }
+      .table-wrap td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: var(--text-muted);
+        text-align: left;
+        flex-shrink: 0;
+      }
+      .table-wrap td:last-child { border-bottom: none; }
     }
 
     /* Tables */
@@ -763,8 +840,11 @@
           </div>
         </div>
 
-        <div class="arch-frame" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
-          <img src="assets/figures/v6_figure1_architecture.png" alt="Three Stage Incident Discovery, Shift Tracking, and Validation Pipeline" loading="lazy" />
+        <div class="arch-frame">
+          <div class="swipe-hint">&larr; Swipe figure horizontally or tap to zoom &rarr;</div>
+          <div class="wide-fig-scroll" onclick="openLightbox('assets/figures/v6_figure1_architecture.png')">
+            <img src="assets/figures/v6_figure1_architecture.png" alt="Three Stage Incident Discovery, Shift Tracking, and Validation Pipeline" loading="lazy" />
+          </div>
           <div class="caption-text"><strong>Figure 1 (tap to zoom &amp; pan):</strong> End-to-end architecture across Open-Source GitHub Issues/PRs (<em>N</em> = 881) and Enterprise IT Service Desk Tickets (<em>N</em> = 1,380).</div>
         </div>
       </div>
@@ -920,22 +1000,34 @@
 
         <div class="gallery-grid" style="margin-bottom:1.75rem;">
           <div class="gallery-card">
-            <img src="assets/figures/spatial.png" alt="2D UMAP Bounded EOM" onclick="openLightbox('assets/figures/spatial.png')" loading="lazy" />
+            <div class="swipe-hint">&larr; Swipe or tap to zoom &rarr;</div>
+            <div class="wide-fig-scroll single-panel" onclick="openLightbox('assets/figures/spatial.png')">
+              <img src="assets/figures/spatial.png" alt="2D UMAP Bounded EOM" loading="lazy" />
+            </div>
             <h4>1 &middot; Break the Mega Cluster</h4>
             <p>Bounded EOM splits 298-ticket <code>R1</code> into 5 subsystem clusters while keeping 9 sibling clusters intact.</p>
           </div>
           <div class="gallery-card">
-            <img src="assets/figures/rolling.png" alt="14-day Rolling Trajectories" onclick="openLightbox('assets/figures/rolling.png')" loading="lazy" />
+            <div class="swipe-hint">&larr; Swipe or tap to zoom &rarr;</div>
+            <div class="wide-fig-scroll single-panel" onclick="openLightbox('assets/figures/rolling.png')">
+              <img src="assets/figures/rolling.png" alt="14-day Rolling Trajectories" loading="lazy" />
+            </div>
             <h4>2 &middot; Plateaus vs. Sprints</h4>
             <p>14-day rolling trajectories across 91 Q2 days separate chronic <code>R1</code> (94.5% days elevated) from May sprint <code>R3</code>.</p>
           </div>
           <div class="gallery-card">
-            <img src="assets/figures/pooling.png" alt="IT Pooling Cancellation" onclick="openLightbox('assets/figures/pooling.png')" loading="lazy" />
+            <div class="swipe-hint">&larr; Swipe across panels or tap to zoom &rarr;</div>
+            <div class="wide-fig-scroll" onclick="openLightbox('assets/figures/pooling.png')">
+              <img src="assets/figures/pooling.png" alt="IT Pooling Cancellation" loading="lazy" />
+            </div>
             <h4>3 &middot; Pooling Cancellation</h4>
             <p>Monthly IT share breakdown rescues 4 FDR-significant shifts missed by coarse two-period pooling.</p>
           </div>
           <div class="gallery-card">
-            <img src="assets/figures/payoff.png" alt="Extrinsic Operational Payoff" onclick="openLightbox('assets/figures/payoff.png')" loading="lazy" />
+            <div class="swipe-hint">&larr; Swipe across panels or tap to zoom &rarr;</div>
+            <div class="wide-fig-scroll ultra-wide" onclick="openLightbox('assets/figures/payoff.png')">
+              <img src="assets/figures/payoff.png" alt="Extrinsic Operational Payoff" loading="lazy" />
+            </div>
             <h4>4 &middot; Operational Payoff</h4>
             <p>Withheld role checks confirm <code>R3</code> is 0% external and group 237/314 (75.5%) orphaned IT tickets.</p>
           </div>
@@ -1145,14 +1237,15 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         });
       }
 
+      const mob = isMobile();
       Plotly.newPlot('spatialPlot', traces, {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        font: { color: tc.text, family: 'Inter, sans-serif', size: isMobile() ? 10 : 11 },
-        margin: { l: isMobile() ? 34 : 42, r: 8, t: 10, b: isMobile() ? 36 : 42 },
-        dragmode: isMobile() ? false : 'zoom',
-        xaxis: { title: 'UMAP Dimension 1', gridcolor: tc.grid, zeroline: false },
-        yaxis: { title: 'UMAP Dimension 2', gridcolor: tc.grid, zeroline: false, scaleanchor: 'x', scaleratio: 1 },
-        legend: { orientation: 'h', y: isMobile() ? -0.28 : -0.18, font: { size: isMobile() ? 9 : 10 } },
+        font: { color: tc.text, family: 'Inter, sans-serif', size: mob ? 10 : 11 },
+        margin: mob ? { l: 42, r: 8, t: 10, b: 135 } : { l: 46, r: 10, t: 10, b: 48 },
+        dragmode: mob ? false : 'zoom',
+        xaxis: { title: { text: 'UMAP Dimension 1', standoff: 10 }, gridcolor: tc.grid, zeroline: false, automargin: true },
+        yaxis: { title: { text: 'UMAP Dimension 2', standoff: 8 }, gridcolor: tc.grid, zeroline: false, scaleanchor: 'x', scaleratio: 1, automargin: true },
+        legend: { orientation: 'h', y: mob ? -0.34 : -0.22, yanchor: 'top', font: { size: mob ? 9 : 10 } },
         hovermode: 'closest',
       }, plotConfig());
     }
@@ -1160,7 +1253,8 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     function renderBench() {
       if (!window.Plotly || !DATA) return;
       const tc = themeColors();
-      let rows, labels, cv, sil, pur;
+      const mob = isMobile();
+      let rows, labels, cv, sil;
       if (currentBenchStream === 'swe') {
         rows = DATA.exp1_swe.filter(r => r.Preprocessing === 'Domain-Pruned' && r.K >= 10).slice(3);
         labels = rows.map(r => r.Model.replace('Proposed SBERT+UMAP+HDBSCAN ', ''));
@@ -1171,19 +1265,21 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           { x: labels, y: sil, type: 'bar', name: '5D Silhouette (↑)', marker: { color: '#1768ac' } }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-          dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: 10.5 }, margin: { l: 38, r: 8, t: 10, b: 62 },
-          yaxis: { gridcolor: tc.grid, range: [-0.3, 1.05] }, legend: { orientation: 'h', y: 1.15 }
+          dragmode: mob ? false : 'zoom',
+          font: { color: tc.text, size: mob ? 9.5 : 10.5 }, margin: { l: 38, r: 8, t: 38, b: mob ? 76 : 62 },
+          yaxis: { gridcolor: tc.grid, range: [-0.3, 1.05], automargin: true },
+          xaxis: { automargin: true },
+          legend: { orientation: 'h', y: 1.04, yanchor: 'bottom', x: 0 }
         }, plotConfig());
 
         document.getElementById('benchTable').innerHTML = `
           <thead><tr><th>Model (Pruned)</th><th>Noise</th><th>C_v</th><th>Div.</th><th>Sil.5D &uarr;</th></tr></thead>
           <tbody>${rows.map(r => `<tr>
-            <td><strong>${r.Model.replace('Proposed SBERT+UMAP+HDBSCAN ', '')}</strong></td>
-            <td>${(r.Noise_Ratio*100).toFixed(1)}%</td>
-            <td>${r.Cv_Coherence.toFixed(3)}</td>
-            <td>${r.Topic_Diversity.toFixed(3)}</td>
-            <td><strong>${r.Sil_UMAP_5D_Clean.toFixed(3)}</strong></td>
+            <td data-label="Model"><strong>${r.Model.replace('Proposed SBERT+UMAP+HDBSCAN ', '')}</strong></td>
+            <td data-label="Noise">${(r.Noise_Ratio*100).toFixed(1)}%</td>
+            <td data-label="C_v">${r.Cv_Coherence.toFixed(3)}</td>
+            <td data-label="Diversity">${r.Topic_Diversity.toFixed(3)}</td>
+            <td data-label="Sil. 5D"><strong>${r.Sil_UMAP_5D_Clean.toFixed(3)}</strong></td>
           </tr>`).join('')}</tbody>`;
       } else {
         rows = DATA.exp7_it;
@@ -1194,19 +1290,21 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           { x: labels, y: rows.map(r => r.Sil_UMAP_5D), type: 'scatter', mode: 'lines+markers', name: '5D Silhouette', marker: { color: '#1768ac', size: 7 } }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-          dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: 10.5 }, margin: { l: 38, r: 8, t: 10, b: 62 },
-          yaxis: { gridcolor: tc.grid, range: [-0.12, 1.08] }, legend: { orientation: 'h', y: 1.15 }
+          dragmode: mob ? false : 'zoom',
+          font: { color: tc.text, size: mob ? 9.5 : 10.5 }, margin: { l: 38, r: 8, t: 48, b: mob ? 76 : 62 },
+          yaxis: { gridcolor: tc.grid, range: [-0.12, 1.08], automargin: true },
+          xaxis: { automargin: true },
+          legend: { orientation: 'h', y: 1.04, yanchor: 'bottom', x: 0 }
         }, plotConfig());
 
         document.getElementById('benchTable').innerHTML = `
           <thead><tr><th>Model (IT Pruned)</th><th>Noise</th><th>C_v</th><th>Sil.5D</th><th>Type / Sub. &uarr;</th></tr></thead>
           <tbody>${rows.map(r => `<tr>
-            <td><strong>${r.Model.replace('Proposed SBERT+UMAP+HDBSCAN ', '')}</strong></td>
-            <td>${(r.Noise_Ratio*100).toFixed(1)}%</td>
-            <td>${r.Cv_Coherence.toFixed(3)}</td>
-            <td>${r.Sil_UMAP_5D.toFixed(3)}</td>
-            <td><strong>${(r.Purity_Type*100).toFixed(1)}% / ${(r.Purity_Subcategory*100).toFixed(1)}%</strong></td>
+            <td data-label="Model"><strong>${r.Model.replace('Proposed SBERT+UMAP+HDBSCAN ', '')}</strong></td>
+            <td data-label="Noise">${(r.Noise_Ratio*100).toFixed(1)}%</td>
+            <td data-label="C_v">${r.Cv_Coherence.toFixed(3)}</td>
+            <td data-label="Sil. 5D">${r.Sil_UMAP_5D.toFixed(3)}</td>
+            <td data-label="Type / Sub."><strong>${(r.Purity_Type*100).toFixed(1)}% / ${(r.Purity_Subcategory*100).toFixed(1)}%</strong></td>
           </tr>`).join('')}</tbody>`;
       }
     }
@@ -1214,11 +1312,12 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
     function renderRolling() {
       if (!window.Plotly || !DATA) return;
       const tc = themeColors();
+      const mob = isMobile();
       const series = [
-        ['R1', '#1768ac', 'R1: pickle / dtype (Chronic Plateau)'],
-        ['R3', '#7b4397', 'R3: task_cast (Late-May Sprint)'],
-        ['R0', '#0f766e', 'R0: DuplicateKeysError (Emerging)'],
-        ['R6', '#c62828', 'R6: NumPy / Checksums (Declining)']
+        ['R1', '#1768ac', 'R1: pickle / dtype (Chronic)'],
+        ['R3', '#7b4397', 'R3: task_cast (May Sprint)'],
+        ['R0', '#0f766e', 'R0: DuplicateKeysError'],
+        ['R6', '#c62828', 'R6: NumPy / Checksums']
       ];
       const traces = series.map(([k, col, name]) => {
         const s = DATA.rolling_q2[k];
@@ -1232,25 +1331,26 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       });
       Plotly.newPlot('rollingPlot', traces, {
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-        dragmode: isMobile() ? false : 'zoom',
-        font: { color: tc.text, size: isMobile() ? 10 : 11 },
-        margin: { l: isMobile() ? 40 : 48, r: 8, t: 14, b: isMobile() ? 48 : 42 },
-        yaxis: { title: currentRollingView === 'excess' ? 'Excess vs. Q1 (pp)' : '14-Day Share (%)', gridcolor: tc.grid, zeroline: true },
-        xaxis: { gridcolor: tc.grid },
-        legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
+        dragmode: mob ? false : 'zoom',
+        font: { color: tc.text, size: mob ? 10 : 11 },
+        margin: { l: mob ? 42 : 48, r: 8, t: mob ? 66 : 48, b: 44 },
+        yaxis: { title: currentRollingView === 'excess' ? 'Excess vs. Q1 (pp)' : '14-Day Share (%)', gridcolor: tc.grid, zeroline: true, automargin: true },
+        xaxis: { gridcolor: tc.grid, automargin: true },
+        legend: { orientation: 'h', y: 1.03, yanchor: 'bottom', x: 0, font: { size: mob ? 9.5 : 10 } }
       }, plotConfig());
     }
 
     function renderPooling() {
       if (!window.Plotly || !DATA) return;
       const tc = themeColors();
+      const mob = isMobile();
       const rows = DATA.exp8_it_pooling;
       if (currentPoolingView === 'monthly') {
         const picks = [
-          ['IT-03', '#1768ac', 'IT-03 Installation (Pooled Cancelled!)'],
-          ['IT-10', '#c62828', 'IT-10 RSA / Java Token'],
-          ['IT-02', '#0f766e', 'IT-02 DevOps Config'],
-          ['IT-08', '#7b4397', 'IT-08 F5 BIG-IP']
+          ['IT-03', '#1768ac', 'IT-03 Install (Cancelled)'],
+          ['IT-10', '#c62828', 'IT-10 RSA/Java'],
+          ['IT-02', '#0f766e', 'IT-02 DevOps'],
+          ['IT-08', '#7b4397', 'IT-08 F5 IP']
         ];
         const traces = picks.map(([id, col, name]) => {
           const r = rows.find(x => x.Cluster_ID === id);
@@ -1260,26 +1360,26 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         const pooled = ((it03.Count_Feb + it03.Count_Mar) / (483 + 368)) * 100;
         traces.push({
           x: ['Jan 2021', 'Mar 2021'], y: [it03.P_Jan_Pct, +pooled.toFixed(2)],
-          mode: 'lines', name: `IT-03 Pooled Feb+Mar (${pooled.toFixed(2)}%)`,
+          mode: 'lines', name: `IT-03 Pooled (${pooled.toFixed(2)}%)`,
           line: { color: '#64748b', width: 2.2, dash: 'dash' }
         });
         Plotly.newPlot('poolingPlot', traces, {
           paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-          dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: isMobile() ? 10 : 11 },
-          margin: { l: isMobile() ? 40 : 48, r: 8, t: 14, b: isMobile() ? 48 : 42 },
-          yaxis: { title: 'Monthly Share (%)', gridcolor: tc.grid },
-          xaxis: { gridcolor: tc.grid },
-          legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
+          dragmode: mob ? false : 'zoom',
+          font: { color: tc.text, size: mob ? 10 : 11 },
+          margin: { l: mob ? 42 : 48, r: 8, t: mob ? 66 : 48, b: 40 },
+          yaxis: { title: 'Monthly Share (%)', gridcolor: tc.grid, automargin: true },
+          xaxis: { gridcolor: tc.grid, automargin: true },
+          legend: { orientation: 'h', y: 1.03, yanchor: 'bottom', x: 0, font: { size: mob ? 9.5 : 10 } }
         }, plotConfig());
       } else {
         const ids = ['IT-03', 'IT-02', 'IT-08', 'IT-10'];
         const sub = ids.map(id => rows.find(r => r.Cluster_ID === id));
         Plotly.newPlot('poolingPlot', [
-          { y: ids, x: sub.map(r => r.Coarse_Delta_FebMar_vs_Jan_PP), type: 'bar', orientation: 'h', name: 'Coarse (Feb+Mar vs Jan, 0/14 sig)', marker: { color: '#94a3b8' } },
+          { y: ids, x: sub.map(r => r.Coarse_Delta_FebMar_vs_Jan_PP), type: 'bar', orientation: 'h', name: 'Coarse (0/14 sig)', marker: { color: '#94a3b8' } },
           {
             y: ids, x: sub.map(r => r.Monthly_Delta_Mar_vs_JanFeb_PP), type: 'bar', orientation: 'h',
-            name: 'Monthly (Mar vs Jan+Feb, q < 0.10)', marker: { color: '#1768ac' },
+            name: 'Monthly FDR (4/14 sig)', marker: { color: '#1768ac' },
             error_x: {
               type: 'data', symmetric: false,
               array: sub.map(r => r.Monthly_CI95_High_PP - r.Monthly_Delta_Mar_vs_JanFeb_PP),
@@ -1288,11 +1388,12 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
           }
         ], {
           barmode: 'group', paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
-          dragmode: isMobile() ? false : 'zoom',
-          font: { color: tc.text, size: isMobile() ? 10 : 11 },
-          margin: { l: isMobile() ? 46 : 55, r: 10, t: 14, b: 48 },
-          xaxis: { title: 'Share Shift (pp)', gridcolor: tc.grid, zeroline: true },
-          legend: { orientation: 'h', y: isMobile() ? -0.32 : -0.22, font: { size: isMobile() ? 9 : 10 } }
+          dragmode: mob ? false : 'zoom',
+          font: { color: tc.text, size: mob ? 10 : 11 },
+          margin: { l: mob ? 46 : 55, r: 10, t: 46, b: 48 },
+          xaxis: { title: 'Share Shift (pp)', gridcolor: tc.grid, zeroline: true, automargin: true },
+          yaxis: { automargin: true },
+          legend: { orientation: 'h', y: 1.03, yanchor: 'bottom', x: 0, font: { size: mob ? 9.5 : 10 } }
         }, plotConfig());
       }
     }
@@ -1302,13 +1403,13 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
       document.getElementById('shiftsTable').innerHTML = `
         <thead><tr><th>Cluster (C)</th><th>Subsystem</th><th>Q1 &rarr; Q2</th><th>P_Q1 &rarr; P_Q2</th><th>&Delta;K (pp)</th><th>BH q-val</th><th>Status</th></tr></thead>
         <tbody>${rows.map(r => `<tr>
-          <td><code>C${r.Cluster_ID}</code></td>
-          <td>${r.Technical_Subsystem}</td>
-          <td>${r.Count_Q1} &rarr; ${r.Count_Q2}</td>
-          <td>${(r.P_Q1*100).toFixed(1)}% &rarr; ${(r.P_Q2*100).toFixed(1)}%</td>
-          <td><strong>${r.Delta_K >= 0 ? '+' : ''}${(r.Delta_K*100).toFixed(2)}</strong></td>
-          <td>${r.Q_Value_BH_FDR.toFixed(4)}</td>
-          <td><span class="badge ${r.FDR_Significant_010 ? (r.Delta_K > 0 ? 'badge-sig' : 'badge-warn') : 'badge-muted'}">${r.Category}</span></td>
+          <td data-label="Cluster"><code>C${r.Cluster_ID}</code></td>
+          <td data-label="Subsystem">${r.Technical_Subsystem}</td>
+          <td data-label="Q1 → Q2">${r.Count_Q1} &rarr; ${r.Count_Q2}</td>
+          <td data-label="Share">${(r.P_Q1*100).toFixed(1)}% &rarr; ${(r.P_Q2*100).toFixed(1)}%</td>
+          <td data-label="ΔK (pp)"><strong>${r.Delta_K >= 0 ? '+' : ''}${(r.Delta_K*100).toFixed(2)}</strong></td>
+          <td data-label="BH q-val">${r.Q_Value_BH_FDR.toFixed(4)}</td>
+          <td data-label="Status"><span class="badge ${r.FDR_Significant_010 ? (r.Delta_K > 0 ? 'badge-sig' : 'badge-warn') : 'badge-muted'}">${r.Category}</span></td>
         </tr>`).join('')}</tbody>`;
     }
 
@@ -1322,21 +1423,25 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         R4: 'bottom right', R5: 'top right', R6: 'bottom left', R7: 'bottom center',
         R8: 'top left', R9: 'top center'
       };
+      const mobShowLabel = new Set(['R3', 'R1', 'R6', 'R5', 'R9']);
       Plotly.newPlot('ghPayoffPlot', [{
         x: gh.map(r => r.Issue_Ratio_Pct),
         y: gh.map(r => r.Median_MTTR_Hours),
-        text: gh.map(r => r.Cluster_ID === 'R3' ? 'R3 (0% Ext.)' : r.Cluster_ID),
+        text: gh.map(r => {
+          if (mob && !mobShowLabel.has(r.Cluster_ID)) return '';
+          return r.Cluster_ID === 'R3' ? 'R3 (0% Ext.)' : r.Cluster_ID;
+        }),
         hovertext: gh.map(r => `<b>${r.Cluster_ID}</b>: ${r.Topic_Label}<br>Count: ${r.Total_Count} | External: ${r.External_User_Pct}% | MTTR: ${r.Median_MTTR_Hours}h`),
         hovertemplate: '%{hovertext}<extra></extra>',
         mode: 'markers+text',
         textposition: gh.map(r => labelPos[r.Cluster_ID] || 'top center'),
-        textfont: { size: mob ? 9.5 : 10.5, color: tc.text },
+        textfont: { size: mob ? 10 : 10.5, color: tc.text },
         marker: {
           size: gh.map(r => Math.sqrt(r.Total_Count) * (mob ? 2.6 : 3.1) + (mob ? 7 : 8)),
           color: gh.map(r => r.External_User_Pct),
           colorscale: 'RdYlBu', reversescale: true, cmin: 0, cmax: 55,
           colorbar: mob
-            ? { title: 'Ext. %', orientation: 'h', y: -0.32, x: 0.5, xanchor: 'center', len: 0.85, thickness: 10, titleside: 'top' }
+            ? { title: { text: 'External Author %', side: 'top' }, orientation: 'h', y: 1.06, yanchor: 'bottom', x: 0.5, xanchor: 'center', len: 0.85, thickness: 10 }
             : { title: 'Ext. %', thickness: 12 },
           line: { width: 1, color: tc.text }
         }
@@ -1344,9 +1449,9 @@ jupyter lab Incident_Triage_End_to_End_Showcase.ipynb</pre>
         paper_bgcolor: tc.bg, plot_bgcolor: tc.bg,
         dragmode: mob ? false : 'zoom',
         font: { color: tc.text, size: mob ? 10 : 11 },
-        margin: mob ? { l: 42, r: 10, t: 14, b: 92 } : { l: 50, r: 12, t: 14, b: 46 },
-        xaxis: { title: 'User Bug Issue Share (%) [vs. PRs]', gridcolor: tc.grid, range: [-2, 82] },
-        yaxis: { title: 'Median MTTR (Hours)', gridcolor: tc.grid, range: [0, 175] }
+        margin: mob ? { l: 46, r: 10, t: 74, b: 52 } : { l: 50, r: 12, t: 16, b: 48 },
+        xaxis: { title: { text: 'User Bug Issue Share (%) [vs. PRs]', standoff: 10 }, gridcolor: tc.grid, range: [-2, 82], automargin: true },
+        yaxis: { title: { text: 'Median MTTR (Hours)', standoff: 8 }, gridcolor: tc.grid, range: [0, 175], automargin: true }
       }, plotConfig());
 
       const keep = ['IT-00','IT-01','IT-02','IT-03','IT-10','IT-07','IT-08','IT-12','IT-13'];
