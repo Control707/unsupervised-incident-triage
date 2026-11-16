@@ -331,6 +331,20 @@
       text-align: center;
       cursor: zoom-in;
     }
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      border-radius: 10px;
+      background: #0b1120;
+    }
     .arch-frame img {
       max-width: 100%;
       height: auto;
@@ -588,6 +602,7 @@
         <span>Unsupervised Incident Triage</span>
       </div>
       <div class="nav-links">
+        <a href="#video-walkthrough">40s Video</a>
         <a href="#pipeline">Pipeline</a>
         <a href="#trap1">Trap 1 · Mega Clusters</a>
         <a href="#trap2">Trap 2 · Rolling &amp; Pooling</a>
@@ -625,8 +640,8 @@
         <a class="btn btn-primary" href="https://github.com/Control707/unsupervised-incident-triage/blob/main/Incident_Triage_End_to_End_Showcase.ipynb" target="_blank" rel="noopener">
           Open End-to-End Notebook (.ipynb)
         </a>
-        <a class="btn" href="assets/showcase_video.mp4" target="_blank" rel="noopener">
-          Watch 40s AI Video (MP4)
+        <a class="btn" href="#video-walkthrough">
+          Watch 40s Walkthrough
         </a>
         <a class="btn" href="assets/Final_Project_Report_V2.pdf" target="_blank" rel="noopener">
           Read Preprint Paper (PDF)
@@ -667,6 +682,27 @@
   </header>
 
   <main>
+    <!-- VIDEO WALKTHROUGH -->
+    <section class="block" id="video-walkthrough">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <div class="sec-eyebrow">40-Second Walkthrough</div>
+            <h2 class="sec-title">Project Overview in 40 Seconds</h2>
+            <p class="sec-desc">Narrated overview covering the Template Mega Cluster split (<code>298 &rarr; 5</code>), 14-day rolling vs. monthly pooling cancellation, and <code>75.5%</code> orphaned ticket grouping.</p>
+          </div>
+          <a class="mini-btn" href="assets/showcase_video.mp4" download>Download MP4 (2.3 MB)</a>
+        </div>
+
+        <div class="video-card">
+          <video controls playsinline preload="metadata" poster="assets/video_poster.png">
+            <source src="assets/showcase_video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video. <a href="assets/showcase_video.mp4">Download the showcase video</a>.
+          </video>
+        </div>
+      </div>
+    </section>
+
     <!-- PIPELINE -->
     <section class="block" id="pipeline">
       <div class="container">
